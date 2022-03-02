@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cee23cce-0f5e-4333-a56b-5945862cdd8c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/EmployeePosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/EmployeePosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/Floors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/Floors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/ContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/ContractServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/ContractServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="cee23cce-0f5e-4333-a56b-5945862cdd8c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +55,7 @@
       <workItem from="1646182486876" duration="853000" />
       <workItem from="1646195021011" duration="686000" />
       <workItem from="1646195791389" duration="760000" />
-      <workItem from="1646200883158" duration="11001000" />
+      <workItem from="1646200883158" duration="11467000" />
     </task>
     <servers />
   </component>
