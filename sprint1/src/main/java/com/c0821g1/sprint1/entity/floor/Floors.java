@@ -1,6 +1,7 @@
 package com.c0821g1.sprint1.entity.floor;
 
 import com.c0821g1.sprint1.entity.space.Spaces;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnJava;
 
 import javax.persistence.*;
@@ -27,6 +28,7 @@ public class Floors {
     private FloorsStatus floorsStatus;
 
     @OneToMany(mappedBy = "floors")
+    @JsonBackReference
     private List<Spaces> spacesList;
 
     public Floors() {

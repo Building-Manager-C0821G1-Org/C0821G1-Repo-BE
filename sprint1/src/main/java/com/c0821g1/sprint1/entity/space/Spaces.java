@@ -3,12 +3,13 @@ package com.c0821g1.sprint1.entity.space;
 
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.floor.Floors;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Spaces {
+public class  Spaces {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int spaceId;
@@ -33,6 +34,7 @@ public class Spaces {
     private Floors floors;
 
     @OneToMany(mappedBy = "spaces")
+    @JsonBackReference
     private List<Contract> contractList;
 
     public Spaces() {
