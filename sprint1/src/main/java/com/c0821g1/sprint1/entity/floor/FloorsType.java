@@ -1,6 +1,7 @@
 package com.c0821g1.sprint1.entity.floor;
 
 import com.c0821g1.sprint1.entity.employee.Employee;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,27 +10,28 @@ import java.util.List;
 public class FloorsType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int floorTypeId;
+    private Integer floorTypeId;
 
     private String floorTypeName;
 
     @OneToMany(mappedBy = "floorsType")
+//    @JsonBackReference
     private List<Floors> floors;
 
     public FloorsType() {
     }
 
-    public FloorsType(int floorTypeId, String floorTypeName, List<Floors> floors) {
+    public FloorsType(Integer floorTypeId, String floorTypeName, List<Floors> floors) {
         this.floorTypeId = floorTypeId;
         this.floorTypeName = floorTypeName;
         this.floors = floors;
     }
 
-    public int getFloorTypeId() {
+    public Integer getFloorTypeId() {
         return floorTypeId;
     }
 
-    public void setFloorTypeId(int floorTypeId) {
+    public void setFloorTypeId(Integer floorTypeId) {
         this.floorTypeId = floorTypeId;
     }
 
