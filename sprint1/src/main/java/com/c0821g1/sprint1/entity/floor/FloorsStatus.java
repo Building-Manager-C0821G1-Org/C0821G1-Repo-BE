@@ -1,6 +1,8 @@
 package com.c0821g1.sprint1.entity.floor;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,27 +10,28 @@ import java.util.List;
 public class FloorsStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int floorStatusId;
+    private Integer floorStatusId;
 
     private String floorStatusName;
 
     @OneToMany(mappedBy = "floorsStatus")
+//    @JsonBackReference
     private List<Floors> floorsList;
 
     public FloorsStatus() {
     }
 
-    public FloorsStatus(int floorStatusId, String floorStatusName, List<Floors> floorsList) {
+    public FloorsStatus(Integer floorStatusId, String floorStatusName, List<Floors> floorsList) {
         this.floorStatusId = floorStatusId;
         this.floorStatusName = floorStatusName;
         this.floorsList = floorsList;
     }
 
-    public int getFloorStatusId() {
+    public Integer getFloorStatusId() {
         return floorStatusId;
     }
 
-    public void setFloorStatusId(int floorStatusId) {
+    public void setFloorStatusId(Integer floorStatusId) {
         this.floorStatusId = floorStatusId;
     }
 
