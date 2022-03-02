@@ -29,14 +29,6 @@ public class ContractController {
     private ContractService contractService;
 
 
-//    @GetMapping("/vaccines")
-//    public ResponseEntity<List<VaccineDTO>> getAllVaccine(@RequestParam int index) {
-//        List<VaccineDTO> vaccines = vaccineService.getAllVaccineDTO(index);
-//        if (vaccines.isEmpty()) {
-//            return new ResponseEntity<List<VaccineDTO>>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<List<VaccineDTO>>(vaccines, HttpStatus.OK);
-//    }
 
     @GetMapping("/list")
     public ResponseEntity<List<Contract>> showListContract(@RequestParam Integer index) {
