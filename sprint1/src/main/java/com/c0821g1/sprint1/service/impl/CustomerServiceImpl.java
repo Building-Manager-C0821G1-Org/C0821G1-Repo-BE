@@ -33,6 +33,17 @@ public class CustomerServiceImpl implements CustomerService {
         return customerPage;
     }
 
+    //    VyLTT - search by name, email, phone, identify number
+    @Override
+    public Page<Customer> findCustomerByNameAndEmailAndPhoneAndIdentify(Pageable pageable,
+                                                                        String customerName,
+                                                                        String customerEmail,
+                                                                        String customerPhone,
+                                                                        String customerIdentifyNumber) {
+        return customerRepository.getByCustomerNameAndCustomerEmailAndCustomerPhoneAndCustomerIdentifyNumber
+                (pageable, customerName, customerEmail, customerPhone, customerIdentifyNumber);
+    }
+
     @Override
     public void save(Customer customer) {
         customerRepository.save(customer);

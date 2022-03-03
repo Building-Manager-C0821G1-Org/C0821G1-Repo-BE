@@ -14,6 +14,13 @@ public interface CustomerService {
 
     Page<Customer> findByName(Pageable pageable, String name);
 
+    //    VyLTT - search by name, email, phone, identify number
+    Page<Customer> findCustomerByNameAndEmailAndPhoneAndIdentify(Pageable pageable,
+                                                                 String customerName,
+                                                                 String customerEmail,
+                                                                 String customerPhone,
+                                                                 String customerIdentifyNumber);
+
     void save(Customer customer);
 
     void save(CustomerDTO customerDto);

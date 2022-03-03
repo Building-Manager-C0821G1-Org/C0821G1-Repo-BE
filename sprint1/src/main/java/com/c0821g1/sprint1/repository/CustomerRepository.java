@@ -11,10 +11,21 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    @Query(value = "select  * from customer where name like :name", nativeQuery = true)
+    //    VyLTT - search by name
+    @Query(value = "select  * from customer where customer_name like :name", nativeQuery = true)
     Page<Customer> getByName(Pageable pageable, @Param("name") String name);
 
-    @Query(value = "select  * from customer where name like :name", nativeQuery = true)
-    Page<Customer> getByCustomerIdentifyNumberAndCustomerAndCustomerEmailAndCustomerPhone(Pageable pageable, @Param("name") String name);
+    //    VyLTT - search by name, email, phone, identify number
+    @Query(value = "select *  from customer where  customer_name like concat('%',:name,'%') \n" +
+            "and customer_email like concat('%',:email,'%') \n" +
+            "and customer_phone like concat('%',:phone,'%') \n" +
+            "and customer_identify_number like concat('%',:identify,'%') \n" +
+            "and customer_delete_flag = false", nativeQuery = true)
+    Page<Customer> getByCustomerNameAndCustomerEmailAndCustomerPhoneAndCustomerIdentifyNumber
+    (Pageable pageable,
+     @Param("name") String customerName,
+     @Param("email") String customerEmail,
+     @Param("phone") String customerPhone,
+     @Param("identify") String customerIdentifyNumber);
 }
 

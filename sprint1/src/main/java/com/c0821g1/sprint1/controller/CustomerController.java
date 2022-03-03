@@ -3,6 +3,10 @@ package com.c0821g1.sprint1.controller;
 import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +28,7 @@ public class CustomerController {
         List<Customer> customers = this.customerService.getAll();
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
+
     //      VyLTT- delete customer
     @DeleteMapping("delete-customer/{id}")
     public ResponseEntity<Customer> deleteCustomer(@PathVariable Integer id) {
@@ -33,5 +38,25 @@ public class CustomerController {
         }
         customerService.remove(id);
         return new ResponseEntity<>(customerOptional.get(), HttpStatus.NO_CONTENT);
+    }
+
+    //    VyLTT - search by name, email, phone, identify number
+    @GetMapping("/search")
+    public ResponseEntity<Page<Customer>> searchCustomer(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "") String customerName,
+            @RequestParam(defaultValue = "") String customerEmail,
+            @RequestParam(defaultValue = "") String customerPhone,
+            @RequestParam(defaultValue = "") String customerIdentifyNumber
+    ) {
+        Pageable pageable = PageRequest.of(page, 10, Sort.by("customer_id"));
+        Page<Customer> customersNewPage = customerService.findCustomerByNameAndEmailAndPhoneAndIdentify
+                (pageable, customerName, customerEmail, customerPhone, customerIdentifyNumber);
+
+        if (customersNewPage.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(customersNewPage, HttpStatus.OK);
+
     }
 }
