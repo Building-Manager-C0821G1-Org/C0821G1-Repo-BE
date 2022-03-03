@@ -1,4 +1,4 @@
-package com.c0821g1.sprint1.entity.floor;
+package com.c0821g1.sprint1.entity.floors;
 
 import com.c0821g1.sprint1.entity.space.Spaces;
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -20,12 +20,12 @@ public class Floors {
 
     @ManyToOne
     @JsonBackReference
-    @JoinColumn(name = "floor_type_id",nullable = false)
+    @JoinColumn(name = "floor_type",nullable = false)
     private FloorsType floorsType;
 
     @ManyToOne
     @JsonBackReference
-    @JoinColumn(name = "floor_status_id",nullable = false)
+    @JoinColumn(name = "floor_status",nullable = false)
     private FloorsStatus floorsStatus;
 
     @OneToMany(mappedBy = "floors")

@@ -1,6 +1,6 @@
 package com.c0821g1.sprint1.repository;
 
-import com.c0821g1.sprint1.entity.floor.Floors;
+import com.c0821g1.sprint1.entity.floors.Floors;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
