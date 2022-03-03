@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,22 +23,47 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    //      VyLTT - list of customer
+    /**
+     * created by VyLTT
+     * method getAllCustomer
+     *
+     * @param pageable
+     * @return
+     */
     @GetMapping("/list")
-    public ResponseEntity<List<Customer>> getAllCustomer() {
-        List<Customer> customers = this.customerService.getAll();
+    public ResponseEntity<Page<Customer>> getAllCustomer(@PageableDefault(size = 4) Pageable pageable) {
+        Page<Customer> customers = this.customerService.getAll(pageable);
+        if (customers.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 
+//    @GetMapping("/list")
+//    public ResponseEntity<List<Customer>> getAllCustomer() {
+//        List<Customer> customers = this.customerService.getAll();
+//        return new ResponseEntity<>(customers, HttpStatus.OK);
+//    }
+
+    @GetMapping(value = "/detail/{id}")
+    public ResponseEntity<Customer> getDetailCustomer(@PathVariable Integer id) {
+        Customer customerObj = this.customerService.findById(id);
+        if(customerObj==null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(customerObj, HttpStatus.OK);
+    }
+
     //      VyLTT- delete customer
-    @DeleteMapping("delete-customer/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Customer> deleteCustomer(@PathVariable Integer id) {
-        Optional<Customer> customerOptional = Optional.ofNullable(customerService.findById(id));
-        if (!customerOptional.isPresent()) {
+        Customer customerObj = customerService.findById(id);
+        if (customerObj == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        customerService.remove(id);
-        return new ResponseEntity<>(customerOptional.get(), HttpStatus.NO_CONTENT);
+        customerObj.setCustomerDeleteFlag(false);
+        this.customerService.remove(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     //    VyLTT - search by name, email, phone, identify number

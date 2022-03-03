@@ -6,11 +6,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CustomerService {
-    List<Customer> getAll();
+  Page<Customer> getAll(Pageable pageable);
 
-    Customer findById(Integer id);
+  Customer findById(Integer id);
 
     Page<Customer> findByName(Pageable pageable, String name);
 
