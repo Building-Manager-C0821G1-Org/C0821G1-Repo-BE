@@ -37,9 +37,9 @@ public class JwtUtils {
         return expiration.before(new Date());
     }
 
-    public String generateToken(MyUserDetailsImpl userDetails) {
+    public String generateToken(MyUserDetailsImpl myUserDetailsImpl) {
         Map<String, Object> claims = new HashMap<>();
-        return doGenerateToken(claims, userDetails.getUsername());
+        return doGenerateToken(claims, myUserDetailsImpl.getUsername());
     }
 
     private String doGenerateToken(Map<String, Object> claims, String subject) {
