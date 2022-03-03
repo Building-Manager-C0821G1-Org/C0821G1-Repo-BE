@@ -56,7 +56,7 @@ public class ContractController {
 
 
 //    Tây chức năng edit hợp đồng
-    @PutMapping("/update/{id}")
+    @PatchMapping("/update/{id}")
     private ResponseEntity<?> updateContract(@Valid @RequestBody ContractDTO contractDTO,BindingResult bindingResult,@PathVariable("id") Integer id) {
         try {
             new ContractDTO().validate(contractDTO,bindingResult);

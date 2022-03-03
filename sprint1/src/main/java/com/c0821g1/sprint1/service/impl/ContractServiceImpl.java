@@ -57,8 +57,8 @@ public class ContractServiceImpl implements ContractService {
                         ,contractDTO.getSpaceId());
     }
 
-    @Override
-    public void deleteContract(Integer id) {
-        contractRepository.deleteContract(id);
-    }
+//    @Override
+//    public void deleteContract(Integer id) {
+//        contractRepository.deleteContract(id);
+//    }
 }
