@@ -10,6 +10,7 @@ import java.util.Set;
 @Entity(name = "app_users")
 @SQLDelete(sql = "UPDATE app_users SET deleted = true WHERE id=?")
 @Where(clause = "deleted=false")
+
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

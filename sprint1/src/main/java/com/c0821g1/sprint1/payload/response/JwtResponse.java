@@ -1,6 +1,4 @@
 package com.c0821g1.sprint1.payload.response;
-
-import java.util.Date;
 import java.util.List;
 
 public class JwtResponse {
