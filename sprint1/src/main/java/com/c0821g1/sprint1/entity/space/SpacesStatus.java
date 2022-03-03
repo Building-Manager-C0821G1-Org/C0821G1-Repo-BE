@@ -15,8 +15,8 @@ public class SpacesStatus {
 
     private String spacerStatusName;
 
-    @OneToMany(mappedBy = "spaceStatus")
     @JsonBackReference
+    @OneToMany(mappedBy = "spaceStatus")
     private List<Spaces> spacesList;
 
 

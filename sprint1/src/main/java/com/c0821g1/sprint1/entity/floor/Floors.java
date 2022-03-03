@@ -27,8 +27,8 @@ public class Floors {
     @JoinColumn(name = "floor_status_id",nullable = false)
     private FloorsStatus floorsStatus;
 
-    @OneToMany(mappedBy = "floors")
     @JsonBackReference
+    @OneToMany(mappedBy = "floors")
     private List<Spaces> spacesList;
 
     public Floors() {

@@ -6,6 +6,8 @@ import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.entity.space.Spaces;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class Contract {
@@ -14,8 +16,9 @@ public class Contract {
     private int contractId;
 
     private String contractExpred;
-    private String contractDateStart;
-    private String contractDateEnd;
+    @Column()
+    private Date contractDateStart;
+    private Date contractDateEnd;
     private String contractTotal;
     private String contractContent;
     private Boolean contractDeleteFlag;
@@ -36,7 +39,7 @@ public class Contract {
     public Contract() {
     }
 
-    public Contract(int contractId, String contractExpred, String contractDateStart, String contractDateEnd, String contractTotal, String contractContent, Boolean contractDeleteFlag, Customer customer, Employee employee, Spaces spaces) {
+    public Contract(int contractId, String contractExpred, Date contractDateStart, Date contractDateEnd, String contractTotal, String contractContent, Boolean contractDeleteFlag, Customer customer, Employee employee, Spaces spaces) {
         this.contractId = contractId;
         this.contractExpred = contractExpred;
         this.contractDateStart = contractDateStart;
@@ -89,19 +92,20 @@ public class Contract {
         this.contractExpred = contractExpred;
     }
 
-    public String getContractDateStart() {
+
+    public Date getContractDateStart() {
         return contractDateStart;
     }
 
-    public void setContractDateStart(String contractDateStart) {
+    public void setContractDateStart(Date contractDateStart) {
         this.contractDateStart = contractDateStart;
     }
 
-    public String getContractDateEnd() {
+    public Date getContractDateEnd() {
         return contractDateEnd;
     }
 
-    public void setContractDateEnd(String contractDateEnd) {
+    public void setContractDateEnd(Date contractDateEnd) {
         this.contractDateEnd = contractDateEnd;
     }
 

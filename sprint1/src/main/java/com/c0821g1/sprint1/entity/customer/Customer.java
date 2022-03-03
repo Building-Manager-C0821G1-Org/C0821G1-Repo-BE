@@ -21,8 +21,8 @@ public class Customer {
     private String customerStatus;
     private Boolean customerDeleteFlag;
 
-    @OneToMany(mappedBy = "customer")
     @JsonBackReference
+    @OneToMany(mappedBy = "customer")
     private List<Contract> contractList;
 
 

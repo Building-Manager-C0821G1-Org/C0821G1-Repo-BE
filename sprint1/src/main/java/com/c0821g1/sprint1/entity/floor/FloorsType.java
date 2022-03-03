@@ -14,8 +14,8 @@ public class FloorsType {
 
     private String floorTypeName;
 
-    @OneToMany(mappedBy = "floorsType")
     @JsonBackReference
+    @OneToMany(mappedBy = "floorsType")
     private List<Floors> floors;
 
     public FloorsType() {
