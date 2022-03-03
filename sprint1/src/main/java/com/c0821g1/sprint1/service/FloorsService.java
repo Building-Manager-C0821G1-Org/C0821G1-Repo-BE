@@ -1,18 +1,21 @@
 package com.c0821g1.sprint1.service;
 
-import com.c0821g1.sprint1.entity.floor.Floors;
-import org.springframework.stereotype.Service;
+import com.c0821g1.sprint1.entity.floors.Floors;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 
 public interface FloorsService {
-    List<Floors> findAll();
+    Page<Floors> findAllFloors(Pageable pageable);
 
     Optional<Floors> findFloorsById(Integer id);
 
     void deleteFloorsById(Integer id);
 
 
+    void editFloors(Floors floors);
+
+    Floors findById(Integer id);
 }

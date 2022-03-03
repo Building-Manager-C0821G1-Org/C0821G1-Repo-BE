@@ -1,7 +1,4 @@
-package com.c0821g1.sprint1.entity.floor;
-
-import com.c0821g1.sprint1.entity.employee.Employee;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+package com.c0821g1.sprint1.entity.floors;
 
 import javax.persistence.*;
 import java.util.List;
