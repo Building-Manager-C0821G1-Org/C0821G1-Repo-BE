@@ -27,6 +27,10 @@ public class SpacesType {
     public SpacesType() {
     }
 
+//    public SpacesType(int spaceTypeId) {
+//        this.spaceTypeId = spaceTypeId;
+//    }
+
     public int getSpaceTypeId() {
         return spaceTypeId;
     }

@@ -23,6 +23,10 @@ public class SpacesStatus {
     public SpacesStatus() {
     }
 
+//    public SpacesStatus(int spaceStatusId) {
+//        this.spaceStatusId = spaceStatusId;
+//    }
+
     public SpacesStatus(int spaceStatusId, String spacerStatusName, List<Spaces> spacesList) {
         this.spaceStatusId = spaceStatusId;
         this.spacerStatusName = spacerStatusName;

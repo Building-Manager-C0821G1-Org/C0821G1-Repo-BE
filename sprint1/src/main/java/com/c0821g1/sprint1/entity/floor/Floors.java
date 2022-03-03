@@ -6,18 +6,18 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnJava;
 
 import javax.persistence.*;
 import java.util.List;
-
-@Entity
+//@Table("floors")
+@Entity()
 public class Floors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int floorId;
+    private Integer floorId;
     private String floorCode;
     private String floorName;
-    private String floorArea;
-    private String floorCapacity;
+    private Double floorArea;
+    private Integer floorCapacity;
 
-    private Boolean floorDeleteFlag;
+    private Integer floorDeleteFlag;
 
     @ManyToOne
     @JoinColumn(name = "floor_type_id",nullable = false)
@@ -34,7 +34,7 @@ public class Floors {
     public Floors() {
     }
 
-    public Floors(int floorId, String floorCode, String floorName, String floorArea, String floorCapacity, Boolean floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
+    public Floors(Integer floorId, String floorCode, String floorName, Double floorArea, Integer floorCapacity, Integer floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
         this.floorId = floorId;
         this.floorCode = floorCode;
         this.floorName = floorName;
@@ -46,35 +46,15 @@ public class Floors {
         this.spacesList = spacesList;
     }
 
-    public FloorsStatus getFloorsStatus() {
-        return floorsStatus;
-    }
+//    public Floors(Integer floorId) {
+//        this.floorId = floorId;
+//    }
 
-    public void setFloorsStatus(FloorsStatus floorsStatus) {
-        this.floorsStatus = floorsStatus;
-    }
-
-    public List<Spaces> getSpacesList() {
-        return spacesList;
-    }
-
-    public void setSpacesList(List<Spaces> spacesList) {
-        this.spacesList = spacesList;
-    }
-
-    public Boolean getFloorDeleteFlag() {
-        return floorDeleteFlag;
-    }
-
-    public void setFloorDeleteFlag(Boolean floorDeleteFlag) {
-        this.floorDeleteFlag = floorDeleteFlag;
-    }
-
-    public int getFloorId() {
+    public Integer getFloorId() {
         return floorId;
     }
 
-    public void setFloorId(int floorId) {
+    public void setFloorId(Integer floorId) {
         this.floorId = floorId;
     }
 
@@ -94,20 +74,28 @@ public class Floors {
         this.floorName = floorName;
     }
 
-    public String getFloorArea() {
+    public Double getFloorArea() {
         return floorArea;
     }
 
-    public void setFloorArea(String floorArea) {
+    public void setFloorArea(Double floorArea) {
         this.floorArea = floorArea;
     }
 
-    public String getFloorCapacity() {
+    public Integer getFloorCapacity() {
         return floorCapacity;
     }
 
-    public void setFloorCapacity(String floorCapacity) {
+    public void setFloorCapacity(Integer floorCapacity) {
         this.floorCapacity = floorCapacity;
+    }
+
+    public Integer getFloorDeleteFlag() {
+        return floorDeleteFlag;
+    }
+
+    public void setFloorDeleteFlag(Integer floorDeleteFlag) {
+        this.floorDeleteFlag = floorDeleteFlag;
     }
 
     public FloorsType getFloorsType() {
@@ -116,5 +104,21 @@ public class Floors {
 
     public void setFloorsType(FloorsType floorsType) {
         this.floorsType = floorsType;
+    }
+
+    public FloorsStatus getFloorsStatus() {
+        return floorsStatus;
+    }
+
+    public void setFloorsStatus(FloorsStatus floorsStatus) {
+        this.floorsStatus = floorsStatus;
+    }
+
+    public List<Spaces> getSpacesList() {
+        return spacesList;
+    }
+
+    public void setSpacesList(List<Spaces> spacesList) {
+        this.spacesList = spacesList;
     }
 }

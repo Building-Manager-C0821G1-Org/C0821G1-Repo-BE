@@ -9,37 +9,37 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
-public class SpacesDTO {
+public class SpacesDTO1 {
 
     private int spaceId;
-
-    @NotBlank (message = "Mã mặt bằng không được để trống")
+    @NotBlank(message = "Mã mặt bằng không được để trống")
     private String spaceCode;
-
     @NotBlank (message = "Diện tích không được để trống")
     private String spaceArea;
     private String spacePrice;
     private String spaceManagerFee;
     private String spaceNote;
     private String spaceImage;
-    private boolean spaceDeleteFlag;
+    private Boolean spaceDeleteFlag;
 
-//    @NotBlank (message = "Tầng không được để trống")
-    private int floorId;
+    @NotNull (message = "Loại mặt bằng không được để trống")
+    private SpacesType spacesType;
 
-//    @NotBlank (message = "Loại mặt bằng không được để trống")
-    private int spaceTypeId;
 
-//    @NotBlank (message = "Trạng thái không được để trống")
-    private int spaceStatusId;
+    private SpacesStatus spaceStatus;
 
-    public SpacesDTO() {
+
+    private Floors floors;
+
+
+    public SpacesDTO1() {
     }
 
-    public SpacesDTO(int spaceId, String spaceCode, String spaceArea, String spacePrice, String spaceManagerFee, String spaceNote, String spaceImage, boolean spaceDeleteFlag, int floorId, int spaceTypeId, int spaceStatusId) {
+    public SpacesDTO1(int spaceId, String spaceCode, String spaceArea, String spacePrice, String spaceManagerFee, String spaceNote, String spaceImage, Boolean spaceDeleteFlag, SpacesType spacesType, SpacesStatus spaceStatus, Floors floors) {
         this.spaceId = spaceId;
         this.spaceCode = spaceCode;
         this.spaceArea = spaceArea;
@@ -48,41 +48,19 @@ public class SpacesDTO {
         this.spaceNote = spaceNote;
         this.spaceImage = spaceImage;
         this.spaceDeleteFlag = spaceDeleteFlag;
-        this.floorId = floorId;
-        this.spaceTypeId = spaceTypeId;
-        this.spaceStatusId = spaceStatusId;
+        this.spacesType = spacesType;
+        this.spaceStatus = spaceStatus;
+        this.floors = floors;
+
     }
 
-    public boolean getSpaceDeleteFlag() {
-        return spaceDeleteFlag;
+
+    public Floors getFloors() {
+        return floors;
     }
 
-    public void setSpaceDeleteFlag(boolean spaceDeleteFlag) {
-        this.spaceDeleteFlag = spaceDeleteFlag;
-    }
-
-    public int getFloorId() {
-        return floorId;
-    }
-
-    public void setFloorId(int floorId) {
-        this.floorId = floorId;
-    }
-
-    public int getSpaceTypeId() {
-        return spaceTypeId;
-    }
-
-    public void setSpaceTypeId(int spaceTypeId) {
-        this.spaceTypeId = spaceTypeId;
-    }
-
-    public int getSpaceStatusId() {
-        return spaceStatusId;
-    }
-
-    public void setSpaceStatusId(int spaceStatusId) {
-        this.spaceStatusId = spaceStatusId;
+    public void setFloors(Floors floors) {
+        this.floors = floors;
     }
 
     public int getSpaceId() {
@@ -141,4 +119,27 @@ public class SpacesDTO {
         this.spaceImage = spaceImage;
     }
 
+    public Boolean getSpaceDeleteFlag() {
+        return spaceDeleteFlag;
+    }
+
+    public void setSpaceDeleteFlag(Boolean spaceDeleteFlag) {
+        this.spaceDeleteFlag = spaceDeleteFlag;
+    }
+
+    public SpacesType getSpacesType() {
+        return spacesType;
+    }
+
+    public void setSpacesType(SpacesType spacesType) {
+        this.spacesType = spacesType;
+    }
+
+    public SpacesStatus getSpaceStatus() {
+        return spaceStatus;
+    }
+
+    public void setSpaceStatus(SpacesStatus spaceStatus) {
+        this.spaceStatus = spaceStatus;
+    }
 }
