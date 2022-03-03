@@ -24,17 +24,17 @@ public class EmployeeController {
     @Autowired
     EmployeePositionService employeePositionService;
 
-    // Lấy danh sách Position
-    @GetMapping(value = "/position")
-    public ResponseEntity<List<EmployeePosition>> getPosition() {
-        List<EmployeePosition> positions = employeePositionService.findAll();
-        if (positions.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        {
-            return new ResponseEntity<>(positions, HttpStatus.OK);
-        }
-    }
+//    // Lấy danh sách Position
+//    @GetMapping(value = "/position")
+//    public ResponseEntity<List<EmployeePosition>> getPosition() {
+//        List<EmployeePosition> positions = employeePositionService.findAll();
+//        if (positions.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        {
+//            return new ResponseEntity<>(positions, HttpStatus.OK);
+//        }
+//    }
 
     //Hiển thị danh sách
     @GetMapping(value = "/list")
