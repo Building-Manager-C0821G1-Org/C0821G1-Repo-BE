@@ -33,8 +33,8 @@ public class Spaces {
     @JoinColumn(name = "floor_id",nullable = false)
     private Floors floors;
 
-    @OneToMany(mappedBy = "spaces")
     @JsonBackReference
+    @OneToMany(mappedBy = "spaces")
     private List<Contract> contractList;
 
     public Spaces() {

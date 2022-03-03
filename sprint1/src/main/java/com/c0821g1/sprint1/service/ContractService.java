@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ContractService {
-    List<Contract> findAllContract(int index);
     void delete(Integer id);
+    Page<Contract> findAllContract(Pageable pageable);
+    Page<Contract> findAllContractSearch(Pageable pageable, String name, String code, String start, String end);
 }

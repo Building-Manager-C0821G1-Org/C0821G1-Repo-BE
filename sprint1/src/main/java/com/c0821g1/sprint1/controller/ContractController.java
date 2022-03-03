@@ -28,16 +28,16 @@ public class ContractController {
     @Autowired
     private ContractService contractService;
 
-
-
-    @GetMapping("/list")
-    public ResponseEntity<List<Contract>> showListContract(@RequestParam Integer index) {
-        List<Contract> contractPage = contractService.findAllContract(index);
-        if (contractPage.isEmpty()) {
-            return new ResponseEntity<List<Contract>>(HttpStatus.NO_CONTENT);
+    @GetMapping(value = "/list")
+    public ResponseEntity<Page<Contract>> showListContract(@PageableDefault(value = 1) Pageable pageable) {
+        Page<Contract> contracts = contractService.findAllContract(pageable);
+        System.out.println(contracts);
+        if (contracts.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<List<Contract>>(contractPage, HttpStatus.OK);
+        return new ResponseEntity<>(contracts, HttpStatus.OK);
     }
+
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Integer id){
@@ -48,5 +48,20 @@ public class ContractController {
         this.contractService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping(value = "/search")
+    public ResponseEntity<Page<Contract>> searchContractNameAndCode(@PageableDefault(value = 5) Pageable pageable,
+                                                         @RequestParam(defaultValue = "") String name,
+                                                         @RequestParam(defaultValue = "") String code,
+                                                         @RequestParam(defaultValue = "") String start,
+                                                         @RequestParam(defaultValue = "") String end
+    ) {
+        Page<Contract> contractSearch = contractService.findAllContractSearch(pageable, name,code,start,end);
+        if (contractSearch.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(contractSearch, HttpStatus.OK);
+    }
+
 }
 
