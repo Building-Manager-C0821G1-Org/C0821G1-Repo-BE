@@ -8,6 +8,7 @@ import com.c0821g1.sprint1.entity.security.AppUser;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -19,18 +20,18 @@ public class EmployeeDTO {
     private String employeeCode;
 
     @NotBlank(message = "Tên không được để trống")
-    @Size(min = 6, max = 40, message = "Tên phải từ 6 đến 40 ký tự")
+//    @Size(min = 6, max = 40, message = "Tên phải từ 6 đến 40 ký tự")
     private String employeeName;
     private String employeeDateOfBirth;
     private String employeeGender;
     private String employeeAddress;
 
     @NotBlank(message = "Số điện thoại không được để trống")
-    @Pattern(regexp = "^(0?)(3[2-9]|5[6|89]|7[0|6-9]|8[0-6|89]|9[0-4|6-9])[0-9]{7}$", message = "Số điện thoại phải nhập đúng định dạng")
+//    @Pattern(regexp = "^(0?)(3[2-9]|5[6|89]|7[0|6-9]|8[0-6|89]|9[0-4|6-9])[0-9]{7}$", message = "Số điện thoại phải nhập đúng định dạng")
     private String employeePhone;
 
     @NotBlank(message = "Email không được để trống")
-    @Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$",message = "Email phải nhập đúng định dạng abc@xyz.com")
+//    @Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$",message = "Email phải nhập đúng định dạng abc@xyz.com")
     private String employeeEmail;
 
 
@@ -39,24 +40,22 @@ public class EmployeeDTO {
     private String employeeImage;
     private Boolean employeeDeleteFlag;
 
-    @OneToMany(mappedBy = "employee")
-    private List<Contract> contractList;
 
-    @ManyToOne
-    @JoinColumn(name = "employee_position_id", nullable = false)
+
+
+//   @NotNull(message = "Vị trí không được để trống")
     private EmployeePosition employeePosition;
 
 //    @OneToMany(mappedBy = "employee")
 //    private List<AppUser> appUserList;
 
-    @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
     private AppUser appUser;
 
     public EmployeeDTO() {
     }
 
 
-    public EmployeeDTO(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth, String employeeGender, String employeeAddress, String employeePhone, String employeeEmail, String employeeStartDate, String employeeImage, Boolean employeeDeleteFlag, List<Contract> contractList, EmployeePosition employeePosition, AppUser appUser) {
+    public EmployeeDTO(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth, String employeeGender, String employeeAddress, String employeePhone, String employeeEmail, String employeeStartDate, String employeeImage, Boolean employeeDeleteFlag, EmployeePosition employeePosition, AppUser appUser) {
         this.employeeId = employeeId;
         this.employeeCode = employeeCode;
 
@@ -69,7 +68,6 @@ public class EmployeeDTO {
         this.employeeStartDate = employeeStartDate;
         this.employeeImage = employeeImage;
         this.employeeDeleteFlag = employeeDeleteFlag;
-        this.contractList = contractList;
         this.employeePosition = employeePosition;
         this.appUser = appUser;
     }
@@ -80,14 +78,6 @@ public class EmployeeDTO {
 
     public void setAppUser(AppUser appUser) {
         this.appUser = appUser;
-    }
-
-    public List<Contract> getContractList() {
-        return contractList;
-    }
-
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
     }
 
     public Boolean getCustomerDeleteFlag() {

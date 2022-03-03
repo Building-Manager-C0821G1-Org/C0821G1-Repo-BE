@@ -1,12 +1,14 @@
 package com.c0821g1.sprint1.entity.employee;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
 public class EmployeePosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotBlank(message = "Lỗi")
     private int employeePositionId;
     private String employeePositionName;
 
