@@ -16,5 +16,5 @@ public interface ContractService {
 
     void addContract(ContractDTO contractDTO);
 
-    void deleteContract(Integer id);
+//    void deleteContract(Integer id);
 }
