@@ -1,5 +1,6 @@
 package com.c0821g1.sprint1.controller;
 
+
 import com.c0821g1.sprint1.dto.ContractDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class ContractRestController_editContract {
-
     @Autowired
     private MockMvc mockMvc;
 
@@ -24,7 +24,7 @@ public class ContractRestController_editContract {
     private ObjectMapper objectMapper;
 
     @Test
-    public void editContract_Expired_13() throws Exception {
+    public void editContract_Expired_19() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred(null);
@@ -39,7 +39,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -47,7 +47,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Expired_14() throws Exception {
+    public void editContract_Expired_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("");
@@ -62,7 +62,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -70,7 +70,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_DateStart_14() throws Exception {
+    public void edit_DateStart_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("12");
@@ -85,7 +85,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -93,7 +93,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_DateStart_13() throws Exception {
+    public void editContract_DateStart_19() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("sdsd");
@@ -108,7 +108,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -116,7 +116,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_DateEnd_13() throws Exception {
+    public void edit_DateEnd_19() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("12");
@@ -131,7 +131,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -139,7 +139,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_DateEnd_14() throws Exception {
+    public void editContract_DateEnd_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("sdsd");
@@ -154,7 +154,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -162,7 +162,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Price_14() throws Exception {
+    public void editContract_Price_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -177,7 +177,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -185,7 +185,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Total_14() throws Exception {
+    public void editContract_Total_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -200,7 +200,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -208,7 +208,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Content_14() throws Exception {
+    public void editContract_Content_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -223,7 +223,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -231,7 +231,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Content_16() throws Exception {
+    public void editContract_Content_21() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -246,7 +246,7 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -254,7 +254,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_18() throws Exception {
+    public void editContract_24() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -269,12 +269,10 @@ public class ContractRestController_editContract {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post("/contract/add")
+                        .patch("/contract/update/{id}","1")
                         .content(this.objectMapper.writeValueAsString(contractDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());
     }
-
-
 }

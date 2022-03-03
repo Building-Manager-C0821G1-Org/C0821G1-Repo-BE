@@ -61,7 +61,7 @@ public class ContractController {
         try {
             new ContractDTO().validate(contractDTO,bindingResult);
             if (bindingResult.hasErrors()){
-                return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.NOT_MODIFIED);
+                return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
             }
 
             contractDTO.setContractId(id);
