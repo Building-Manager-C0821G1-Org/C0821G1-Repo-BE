@@ -24,7 +24,7 @@ public class ContractRestController_editContract {
     private ObjectMapper objectMapper;
 
     @Test
-    public void editContract_Expired_13() throws Exception {
+    public void editContract_Expired_19() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred(null);
@@ -47,7 +47,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Expired_14() throws Exception {
+    public void editContract_Expired_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("");
@@ -70,7 +70,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_DateStart_14() throws Exception {
+    public void editContract_DateStart_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("12");
@@ -93,7 +93,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_DateStart_13() throws Exception {
+    public void editContract_DateStart_19() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("sdsd");
@@ -116,7 +116,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_DateEnd_13() throws Exception {
+    public void editContract_DateEnd_19() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("12");
@@ -139,7 +139,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_DateEnd_14() throws Exception {
+    public void editContract_DateEnd_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("sdsd");
@@ -162,7 +162,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Price_14() throws Exception {
+    public void editContract_Price_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -185,7 +185,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Total_14() throws Exception {
+    public void editContract_Total_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -208,7 +208,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Content_14() throws Exception {
+    public void editContract_Content_20() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -231,7 +231,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_Content_16() throws Exception {
+    public void editContract_Content_22() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");
@@ -254,7 +254,7 @@ public class ContractRestController_editContract {
     }
 
     @Test
-    public void editContract_18() throws Exception {
+    public void editContract_24() throws Exception {
 
         ContractDTO contractDTO = new ContractDTO();
         contractDTO.setContractExpred("5");

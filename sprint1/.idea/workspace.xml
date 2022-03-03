@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a45fa7dc-a947-4c97-828b-ee2d9873b696" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/ContractRestController_createContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/ContractRestController_editContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/ContractDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/ContractDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +209,7 @@
       <workItem from="1646281937848" duration="23000" />
       <workItem from="1646282793929" duration="613000" />
       <workItem from="1646285824467" duration="8133000" />
+      <workItem from="1646296162185" duration="603000" />
     </task>
     <servers />
   </component>
