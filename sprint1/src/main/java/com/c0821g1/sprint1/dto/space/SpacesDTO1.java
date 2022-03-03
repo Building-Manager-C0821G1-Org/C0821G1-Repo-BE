@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -27,12 +28,15 @@ public class SpacesDTO1 {
     private Boolean spaceDeleteFlag;
 
     @NotNull (message = "Loại mặt bằng không được để trống")
+//    @NotEmpty (message = "Loại mặt bằng không được để trống")
     private SpacesType spacesType;
 
-
+    @NotNull (message = "Loại mặt bằng không được để trống")
+//    @NotEmpty (message = "Loại mặt bằng không được để trống")
     private SpacesStatus spaceStatus;
 
-
+    @NotNull (message = "Loại mặt bằng không được để trống")
+//    @NotEmpty (message = "Loại mặt bằng không được để trống")
     private Floors floors;
 
 
