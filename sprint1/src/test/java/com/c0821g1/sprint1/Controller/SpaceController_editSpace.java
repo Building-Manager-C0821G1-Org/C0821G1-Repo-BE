@@ -31,11 +31,11 @@ public class SpaceController_editSpace {
     public void editSpace_spaceCode_13() throws Exception {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode(null);
-        spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpaceArea("50");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -50,7 +50,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -60,11 +60,11 @@ public class SpaceController_editSpace {
     public void editSpace_spaceCode_14() throws Exception {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("");
-        spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpaceArea("50");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -79,7 +79,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -90,10 +90,10 @@ public class SpaceController_editSpace {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
         spacesDTO1.setSpaceArea(null);
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -108,7 +108,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -119,10 +119,10 @@ public class SpaceController_editSpace {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
         spacesDTO1.setSpaceArea("");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -137,7 +137,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -147,11 +147,11 @@ public class SpaceController_editSpace {
     public void editSpace_spacesType_13() throws Exception {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
-        spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpaceArea("50");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
 //        SpacesType spacesType = new SpacesType();
@@ -166,7 +166,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -176,11 +176,11 @@ public class SpaceController_editSpace {
     public void editSpace_spacesType_14() throws Exception {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
-        spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpaceArea("50");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -195,7 +195,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -205,11 +205,11 @@ public class SpaceController_editSpace {
     public void editSpace_spacesStatus_13() throws Exception {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
-        spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpaceArea("50");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -224,7 +224,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -234,11 +234,11 @@ public class SpaceController_editSpace {
     public void editSpace_spacesStatus_14() throws Exception {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
-        spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpaceArea("50");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -253,7 +253,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -263,11 +263,11 @@ public class SpaceController_editSpace {
     public void editSpace_floors_13() throws Exception {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
-        spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpaceArea("50");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -282,7 +282,7 @@ public class SpaceController_editSpace {
 //        floors.setFloorId(2);
         spacesDTO1.setFloors(null);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -292,11 +292,11 @@ public class SpaceController_editSpace {
     public void editSpace_floors_14() throws Exception {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
-        spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
-        spacesDTO1.setSpaceManagerFee("1.000.000");
+        spacesDTO1.setSpaceArea("50");
+        spacesDTO1.setSpacePrice("10.000.000");
+        spacesDTO1.setSpaceManagerFee("2.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -311,7 +311,7 @@ public class SpaceController_editSpace {
 //        floors.setFloorId(2);
         spacesDTO1.setFloors(null);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
@@ -322,10 +322,10 @@ public class SpaceController_editSpace {
         SpacesDTO1 spacesDTO1 = new SpacesDTO1();
         spacesDTO1.setSpaceCode("MB-001");
         spacesDTO1.setSpaceArea("70");
-        spacesDTO1.setSpacePrice("3.000.000");
+        spacesDTO1.setSpacePrice("9.000.000");
         spacesDTO1.setSpaceManagerFee("1.000.000");
         spacesDTO1.setSpaceNote("ok");
-        spacesDTO1.setSpaceImage("");
+        spacesDTO1.setSpaceImage(null);
         spacesDTO1.setSpaceDeleteFlag(null);
 
         SpacesType spacesType = new SpacesType();
@@ -340,7 +340,7 @@ public class SpaceController_editSpace {
         floors.setFloorId(2);
         spacesDTO1.setFloors(floors);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/space/edit")
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/space/edit/{id}", "1")
                 .content(this.objectMapper.writeValueAsString(spacesDTO1))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is2xxSuccessful());
