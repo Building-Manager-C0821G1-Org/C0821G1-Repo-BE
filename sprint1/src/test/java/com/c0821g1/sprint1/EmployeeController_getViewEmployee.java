@@ -45,8 +45,12 @@ public class EmployeeController_getViewEmployee {
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("$.employee_id").value(2))
+                .andExpect(jsonPath("$.app_user_id").value("2"))
                 .andExpect(jsonPath("$.employee_name").value("hung"))
-                .andExpect(jsonPath("$.employee_date_of_birth").value("1992-10-10"));
+                .andExpect(jsonPath("$.employee_date_of_birth").value("1992-10-10"))
+                .andExpect(jsonPath("$.employee_address").value("dn"))
+                .andExpect(jsonPath("$.employee_email").value("hjj@gmail.com"))
+                .andExpect(jsonPath("$.employee_gender").value(""));
 
     }
 }
