@@ -77,7 +77,7 @@ public class SecurityController {
         jwtResponse.setAddress(employee.getEmployeeAddress());
         jwtResponse.setPhone(employee.getEmployeePhone());
         jwtResponse.setRoles(roles);
-        jwtResponse.setIdCustomer(employee.getEmployeeId() + "");
+        jwtResponse.setIdEmployee(employee.getEmployeeId());
         jwtResponse.setUrlImg(employee.getEmployeeImage() == null ? urlImgDefault : employee.getEmployeeImage());
 
         return ResponseEntity.ok(jwtResponse);

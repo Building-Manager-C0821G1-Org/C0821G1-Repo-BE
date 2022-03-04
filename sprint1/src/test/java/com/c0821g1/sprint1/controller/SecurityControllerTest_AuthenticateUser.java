@@ -24,14 +24,9 @@ class SecurityControllerTest_AuthenticateUser {
     @Autowired
     private ObjectMapper objectMapper;
 
-
-//    @Test
-//    public void authenticateUser() throws Exception {
-//        this.mockMvc.perform(MockMvcRequestBuilders.get("/test")).andExpect(status().is4xxClientError());
-//    }
-
+    // Test username + passwword null
     @Test
-    public void authenticateUser_13() throws Exception {
+    public void authenticateUser_1() throws Exception {
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername(null);
         loginRequest.setPassword(null);
@@ -44,9 +39,9 @@ class SecurityControllerTest_AuthenticateUser {
                 .andExpect(status().is4xxClientError());
 
     }
-
+    // Test username + passwword rỗng
     @Test
-    public void authenticateUser_14() throws Exception {
+    public void authenticateUser_2() throws Exception {
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("");
         loginRequest.setPassword("");
@@ -59,9 +54,9 @@ class SecurityControllerTest_AuthenticateUser {
                 .andExpect(status().is4xxClientError());
 
     }
-
+    // Test username + passwword nhập đúng
     @Test
-    public void authenticateUser_18() throws Exception {
+    public void authenticateUser_3() throws Exception {
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("admin");
         loginRequest.setPassword("123");
@@ -72,6 +67,51 @@ class SecurityControllerTest_AuthenticateUser {
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());
+
+    }
+    // Test passwword nhập sai (khong tồn tại trong db)
+    @Test
+    public void authenticateUser_4() throws Exception {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUsername("admin");
+        loginRequest.setPassword("456");
+
+        this.mockMvc
+                .perform(MockMvcRequestBuilders.post("/api/public/login")
+                        .content(this.objectMapper.writeValueAsString(loginRequest))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+
+    }
+    // Test username nhập sai (khong tồn tại trong db)
+    @Test
+    public void authenticateUser_5() throws Exception {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUsername("abcdefgh");
+        loginRequest.setPassword("456");
+
+        this.mockMvc
+                .perform(MockMvcRequestBuilders.post("/api/public/login")
+                        .content(this.objectMapper.writeValueAsString(loginRequest))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+
+    }
+    // Test username + passwword nhập sai (khong tồn tại trong db)
+    @Test
+    public void authenticateUser_6() throws Exception {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUsername("abcdefgh");
+        loginRequest.setPassword("1584699");
+
+        this.mockMvc
+                .perform(MockMvcRequestBuilders.post("/api/public/login")
+                        .content(this.objectMapper.writeValueAsString(loginRequest))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
 
     }
 }

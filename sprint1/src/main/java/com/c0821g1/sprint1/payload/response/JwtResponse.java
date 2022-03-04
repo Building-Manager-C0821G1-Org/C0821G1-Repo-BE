@@ -11,24 +11,14 @@ public class JwtResponse {
     private String address;
     private String phone;
     private String email;
-    private String idCustomer;
+    private Integer idEmployee;
     private String urlImg;
     private List<String> roles;
 
     public JwtResponse() {
     }
 
-    public JwtResponse(String jwtToken, String username, String name, String email, String idCustomer, String urlImg, List<String> roles) {
-        this.jwtToken = jwtToken;
-        this.username = username;
-        this.name = name;
-        this.email = email;
-        this.idCustomer = idCustomer;
-        this.urlImg = urlImg;
-        this.roles = roles;
-    }
-
-    public JwtResponse(String jwtToken, String username, String name, String dayOfBirth, String gender, String address, String phone, String email, String idCustomer, String urlImg, List<String> roles) {
+    public JwtResponse(String jwtToken, String username, String name, String dayOfBirth, String gender, String address, String phone, String email, Integer idEmployee, String urlImg, List<String> roles) {
         this.jwtToken = jwtToken;
         this.username = username;
         this.name = name;
@@ -37,10 +27,13 @@ public class JwtResponse {
         this.address = address;
         this.phone = phone;
         this.email = email;
-        this.idCustomer = idCustomer;
+        this.idEmployee = idEmployee;
         this.urlImg = urlImg;
         this.roles = roles;
     }
+
+
+
 
     public String getDayOfBirth() {
         return dayOfBirth;
@@ -90,12 +83,12 @@ public class JwtResponse {
         this.name = name;
     }
 
-    public String getIdCustomer() {
-        return idCustomer;
+    public Integer getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setIdCustomer(String idCustomer) {
-        this.idCustomer = idCustomer;
+    public void setIdEmployee(Integer idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     public String getUrlImg() {
