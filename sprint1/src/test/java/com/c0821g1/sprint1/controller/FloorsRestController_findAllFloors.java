@@ -11,6 +11,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 @SpringBootTest
 public class FloorsRestController_findAllFloors {
 
@@ -25,8 +27,8 @@ public class FloorsRestController_findAllFloors {
     @Test
     public void findAllFloors_5() {
 
-        ResponseEntity<Page<Floors>> responseEntity
-                = this.floorsRestController.findAllFloors(PageRequest.of(0, 2));
+        ResponseEntity<List<Floors>> responseEntity
+                = this.floorsRestController.findAllFloors();
 
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
@@ -37,28 +39,27 @@ public class FloorsRestController_findAllFloors {
      */
     @Test
     public void findAllFloors_6() {
-        ResponseEntity<Page<Floors>> responseEntity
-                = this.floorsRestController.findAllFloors(PageRequest.of(0, 2));
+        ResponseEntity<List<Floors>> responseEntity
+                = this.floorsRestController.findAllFloors();
 
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
-        Assertions.assertEquals(3, responseEntity.getBody().getTotalPages());
-        Assertions.assertEquals(5, responseEntity.getBody().getTotalElements());
+        Assertions.assertEquals(2, responseEntity.getBody().size());
         Assertions.assertEquals("Tầng 2",
-                responseEntity.getBody().getContent().get(1).getFloorName());
+                responseEntity.getBody().get(1).getFloorName());
         Assertions.assertEquals("MTL002",
-                responseEntity.getBody().getContent().get(1).getFloorCode());
+                responseEntity.getBody().get(1).getFloorCode());
         Assertions.assertEquals(200.0,
-                responseEntity.getBody().getContent().get(1).getFloorArea());
+                responseEntity.getBody().get(1).getFloorArea());
         Assertions.assertEquals(20,
-                responseEntity.getBody().getContent().get(1).getFloorCapacity());
+                responseEntity.getBody().get(1).getFloorCapacity());
         Assertions.assertEquals(1,
-                responseEntity.getBody().getContent().get(1).getFloorDeleteFlag());
+                responseEntity.getBody().get(1).getFloorDeleteFlag());
         Assertions.assertEquals(2,
-                responseEntity.getBody().getContent().get(1).getFloorId());
+                responseEntity.getBody().get(1).getFloorId());
         Assertions.assertEquals(2,
-                responseEntity.getBody().getContent().get(1).getFloorsStatus().getFloorStatusId());
+                responseEntity.getBody().get(1).getFloorsStatus().getFloorStatusId());
         Assertions.assertEquals(2,
-                responseEntity.getBody().getContent().get(1).getFloorsType().getFloorTypeId());
+                responseEntity.getBody().get(1).getFloorsType().getFloorTypeId());
 
     }
 }

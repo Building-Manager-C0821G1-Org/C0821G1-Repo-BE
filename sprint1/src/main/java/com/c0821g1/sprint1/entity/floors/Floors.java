@@ -17,18 +17,18 @@ public class Floors {
     private Integer floorCapacity;
 
     private Integer floorDeleteFlag;
-
-    @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name = "floor_type",nullable = false)
+    //    @JoinColumn()
+    @ManyToOne(targetEntity = FloorsType.class)
+    @JoinColumn(name = "floors_type", nullable = false)
+//    @JsonBackReference
     private FloorsType floorsType;
-
-    @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name = "floor_status",nullable = false)
+    //    @JoinColumn()
+    @ManyToOne(targetEntity = FloorsStatus.class)
+    @JoinColumn(name = "floors_status", nullable = false)
     private FloorsStatus floorsStatus;
 
-    @OneToMany(mappedBy = "floors")
+    @OneToMany(mappedBy = "floors", cascade = CascadeType.REMOVE)
+    @JsonBackReference
     private List<Spaces> spacesList;
 
     public Floors() {
