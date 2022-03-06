@@ -2,6 +2,9 @@ package com.c0821g1.sprint1.repository;
 
 import com.c0821g1.sprint1.entity.space.SpacesStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
-public interface SpaceStatusRepository extends JpaRepository<SpacesStatus,Integer> {
+@Repository
+public interface SpaceStatusRepository extends JpaRepository<SpacesStatus, Integer> {
 }

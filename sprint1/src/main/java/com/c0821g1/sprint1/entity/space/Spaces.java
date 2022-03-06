@@ -1,12 +1,32 @@
 package com.c0821g1.sprint1.entity.space;
 
 
+import com.c0821g1.sprint1.dto.SpaceListDTO;
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.floor.Floors;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
 
+@NamedNativeQuery(name = "Spaces.findAllSpace",
+        query = "select s.space_id as spaceId, s.space_code as spaceCode, st.space_type_name as spaceTypeName, s.space_area as spaceArea, stt.spacer_status_name as spaceStatusName, s.space_price as spacePrice, s.space_manager_fee as spaceManagerFee\n" +
+                "from spaces s \n" +
+                "join spaces_type st on s.space_type_id = st.space_type_id\n" +
+                "join spaces_status stt on s.space_status_id = stt.space_status_id\n" +
+                "where s.space_delete_flag = 1",
+        resultSetMapping = "Mapping.SpaceListDTO")
+@SqlResultSetMapping(name = "Mapping.SpaceListDTO",
+        classes = @ConstructorResult(targetClass = SpaceListDTO.class,
+                columns = {@ColumnResult(name = "spaceId"),
+                        @ColumnResult(name = "spaceCode"),
+                        @ColumnResult(name = "spaceTypeName"),
+                        @ColumnResult(name = "spaceArea"),
+                        @ColumnResult(name = "spaceStatusName"),
+                        @ColumnResult(name = "spacePrice"),
+                        @ColumnResult(name = "spaceManagerFee")
+        }))
 @Entity
 public class Spaces {
     @Id
@@ -21,18 +41,22 @@ public class Spaces {
     private Boolean spaceDeleteFlag;
 
     @ManyToOne
-    @JoinColumn(name = "space_type_id",nullable = false)
+    @JsonManagedReference
+    @JoinColumn(name = "space_type_id", nullable = false)
     private SpacesType spacesType;
 
     @ManyToOne
-    @JoinColumn(name = "space_status_id",nullable = false)
+    @JsonManagedReference
+    @JoinColumn(name = "space_status_id", nullable = false)
     private SpacesStatus spaceStatus;
 
     @ManyToOne
-    @JoinColumn(name = "floor_id",nullable = false)
+    @JoinColumn(name = "floor_id", nullable = false)
+    @JsonManagedReference
     private Floors floors;
 
-    @OneToMany(mappedBy = "spaces")
+    @OneToMany(mappedBy = "spaces",cascade = CascadeType.ALL)
+    @JsonBackReference(value = "spaces")
     private List<Contract> contractList;
 
     public Spaces() {

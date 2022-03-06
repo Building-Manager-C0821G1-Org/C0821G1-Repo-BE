@@ -1,4 +1,4 @@
-package com.c0821g1.sprint1.SpaceController;
+package com.c0821g1.sprint1.space_controller;
 
 import com.c0821g1.sprint1.controller.SpaceController;
 import com.c0821g1.sprint1.entity.space.Spaces;
@@ -24,6 +24,11 @@ public class SpaceController_searchSpace {
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
         Assertions.assertEquals("tầng 1", responseEntity.getBody().getContent().get(0).getFloors().getFloorName());
+        Assertions.assertEquals("MB-003", responseEntity.getBody().getContent().get(0).getSpaceCode());
+        Assertions.assertEquals("312", responseEntity.getBody().getContent().get(0).getSpaceArea());
+        Assertions.assertEquals("Mặt đứng", responseEntity.getBody().getContent().get(0).getSpacePrice());
+        Assertions.assertEquals("Đã vào ở", responseEntity.getBody().getContent().get(0).getSpaceStatus().getSpacerStatusName());
+
     }
 
 }

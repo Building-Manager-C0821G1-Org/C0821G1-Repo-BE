@@ -1,7 +1,7 @@
 package com.c0821g1.sprint1.entity.space;
 
-
-import com.c0821g1.sprint1.entity.floor.Floors;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,7 +14,9 @@ public class SpacesStatus {
 
     private String spacerStatusName;
 
+
     @OneToMany(mappedBy = "spaceStatus")
+    @JsonBackReference(value = "spaceStatus")
     private List<Spaces> spacesList;
 
 

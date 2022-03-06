@@ -1,4 +1,4 @@
-package com.c0821g1.sprint1.SpaceController;
+package com.c0821g1.sprint1.space_controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

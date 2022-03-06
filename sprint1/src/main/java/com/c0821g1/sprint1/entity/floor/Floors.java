@@ -29,6 +29,7 @@ public class Floors {
     private FloorsStatus floorsStatus;
 
     @OneToMany(mappedBy = "floors")
+    @JsonBackReference(value = "floors")
     private List<Spaces> spacesList;
 
     public Floors() {
