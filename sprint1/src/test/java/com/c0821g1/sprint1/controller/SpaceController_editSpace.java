@@ -1,4 +1,4 @@
-package com.c0821g1.sprint1.Controller;
+package com.c0821g1.sprint1.controller;
 
 
 import com.c0821g1.sprint1.dto.space.SpacesDTO1;

@@ -45,7 +45,7 @@ public class SpaceController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
     //    DuDH - Tìm kiếm theo ID Space
-    @GetMapping (value = "/edit/{id}")
+    @GetMapping (value = "/{id}")
     public ResponseEntity<Spaces> findByID(@PathVariable Integer id){
         return new ResponseEntity<>(spaceService.findById(id), HttpStatus.OK);
     }

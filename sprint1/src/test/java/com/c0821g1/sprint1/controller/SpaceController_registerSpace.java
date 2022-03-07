@@ -1,10 +1,9 @@
-package com.c0821g1.sprint1.Controller;
+package com.c0821g1.sprint1.controller;
 
 import com.c0821g1.sprint1.dto.space.SpacesDTO1;
 import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.entity.space.SpacesStatus;
 import com.c0821g1.sprint1.entity.space.SpacesType;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
