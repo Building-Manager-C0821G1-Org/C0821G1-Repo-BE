@@ -34,6 +34,20 @@ public class FloorsRestController {
 
     /**
      * Created: DuyNP
+     * Method: return floors by id
+     * @param id
+     * @return ResponseEntity<>(floors, HttpStatus.OK);
+     */
+    @GetMapping("/find-by-id/{id}")
+    public ResponseEntity<Floors> findFloorsById(@PathVariable Integer id) {
+        Floors floors = floorService.findById(id);
+        if (floors==null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(floors, HttpStatus.OK);
+    }
+    /**
+     * Created: DuyNP
      * Method: delete floors by id
      * @param id
      * @return ResponseEntity<>(HttpStatus.OK)
