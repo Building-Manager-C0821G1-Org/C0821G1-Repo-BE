@@ -2,7 +2,6 @@ package com.c0821g1.sprint1.entity.contract;
 
 import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.entity.employee.Employee;
-import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.entity.space.Spaces;
 
 import javax.persistence.*;
