@@ -12,7 +12,7 @@ import java.util.function.Function;
 
 @Service
 public class JwtUtils {
-    private String secret = "c0821g1";
+    private String secret = "secret_word";
     public static final long JWT_TOKEN_VALIDITY =(long) (5*60*60);
 
     private Claims getAllClaimsFromToken(String token) {
