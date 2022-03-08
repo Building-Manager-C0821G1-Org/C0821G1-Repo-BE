@@ -17,6 +17,7 @@ public class CustomerController_getDetailCustomer {
     @Autowired
     private MockMvc mockMvc;
 
+    //      VyLTT- customer detail - id = null
     @Test
     public void getDetailCustomer_1() throws Exception {
         this.mockMvc.perform(
@@ -25,6 +26,7 @@ public class CustomerController_getDetailCustomer {
                 .andExpect(status().is4xxClientError());
     }
 
+    //      VyLTT- customer detail - id = ""
     @Test
     public void getIDetailCustomer_2() throws Exception {
         this.mockMvc.perform(
@@ -33,6 +35,7 @@ public class CustomerController_getDetailCustomer {
                 .andExpect(status().is4xxClientError());
     }
 
+    //      VyLTT- customer detail - id is not exist in database
     @Test
     public void getDetailCustomer_3() throws Exception {
         this.mockMvc.perform(
@@ -41,6 +44,7 @@ public class CustomerController_getDetailCustomer {
                 .andExpect(status().is4xxClientError());
     }
 
+    //      VyLTT- customer detail - id is exist in database
     @Test
     public void getDetailCustomer_4() throws Exception {
         this.mockMvc.perform(

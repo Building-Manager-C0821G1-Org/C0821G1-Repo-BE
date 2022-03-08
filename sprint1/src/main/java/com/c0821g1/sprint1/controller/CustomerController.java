@@ -18,20 +18,21 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/customer")
-@CrossOrigin
+@CrossOrigin("http://localhost:4200")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
     /**
      * created by VyLTT
-     * method getAllCustomer
-     *
+     * method getAllCustomer with pageable
+     * <p>
      * @param pageable
+     *
      * @return
      */
-    @GetMapping("/list")
-    public ResponseEntity<Page<Customer>> getAllCustomer(@PageableDefault(size = 4) Pageable pageable) {
+    @GetMapping(value = "/list")
+    public ResponseEntity<Page<Customer>> showListCustomer(@PageableDefault(value = 5) Pageable pageable) {
         Page<Customer> customers = this.customerService.getAll(pageable);
         if (customers.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -39,45 +40,40 @@ public class CustomerController {
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 
-//    @GetMapping("/list")
-//    public ResponseEntity<List<Customer>> getAllCustomer() {
-//        List<Customer> customers = this.customerService.getAll();
-//        return new ResponseEntity<>(customers, HttpStatus.OK);
-//    }
-
-    @GetMapping(value = "/detail/{id}")
+//          VyLTT- detail customer
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Customer> getDetailCustomer(@PathVariable Integer id) {
-        Customer customerObj = this.customerService.findById(id);
-        if(customerObj==null){
+        Customer customerObj = this.customerService.findById(id).get();
+        if (customerObj == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(customerObj, HttpStatus.OK);
     }
 
     //      VyLTT- delete customer
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Customer> deleteCustomer(@PathVariable Integer id) {
-        Customer customerObj = customerService.findById(id);
+    @DeleteMapping(value = "/delete/{id}")
+    public ResponseEntity<Customer> deleteCustomer(@PathVariable("id") Integer id) {
+        Optional<Customer> customerObj = this.customerService.findById(id);
         if (customerObj == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        customerObj.setCustomerDeleteFlag(false);
-        this.customerService.remove(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+//        customerObj.setCustomerDeleteFlag(true);
+        this.customerService.deleteCustomer(id);
+        return new ResponseEntity<>(customerObj.get(), HttpStatus.OK);
     }
 
     //    VyLTT - search by name, email, phone, identify number
-    @GetMapping("/search")
+    @GetMapping(value = "/search")
     public ResponseEntity<Page<Customer>> searchCustomer(
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "") String customerName,
-            @RequestParam(defaultValue = "") String customerEmail,
-            @RequestParam(defaultValue = "") String customerPhone,
-            @RequestParam(defaultValue = "") String customerIdentifyNumber
+            @PageableDefault(value = 5) Pageable pageable,
+            @RequestParam(defaultValue = "") String customer_name,
+            @RequestParam(defaultValue = "") String customer_email,
+            @RequestParam(defaultValue = "") String customer_phone,
+            @RequestParam(defaultValue = "") String customer_identify_number
     ) {
-        Pageable pageable = PageRequest.of(page, 10, Sort.by("customer_id"));
+//        Pageable pageable = PageRequest.of(page, 10, Sort.by("customer_id"));
         Page<Customer> customersNewPage = customerService.findCustomerByNameAndEmailAndPhoneAndIdentify
-                (pageable, customerName, customerEmail, customerPhone, customerIdentifyNumber);
+                (pageable, customer_name, customer_email, customer_phone, customer_identify_number);
 
         if (customersNewPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);

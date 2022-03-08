@@ -5,28 +5,19 @@ import com.c0821g1.sprint1.entity.customer.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface CustomerService {
-  Page<Customer> getAll(Pageable pageable);
+    //    VyLTT - customer list
+    Page<Customer> getAll(Pageable pageable);
 
-  Customer findById(Integer id);
-
-    Page<Customer> findByName(Pageable pageable, String name);
+    Optional<Customer> findById(Integer id);
 
     //    VyLTT - search by name, email, phone, identify number
     Page<Customer> findCustomerByNameAndEmailAndPhoneAndIdentify(Pageable pageable,
-                                                                 String customerName,
-                                                                 String customerEmail,
-                                                                 String customerPhone,
-                                                                 String customerIdentifyNumber);
-
-    void save(Customer customer);
-
-    void save(CustomerDTO customerDto);
-
-    void remove(Integer id);
-
-    Page<Customer> findAll(Pageable of);
+                                                                 String customer_name,
+                                                                 String customer_email,
+                                                                 String customer_phone,
+                                                                 String customer_identify_number);
+    void deleteCustomer(Integer id);
 }

@@ -23,6 +23,7 @@ public class CustomerController_deleteCustomer {
     @Autowired
     private ObjectMapper objectMapper;
 
+    //      VyLTT- customer detail - id = null
     @Test
     public void deleteCustomer_25() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
@@ -31,6 +32,7 @@ public class CustomerController_deleteCustomer {
                 .andExpect(status().is4xxClientError());
     }
 
+    //      VyLTT- customer detail - id = ""
     @Test
     public void deleteCustomer_26() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
@@ -39,6 +41,7 @@ public class CustomerController_deleteCustomer {
                 .andExpect(status().is4xxClientError());
     }
 
+    //      VyLTT- customer detail - id is not exist in DB
     @Test
     public void deleteCustomer_27() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
@@ -47,6 +50,7 @@ public class CustomerController_deleteCustomer {
                 .andExpect(status().is4xxClientError());
     }
 
+    //      VyLTT- customer detail - id is exist in DB
     @Test
     public void deleteCustomer_28() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders

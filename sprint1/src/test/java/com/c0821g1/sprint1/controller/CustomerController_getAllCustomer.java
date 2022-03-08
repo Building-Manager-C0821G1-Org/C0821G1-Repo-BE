@@ -15,6 +15,7 @@ public class CustomerController_getAllCustomer {
     @Autowired
     private CustomerController customerController;
 
+    //      VyLTT- customer list - size = 0
     @Test
     public void getListCustomer_5() {
         ResponseEntity<Page<Customer>> responseEntity
@@ -23,6 +24,7 @@ public class CustomerController_getAllCustomer {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+    //      VyLTT- customer list - size > 0
     @Test
     public void getListCustomer_6() {
         ResponseEntity<Page<Customer>> responseEntity
