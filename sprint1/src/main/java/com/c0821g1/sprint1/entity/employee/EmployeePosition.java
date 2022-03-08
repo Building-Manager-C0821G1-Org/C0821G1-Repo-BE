@@ -1,9 +1,13 @@
 package com.c0821g1.sprint1.entity.employee;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class EmployeePosition {
     @Id
@@ -13,6 +17,7 @@ public class EmployeePosition {
     private String employeePositionName;
 
     @OneToMany(mappedBy = "employeePosition")
+    @JsonBackReference
     private List<Employee> employeeList;
 
     public EmployeePosition() {

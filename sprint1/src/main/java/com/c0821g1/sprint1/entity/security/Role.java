@@ -1,8 +1,11 @@
 package com.c0821g1.sprint1.entity.security;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
-
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class Role {
     @Id
@@ -11,6 +14,7 @@ public class Role {
     private String roleName;
 
     @ManyToMany(mappedBy = "roles")
+    @JsonBackReference
     private List<AppUser> appUsers;
 
     public Role() {

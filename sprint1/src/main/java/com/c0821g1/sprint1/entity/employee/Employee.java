@@ -2,10 +2,13 @@ package com.c0821g1.sprint1.entity.employee;
 
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.security.AppUser;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.List;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class Employee {
     @Id
@@ -23,16 +26,17 @@ public class Employee {
     private Boolean employeeDeleteFlag;
 
     @OneToMany(mappedBy = "employee")
+    @JsonBackReference
     private List<Contract> contractList;
 
     @ManyToOne
     @JoinColumn(name = "employee_position_id", nullable = false)
     private EmployeePosition employeePosition;
 
-//    @OneToMany(mappedBy = "employee")
-//    private List<AppUser> appUserList;
+    @OneToMany(mappedBy = "employee")
+    private List<AppUser> appUserList;
 
-    @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
+    @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.MERGE})
     private AppUser appUser;
 
     public Employee() {
@@ -72,9 +76,6 @@ public class Employee {
         this.contractList = contractList;
     }
 
-    public Boolean getCustomerDeleteFlag() {
-        return employeeDeleteFlag;
-    }
 
     public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
         this.employeeDeleteFlag = customerDeleteFlag;

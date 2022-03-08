@@ -1,10 +1,12 @@
 package com.c0821g1.sprint1.entity.security;
 
 import com.c0821g1.sprint1.entity.employee.Employee;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.List;
-
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class AppUser {
     @Id
@@ -18,7 +20,8 @@ public class AppUser {
 //    @JoinColumn(name = "employee_id",nullable = false)
 //    private Employee employee;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, targetEntity = Role.class)
+    @JsonBackReference
     private List<Role> roles;
 
     public AppUser() {

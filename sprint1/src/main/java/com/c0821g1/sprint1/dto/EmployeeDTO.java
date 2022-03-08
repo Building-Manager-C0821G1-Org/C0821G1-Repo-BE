@@ -1,17 +1,17 @@
 package com.c0821g1.sprint1.dto;
 
-import com.c0821g1.sprint1.entity.contract.Contract;
+
 import com.c0821g1.sprint1.entity.employee.EmployeePosition;
 import com.c0821g1.sprint1.entity.security.AppUser;
 
 
 
-import javax.persistence.*;
+
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-import java.util.List;
+
+
+
+
 
 public class EmployeeDTO {
 
@@ -36,7 +36,7 @@ public class EmployeeDTO {
 
 
     private String employeeStartDate;
-    @NotBlank(message = "Ảnh không được để trống")
+//    @NotBlank(message = "Ảnh không được để trống")
     private String employeeImage;
     private Boolean employeeDeleteFlag;
 
@@ -46,8 +46,7 @@ public class EmployeeDTO {
 //   @NotNull(message = "Vị trí không được để trống")
     private EmployeePosition employeePosition;
 
-//    @OneToMany(mappedBy = "employee")
-//    private List<AppUser> appUserList;
+
 
     private AppUser appUser;
 
@@ -80,9 +79,6 @@ public class EmployeeDTO {
         this.appUser = appUser;
     }
 
-    public Boolean getCustomerDeleteFlag() {
-        return employeeDeleteFlag;
-    }
 
     public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
         this.employeeDeleteFlag = customerDeleteFlag;
