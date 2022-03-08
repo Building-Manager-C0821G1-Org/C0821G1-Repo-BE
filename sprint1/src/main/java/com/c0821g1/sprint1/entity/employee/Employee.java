@@ -2,6 +2,7 @@ package com.c0821g1.sprint1.entity.employee;
 
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.security.AppUser;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,6 +24,7 @@ public class Employee {
     private Boolean employeeDeleteFlag;
 
     @OneToMany(mappedBy = "employee")
+    @JsonBackReference
     private List<Contract> contractList;
 
     @ManyToOne
@@ -33,6 +35,7 @@ public class Employee {
 //    private List<AppUser> appUserList;
 
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
+    @JsonBackReference
     private AppUser appUser;
 
     public Employee() {

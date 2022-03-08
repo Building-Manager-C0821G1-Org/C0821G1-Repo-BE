@@ -22,4 +22,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Page<Employee> findAllEmployeePage(Pageable pageable) {
         return null;
     }
+
+    @Override
+    public Employee findById(Integer id) {
+        return employeeRepository.findById(id).orElse(null);
+    }
 }

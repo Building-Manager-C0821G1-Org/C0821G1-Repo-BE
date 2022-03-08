@@ -8,4 +8,6 @@ public interface EmployeeService {
     Employee findEmployeeByAppUser(String username);
 
     Page<Employee> findAllEmployeePage(Pageable pageable);
+
+    Employee findById(Integer id);
 }

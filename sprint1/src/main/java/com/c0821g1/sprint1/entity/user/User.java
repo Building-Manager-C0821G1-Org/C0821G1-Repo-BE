@@ -13,47 +13,41 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    private int deleted;
-    private int is_enabled;
+    private Integer deleted;
+
+
+    private Integer isEnabled;
     private String password;
     private String username;
-    private String verification_code;
+    private String verificationCode;
 
     public User() {
     }
-    public User(int id, int deleted, int is_enabled, String password, String username, String verification_code) {
-        this.id = id;
-        this.deleted = deleted;
-        this.is_enabled = is_enabled;
-        this.password = password;
-        this.username = username;
-        this.verification_code = verification_code;
 
-    }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getDeleted() {
+    public Integer getDeleted() {
         return deleted;
     }
 
-    public void setDeleted(int deleted) {
+    public void setDeleted(Integer deleted) {
         this.deleted = deleted;
     }
 
-    public int getIs_enabled() {
-        return is_enabled;
+    public Integer getIsEnabled() {
+        return isEnabled;
     }
 
-    public void setIs_enabled(int is_enabled) {
-        this.is_enabled = is_enabled;
+    public void setIsEnabled(Integer isEnabled) {
+        this.isEnabled = isEnabled;
     }
 
     public String getPassword() {
@@ -72,11 +66,11 @@ public class User {
         this.username = username;
     }
 
-    public String getVerification_code() {
-        return verification_code;
+    public String getVerificationCode() {
+        return verificationCode;
     }
 
-    public void setVerification_code(String verification_code) {
-        this.verification_code = verification_code;
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
     }
 }

@@ -1,7 +1,7 @@
 package com.c0821g1.sprint1.dto;
 
 public class ChangePasswordDTO {
-    private  int targetUserId;
+    private  Integer targetUserId;
     private String currentPassword;
     private String newPassword;
     private String confirmPassword;
