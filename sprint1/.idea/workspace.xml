@@ -19,72 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ac0d09-9558-4d3d-8864-48bd05fdbaf9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/Sprint1Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/FloorsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/SpaceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/CustomerDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/EmployeeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/FloorsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/contract/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/customer/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/EmployeePosition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/Floors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/AppUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/EmployeePositionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/EmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/FloorsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceStatusRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceTypeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/ContractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/EmployeePositionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/FloorsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceStatusService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/ContractServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/EmployeePositionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/FloorServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceStatusServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceTypeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/Sprint1ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b7ac0d09-9558-4d3d-8864-48bd05fdbaf9" name="Default Changelist" comment="vy up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +33,11 @@
     </projectState>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="manager-customer" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="25pCiJW9aDdJv9iC0OOr4pkQs0H" />
@@ -120,7 +61,102 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.Sprint1Application">
+    <configuration name="CustomerController_deleteCustomer.deleteCustomer_27" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.c0821g1.sprint1.controller.CustomerController_deleteCustomer.deleteCustomer_27&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CustomerController_deleteCustomer.deleteCustomer_28" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.c0821g1.sprint1.controller.CustomerController_deleteCustomer.deleteCustomer_28&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CustomerController_getDetailCustomer.getDetailCustomer_1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.c0821g1.sprint1.controller.CustomerController_getDetailCustomer.getDetailCustomer_1&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="sprint1 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="sprint1 [sonarqube]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="sonarqube" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="Sprint1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sprint1.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.c0821g1.sprint1.Sprint1Application" />
@@ -128,6 +164,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.sprint1 [sonarqube]" />
+        <item itemvalue="Gradle.sprint1 [dependencies]" />
+        <item itemvalue="Gradle.CustomerController_getDetailCustomer.getDetailCustomer_1" />
+        <item itemvalue="Gradle.CustomerController_deleteCustomer.deleteCustomer_28" />
+        <item itemvalue="Gradle.CustomerController_deleteCustomer.deleteCustomer_27" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -157,9 +202,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="vy up" />
+    <option name="LAST_COMMIT_MESSAGE" value="vy up" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1646225561441">
@@ -202,5 +250,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="666" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1646226392963" />
+    <state x="147" y="64" key="MergeDialog" timestamp="1646816903787">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="64" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1646816903787" />
+    <state x="521" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1646816873357">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="521" y="125" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1646816873357" />
   </component>
 </project>

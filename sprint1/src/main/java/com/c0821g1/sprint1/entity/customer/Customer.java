@@ -1,6 +1,7 @@
 package com.c0821g1.sprint1.entity.customer;
 
 import com.c0821g1.sprint1.entity.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
+    private Integer customerId;
     private String customerCode;
     private String customerName;
     private String customerIdentifyNumber;
@@ -21,13 +22,17 @@ public class Customer {
     private Boolean customerDeleteFlag;
 
     @OneToMany(mappedBy = "customer")
+    @JsonBackReference
     private List<Contract> contractList;
 
 
     public Customer() {
     }
 
-    public Customer(int customerId, String customerCode, String customerName, String customerIdentifyNumber, String customerEmail, String customerPhone, String customerDateOfBirth, String customerAddress, String customerStatus, Boolean customerDeleteFlag, List<Contract> contractList) {
+    public Customer(Integer customerId, String customerCode, String customerName,
+                    String customerIdentifyNumber, String customerEmail, String customerPhone,
+                    String customerDateOfBirth, String customerAddress, String customerStatus,
+                    Boolean customerDeleteFlag, List<Contract> contractList) {
         this.customerId = customerId;
         this.customerCode = customerCode;
         this.customerName = customerName;
