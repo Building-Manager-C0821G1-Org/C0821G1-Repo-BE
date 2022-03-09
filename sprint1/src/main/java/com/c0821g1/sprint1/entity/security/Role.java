@@ -1,10 +1,11 @@
 package com.c0821g1.sprint1.entity.security;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Role {
+public class Role  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer roleId;
@@ -14,12 +15,7 @@ public class Role {
     private List<AppUser> appUsers;
 
     public Role() {
-    }
-
-    public Role(Integer roleId, String roleName, List<AppUser> appUsers) {
-        this.roleId = roleId;
-        this.roleName = roleName;
-        this.appUsers = appUsers;
+        //contructor
     }
 
     public Integer getRoleId() {

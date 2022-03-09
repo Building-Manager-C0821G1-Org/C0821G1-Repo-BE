@@ -4,10 +4,11 @@ import com.c0821g1.sprint1.entity.contract.Contract;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Customer {
+public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customerId;
@@ -27,21 +28,10 @@ public class Customer {
 
 
     public Customer() {
+        //contructor
     }
 
-    public Customer(Integer customerId, String customerCode, String customerName, String customerIdentifyNumber, String customerEmail, String customerPhone, String customerDateOfBirth, String customerAddress, String customerStatus, Boolean customerDeleteFlag, List<Contract> contractList) {
-        this.customerId = customerId;
-        this.customerCode = customerCode;
-        this.customerName = customerName;
-        this.customerIdentifyNumber = customerIdentifyNumber;
-        this.customerEmail = customerEmail;
-        this.customerPhone = customerPhone;
-        this.customerDateOfBirth = customerDateOfBirth;
-        this.customerAddress = customerAddress;
-        this.customerStatus = customerStatus;
-        this.customerDeleteFlag = customerDeleteFlag;
-        this.contractList = contractList;
-    }
+
 
     public List<Contract> getContractList() {
         return contractList;

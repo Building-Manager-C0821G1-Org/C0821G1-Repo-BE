@@ -5,10 +5,11 @@ import com.c0821g1.sprint1.entity.security.AppUser;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Employee {
+public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer employeeId;
@@ -31,32 +32,15 @@ public class Employee {
     @JoinColumn(name = "employee_position_id", nullable = false)
     private EmployeePosition employeePosition;
 
-//    @OneToMany(mappedBy = "employee")
-//    private List<AppUser> appUserList;
 
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
     private AppUser appUser;
 
     public Employee() {
+        //contructor
     }
 
 
-    public Employee(Integer employeeId, String employeeCode, String employeeName, String employeeDateOfBirth, String employeeGender, String employeeAddress, String employeePhone, String employeeEmail, String employeeStartDate, String employeeImage, Boolean employeeDeleteFlag, List<Contract> contractList, EmployeePosition employeePosition, AppUser appUser) {
-        this.employeeId = employeeId;
-        this.employeeCode = employeeCode;
-        this.employeeName = employeeName;
-        this.employeeDateOfBirth = employeeDateOfBirth;
-        this.employeeGender = employeeGender;
-        this.employeeAddress = employeeAddress;
-        this.employeePhone = employeePhone;
-        this.employeeEmail = employeeEmail;
-        this.employeeStartDate = employeeStartDate;
-        this.employeeImage = employeeImage;
-        this.employeeDeleteFlag = employeeDeleteFlag;
-        this.contractList = contractList;
-        this.employeePosition = employeePosition;
-        this.appUser = appUser;
-    }
 
     public AppUser getAppUser() {
         return appUser;
@@ -90,9 +74,6 @@ public class Employee {
         this.employeeId = employeeId;
     }
 
-    public Boolean getEmployeeDeleteFlag() {
-        return employeeDeleteFlag;
-    }
 
     public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
         this.employeeDeleteFlag = employeeDeleteFlag;

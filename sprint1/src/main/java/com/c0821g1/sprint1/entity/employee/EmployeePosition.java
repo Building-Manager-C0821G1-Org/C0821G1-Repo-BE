@@ -3,10 +3,11 @@ package com.c0821g1.sprint1.entity.employee;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class EmployeePosition {
+public class EmployeePosition implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer employeePositionId;
@@ -17,12 +18,7 @@ public class EmployeePosition {
     private List<Employee> employeeList;
 
     public EmployeePosition() {
-    }
-
-    public EmployeePosition(Integer employeePositionId, String employeePositionName, List<Employee> employeeList) {
-        this.employeePositionId = employeePositionId;
-        this.employeePositionName = employeePositionName;
-        this.employeeList = employeeList;
+        //contructor
     }
 
     public Integer getEmployeePositionId() {

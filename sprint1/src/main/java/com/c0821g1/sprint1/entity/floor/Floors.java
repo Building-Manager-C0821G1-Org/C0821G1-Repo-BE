@@ -1,13 +1,14 @@
 package com.c0821g1.sprint1.entity.floor;
 
 import com.c0821g1.sprint1.entity.space.Spaces;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnJava;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Floors {
+public class Floors  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer floorId;
@@ -27,22 +28,13 @@ public class Floors {
     private FloorsStatus floorsStatus;
 
     @OneToMany(mappedBy = "floors")
+    @JsonBackReference
     private List<Spaces> spacesList;
 
     public Floors() {
+        //contructor
     }
 
-    public Floors(Integer floorId, String floorCode, String floorName, String floorArea, String floorCapacity, Boolean floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
-        this.floorId = floorId;
-        this.floorCode = floorCode;
-        this.floorName = floorName;
-        this.floorArea = floorArea;
-        this.floorCapacity = floorCapacity;
-        this.floorDeleteFlag = floorDeleteFlag;
-        this.floorsType = floorsType;
-        this.floorsStatus = floorsStatus;
-        this.spacesList = spacesList;
-    }
 
     public FloorsStatus getFloorsStatus() {
         return floorsStatus;

@@ -24,13 +24,31 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
-    public Contract findContractById(Integer id) {
-        return contractRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
+    public ContractDTO findContractById(Integer id) {
+        Contract contract = contractRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
+        ContractDTO contractDTO = new ContractDTO();
+        contractDTO.setContractCode(contract.getContractCode());
+        contractDTO.setContractId(contract.getContractId());
+        contractDTO.setContractExpired(contract.getContractExpired());
+        contractDTO.setContractDateStart(contract.getContractDateStart());
+        contractDTO.setContractDateEnd(contract.getContractDateEnd());
+        contractDTO.setPrice(contract.getPrice());
+        contractDTO.setContractTotal(contract.getContractTotal());
+        contractDTO.setContractContent(contract.getContractContent());
+        contractDTO.setEmployeeId(contract.getEmployee().getEmployeeId());
+        contractDTO.setCustomerId(contract.getCustomer().getCustomerId());
+        contractDTO.setContractDeposit(contract.getContractDeposit());
+        contractDTO.setContractTaxCode(contract.getContractTaxCode());
+        contractDTO.setSpaceId(contract.getSpaces().getSpaceId());
+        contractDTO.setContractImageUrl(contract.getContractImageUrl());
+        contractDTO.setContractDeleteFlag(contract.getContractDeleteFlag());
+        return contractDTO;
+
     }
 
     @Override
     public void editContract(ContractDTO contractDTO) {
-        contractRepository.editContract(contractDTO.getContractExpred(),
+        contractRepository.editContract(contractDTO.getContractExpired(),
                 contractDTO.getContractDateStart()
                 ,contractDTO.getContractDateEnd(),
                 contractDTO.getContractTotal()
@@ -38,14 +56,19 @@ public class ContractServiceImpl implements ContractService {
                 contractDTO.getContractDeleteFlag(),
                 contractDTO.getEmployeeId(),
                 contractDTO.getCustomerId(),
-                contractDTO.getSpaceId()
+                contractDTO.getSpaceId(),
+                contractDTO.getPrice(),
+                contractDTO.getContractDeposit(),
+                contractDTO.getContractTaxCode(),
+                contractDTO.getContractImageUrl(),
+                contractDTO.getContractCode()
                 ,contractDTO.getContractId());
     }
 
     @Override
     public void addContract(ContractDTO contractDTO) {
         this.contractRepository
-                .saveContract(contractDTO.getContractExpred()
+                .saveContract(contractDTO.getContractExpired()
                         ,contractDTO.getContractDateStart()
                         ,contractDTO.getContractDateEnd()
                         ,contractDTO.getContractTotal()
@@ -54,11 +77,18 @@ public class ContractServiceImpl implements ContractService {
                         ,contractDTO.getContractDeleteFlag()
                         ,contractDTO.getCustomerId()
                         ,contractDTO.getEmployeeId()
-                        ,contractDTO.getSpaceId());
+                        ,contractDTO.getSpaceId(),
+                         contractDTO.getPrice(),
+                        contractDTO.getContractDeposit(),
+                        contractDTO.getContractTaxCode(),
+                        contractDTO.getContractImageUrl(),
+                        contractDTO.getContractCode());
     }
 
     @Override
-    public void deleteContract(Integer id) {
-        contractRepository.deleteContract(id);
+    public boolean existsContractByCode(String contractCode) {
+          return contractRepository.existsContractByCode(contractCode)!=null;
     }
+
+
 }

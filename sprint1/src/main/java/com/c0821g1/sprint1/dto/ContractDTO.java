@@ -4,6 +4,9 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 public class ContractDTO implements Validator {
 
@@ -14,28 +17,37 @@ public class ContractDTO implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-
+//        Chưa có validate
     }
 
     private int contractId;
 
-    @NotBlank
-    private String contractExpred;
+    private String contractCode;
 
-    @NotBlank
+    @NotNull
+    private Integer contractExpired;
+
     private String contractDateStart;
 
-    @NotBlank
     private String contractDateEnd;
 
-    @NotBlank
-    private String price;
 
+
+    @NotNull
+    private Integer price;
+
+    @NotNull
+    private Integer contractDeposit;
     @NotBlank
-    private String contractTotal;
+    private String contractTaxCode;
+    private String contractImageUrl;
+
+    @NotNull
+    private Integer contractTotal;
 
     @NotBlank
     private String contractContent;
+
     private Integer employeeId;
     private Integer customerId;
     private Integer spaceId;
@@ -44,12 +56,16 @@ public class ContractDTO implements Validator {
     public ContractDTO() {
     }
 
-    public ContractDTO(int contractId, @NotBlank String contractExpred, String contractDateStart, String contractDateEnd, String price, String contractTotal, String contractContent, Integer employeeId, Integer customerId, Integer spaceId, Boolean contractDeleteFlag) {
+    public ContractDTO(int contractId, String contractCode, @NotNull Integer contractExpired, String contractDateStart, String contractDateEnd, @NotNull Integer price, @NotNull Integer contractDeposit, @NotBlank String contractTaxCode, String contractImageUrl, @NotNull Integer contractTotal, @NotBlank String contractContent, Integer employeeId, Integer customerId, Integer spaceId, Boolean contractDeleteFlag) {
         this.contractId = contractId;
-        this.contractExpred = contractExpred;
+        this.contractCode = contractCode;
+        this.contractExpired = contractExpired;
         this.contractDateStart = contractDateStart;
         this.contractDateEnd = contractDateEnd;
         this.price = price;
+        this.contractDeposit = contractDeposit;
+        this.contractTaxCode = contractTaxCode;
+        this.contractImageUrl = contractImageUrl;
         this.contractTotal = contractTotal;
         this.contractContent = contractContent;
         this.employeeId = employeeId;
@@ -58,13 +74,31 @@ public class ContractDTO implements Validator {
         this.contractDeleteFlag = contractDeleteFlag;
     }
 
-    public String getPrice() {
-        return price;
+    public String getContractImageUrl() {
+        return contractImageUrl;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setContractImageUrl(String contractImageUrl) {
+        this.contractImageUrl = contractImageUrl;
     }
+
+
+    public String getContractCode() {
+        return contractCode;
+    }
+
+    public void setContractCode(String contractCode) {
+        this.contractCode = contractCode;
+    }
+
+    public String getContractTaxCode() {
+        return contractTaxCode;
+    }
+
+    public void setContractTaxCode(String contractTaxCode) {
+        this.contractTaxCode = contractTaxCode;
+    }
+
 
     public Integer getSpaceId() {
         return spaceId;
@@ -98,12 +132,12 @@ public class ContractDTO implements Validator {
         this.contractId = contractId;
     }
 
-    public String getContractExpred() {
-        return contractExpred;
+    public Integer getContractExpired() {
+        return contractExpired;
     }
 
-    public void setContractExpred(String contractExpred) {
-        this.contractExpred = contractExpred;
+    public void setContractExpired(Integer contractExpired) {
+        this.contractExpired = contractExpired;
     }
 
     public String getContractDateStart() {
@@ -122,11 +156,27 @@ public class ContractDTO implements Validator {
         this.contractDateEnd = contractDateEnd;
     }
 
-    public String getContractTotal() {
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getContractDeposit() {
+        return contractDeposit;
+    }
+
+    public void setContractDeposit(Integer contractDeposit) {
+        this.contractDeposit = contractDeposit;
+    }
+
+    public Integer getContractTotal() {
         return contractTotal;
     }
 
-    public void setContractTotal(String contractTotal) {
+    public void setContractTotal(Integer contractTotal) {
         this.contractTotal = contractTotal;
     }
 

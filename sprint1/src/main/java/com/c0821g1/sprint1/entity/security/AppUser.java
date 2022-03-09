@@ -1,12 +1,12 @@
 package com.c0821g1.sprint1.entity.security;
 
-import com.c0821g1.sprint1.entity.employee.Employee;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class AppUser {
+public class AppUser  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer appUserId;
@@ -14,21 +14,11 @@ public class AppUser {
     private String appUserName;
     private String appUserPassword;
 
-//    @ManyToOne
-//    @JoinColumn(name = "employee_id",nullable = false)
-//    private Employee employee;
-
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
     private List<Role> roles;
 
     public AppUser() {
-    }
-
-    public AppUser(Integer appUserId, String appUserName, String appUserPassword, List<Role> roles) {
-        this.appUserId = appUserId;
-        this.appUserName = appUserName;
-        this.appUserPassword = appUserPassword;
-        this.roles = roles;
+        //contructor
     }
 
     public List<Role> getRoles() {

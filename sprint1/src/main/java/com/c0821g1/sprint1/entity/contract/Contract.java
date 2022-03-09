@@ -2,23 +2,28 @@ package com.c0821g1.sprint1.entity.contract;
 
 import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.entity.employee.Employee;
-import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.entity.space.Spaces;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 
 @Entity
-public class Contract {
+public class Contract  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer contractId;
 
-    private String contractExpired;
+    private String contractCode;
+    private Integer contractExpired;
     private String contractDateStart;
     private String contractDateEnd;
-    private String price;
-    private String contractTotal;
+    private Integer price;
+    private Integer contractTotal;
+    private Integer contractDeposit;
+    private String contractTaxCode;
     private String contractContent;
+    private String contractImageUrl;
     private Boolean contractDeleteFlag;
 
 
@@ -35,29 +40,34 @@ public class Contract {
     private Spaces spaces;
 
     public Contract() {
+//        contructor
     }
 
-    public Contract(Integer contractId, String contractExpired, String contractDateStart, String contractDateEnd, String price, String contractTotal, String contractContent, Boolean contractDeleteFlag, Customer customer, Employee employee, Spaces spaces) {
-        this.contractId = contractId;
-        this.contractExpired = contractExpired;
-        this.contractDateStart = contractDateStart;
-        this.contractDateEnd = contractDateEnd;
-        this.price = price;
-        this.contractTotal = contractTotal;
-        this.contractContent = contractContent;
-        this.contractDeleteFlag = contractDeleteFlag;
-        this.customer = customer;
-        this.employee = employee;
-        this.spaces = spaces;
+    public String getContractCode() {
+        return contractCode;
     }
 
-    public String getPrice() {
-        return price;
+    public void setContractCode(String contractCode) {
+        this.contractCode = contractCode;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public String getContractImageUrl() {
+        return contractImageUrl;
     }
+
+    public void setContractImageUrl(String contractImageUrl) {
+        this.contractImageUrl = contractImageUrl;
+    }
+
+    public String getContractTaxCode() {
+        return contractTaxCode;
+    }
+
+    public void setContractTaxCode(String contractTaxCode) {
+        this.contractTaxCode = contractTaxCode;
+    }
+
+
 
     public Spaces getSpaces() {
         return spaces;
@@ -91,11 +101,11 @@ public class Contract {
         this.contractId = contractId;
     }
 
-    public String getContractExpired() {
+    public Integer getContractExpired() {
         return contractExpired;
     }
 
-    public void setContractExpired(String contractExpired) {
+    public void setContractExpired(Integer contractExpired) {
         this.contractExpired = contractExpired;
     }
 
@@ -115,12 +125,28 @@ public class Contract {
         this.contractDateEnd = contractDateEnd;
     }
 
-    public String getContractTotal() {
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getContractTotal() {
         return contractTotal;
     }
 
-    public void setContractTotal(String contractTotal) {
+    public void setContractTotal(Integer contractTotal) {
         this.contractTotal = contractTotal;
+    }
+
+    public Integer getContractDeposit() {
+        return contractDeposit;
+    }
+
+    public void setContractDeposit(Integer contractDeposit) {
+        this.contractDeposit = contractDeposit;
     }
 
     public String getContractContent() {

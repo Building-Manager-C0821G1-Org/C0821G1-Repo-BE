@@ -9,12 +9,11 @@ public interface ContractService {
 
     List<Contract> findAllContract();
 
-    Contract findContractById(Integer id);
+    ContractDTO findContractById(Integer id);
 
     void editContract(ContractDTO contractDTO);
 
 
     void addContract(ContractDTO contractDTO);
-
-    void deleteContract(Integer id);
+    boolean existsContractByCode(String contractCode);
 }
