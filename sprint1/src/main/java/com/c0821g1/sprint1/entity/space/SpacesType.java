@@ -1,6 +1,5 @@
 package com.c0821g1.sprint1.entity.space;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
@@ -26,10 +25,6 @@ public class SpacesType {
 
     public SpacesType() {
     }
-
-//    public SpacesType(int spaceTypeId) {
-//        this.spaceTypeId = spaceTypeId;
-//    }
 
     public int getSpaceTypeId() {
         return spaceTypeId;

@@ -1,7 +1,6 @@
 package com.c0821g1.sprint1.dto;
 
 public class CustomerDTO {
-
     private String customerCode;
     private String customerName;
     private String customerIdentifyNumber;

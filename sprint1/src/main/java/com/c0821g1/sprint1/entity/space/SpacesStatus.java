@@ -1,7 +1,5 @@
 package com.c0821g1.sprint1.entity.space;
 
-
-import com.c0821g1.sprint1.entity.floor.Floors;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
@@ -22,10 +20,6 @@ public class SpacesStatus {
 
     public SpacesStatus() {
     }
-
-//    public SpacesStatus(int spaceStatusId) {
-//        this.spaceStatusId = spaceStatusId;
-//    }
 
     public SpacesStatus(int spaceStatusId, String spacerStatusName, List<Spaces> spacesList) {
         this.spaceStatusId = spaceStatusId;
