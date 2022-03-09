@@ -56,9 +56,15 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
             "                 :user_password);", nativeQuery = true)
     void createEmployeeAccount(@Param("user_name") String appUserName, @Param("user_password") String appUserPassword);
 
-
+    //Bảo kiểm tra email có tồn tại trong DB hay không
     @Query(value = "SELECT * " +
             "from employee  " +
             "where employee_email =?1", nativeQuery = true)
     Employee existsEmployeeByEmail(String employeeEmail);
+
+    //Bảo kiểm tra mã nhân viên có tồn tại trong DB hay không
+    @Query(value = "SELECT * " +
+            "from employee  " +
+            "where employee_code =?1", nativeQuery = true)
+    Employee existsEmployeeByCode(String employeeCode);
 }

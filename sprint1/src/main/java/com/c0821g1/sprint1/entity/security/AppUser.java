@@ -1,6 +1,5 @@
 package com.c0821g1.sprint1.entity.security;
 
-import com.c0821g1.sprint1.entity.employee.Employee;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -20,14 +19,14 @@ public class AppUser {
 //    @JoinColumn(name = "employee_id",nullable = false)
 //    private Employee employee;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, targetEntity = Role.class)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, targetEntity = Roles.class)
     @JsonBackReference
-    private List<Role> roles;
+    private List<Roles> roles;
 
     public AppUser() {
     }
 
-    public AppUser(int appUserId, String appUserName, String appUserPassword, List<Role> roles) {
+    public AppUser(int appUserId, String appUserName, String appUserPassword, List<Roles> roles) {
         this.appUserId = appUserId;
         this.appUserName = appUserName;
         this.appUserPassword = appUserPassword;
@@ -35,11 +34,11 @@ public class AppUser {
         this.roles = roles;
     }
 
-    public List<Role> getRoles() {
+    public List<Roles> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Role> roles) {
+    public void setRoles(List<Roles> roles) {
         this.roles = roles;
     }
 

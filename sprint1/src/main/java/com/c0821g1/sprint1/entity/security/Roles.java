@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
-public class Role {
+public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int roleId;
@@ -17,10 +17,10 @@ public class Role {
     @JsonBackReference
     private List<AppUser> appUsers;
 
-    public Role() {
+    public Roles() {
     }
 
-    public Role(int roleId, String roleName, List<AppUser> appUsers) {
+    public Roles(int roleId, String roleName, List<AppUser> appUsers) {
         this.roleId = roleId;
         this.roleName = roleName;
         this.appUsers = appUsers;

@@ -4,7 +4,7 @@ package com.c0821g1.sprint1.controller;
 import com.c0821g1.sprint1.dto.EmployeeDTO;
 import com.c0821g1.sprint1.entity.employee.Employee;
 import com.c0821g1.sprint1.entity.security.AppUser;
-import com.c0821g1.sprint1.entity.security.Role;
+import com.c0821g1.sprint1.entity.security.Roles;
 import com.c0821g1.sprint1.service.AppUserService;
 import com.c0821g1.sprint1.service.EmployeeService;
 import org.springframework.beans.BeanUtils;
@@ -33,18 +33,20 @@ public class EmployeeController {
     //Bảo thêm mới nhân viên và đăng ký tài khoản cho nhân viên
     @PostMapping(value = "/create")
     public ResponseEntity<Object> createEmployee(@RequestBody @Valid EmployeeDTO employeeDTO, BindingResult bindingResult) {
+
+
+//        Kiểm tra email và mã nhân viên có tồn tại trong DB hay không
+        if(employeeService.existsEmployeeByCode(employeeDTO.getEmployeeCode())){
+            System.out.println("Test");
+            bindingResult.rejectValue("employeeCode", "Mã nhân viên đã tồn tại!");
+        }
+        if(employeeService.existsEmployeeByEmail(employeeDTO.getEmployeeEmail())){
+            System.out.println("Test");
+            bindingResult.rejectValue("employeeEmail", "Email đã tồn tại!");
+        }
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
         }
-
-        //Kiểm tra email có tồn tại trong DB
-//        List listErrors = new ArrayList();
-//        if(employeeService.existsEmployeeByEmail(employeeDTO.getEmployeeEmail())){
-//            System.out.println("Test");
-//            listErrors.add("Email đã tồn tại");
-//            return ResponseEntity.badRequest().body(listErrors);
-//        }
-
         //tạo tài khoản cho nhân viên với username là email và mật khẩu mặc định là 123456
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
@@ -56,15 +58,15 @@ public class EmployeeController {
         employee.setAppUser(appUser);
 
         //set role
-        List<Role> roleList = new ArrayList<>();
-        Role role = new Role();
+        List<Roles> rolesList = new ArrayList<>();
+        Roles roles = new Roles();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            role.setRoleId(2);
+            roles.setRoleId(2);
         } else {
-            role.setRoleId(1);
+            roles.setRoleId(1);
         }
-        roleList.add(role);
-        appUser.setRoles(roleList);
+        rolesList.add(roles);
+        appUser.setRoles(rolesList);
 
         //tạo mới nhân viên
         employee.setEmployeeDeleteFlag(false);
@@ -87,15 +89,15 @@ public class EmployeeController {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
         AppUser appUser = appUserService.findAppUserByEmail(employeeDTO.getAppUser().getAppUserName());
-        List<Role> roleList =new ArrayList<>();
-        Role role = new Role();
+        List<Roles> rolesList =new ArrayList<>();
+        Roles roles = new Roles();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            role.setRoleId(2);
+            roles.setRoleId(2);
         } else {
-            role.setRoleId(1);
+            roles.setRoleId(1);
         }
-        roleList.add(role);
-        appUser.setRoles(roleList);
+        rolesList.add(roles);
+        appUser.setRoles(rolesList);
 
         // chỉnh sửa nhân viên
         employeeService.editEmployee(employee);

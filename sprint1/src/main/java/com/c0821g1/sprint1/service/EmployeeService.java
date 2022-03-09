@@ -14,6 +14,6 @@ public interface EmployeeService {
     void editEmployee(Employee employee);
     void createEmployeeAccount(AppUser appUser);
     Boolean existsEmployeeByEmail(String employeeEmail);
-
+    Boolean existsEmployeeByCode(String employeeCode);
     List<Employee> findALL();
 }
