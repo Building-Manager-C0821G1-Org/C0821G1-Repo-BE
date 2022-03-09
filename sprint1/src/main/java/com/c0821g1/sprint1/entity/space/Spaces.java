@@ -33,27 +33,10 @@ public class Spaces {
     @JoinColumn(name = "floor_id",nullable = false)
     private Floors floors;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "spaces")
+    @JsonBackReference
     private List<Contract> contractList;
 
-    public Spaces() {
-    }
-
-    public Spaces(int spaceId, String spaceCode, String spaceArea, String spacePrice, String spaceManagerFee, String spaceNote, String spaceImage, Boolean spaceDeleteFlag, SpacesType spacesType, SpacesStatus spaceStatus, Floors floors, List<Contract> contractList) {
-        this.spaceId = spaceId;
-        this.spaceCode = spaceCode;
-        this.spaceArea = spaceArea;
-        this.spacePrice = spacePrice;
-        this.spaceManagerFee = spaceManagerFee;
-        this.spaceNote = spaceNote;
-        this.spaceImage = spaceImage;
-        this.spaceDeleteFlag = spaceDeleteFlag;
-        this.spacesType = spacesType;
-        this.spaceStatus = spaceStatus;
-        this.floors = floors;
-        this.contractList = contractList;
-    }
 
     public List<Contract> getContractList() {
         return contractList;

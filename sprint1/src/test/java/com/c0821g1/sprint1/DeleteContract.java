@@ -13,30 +13,30 @@ public class DeleteContract {
     @Autowired
     private MockMvc mockMvc;
     // null
-    @Test
-    public void deleteContract_25() throws Exception {
-        this.mockMvc.perform(
-                MockMvcRequestBuilders
-                        .get("/api/contract/delete/{id}", "null"))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
-    // rỗng
-    @Test
-    public void deleteContract_26() throws Exception {
-        this.mockMvc.perform(
-                MockMvcRequestBuilders
-                        .get("/api/contract/delete/{id}", " "))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
-    // có giá trị
-    @Test
-    public void deleteContract_28() throws Exception {
-        this.mockMvc.perform(
-                MockMvcRequestBuilders
-                        .get("api/contract/delete/{id}", "1"))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful());
-    }
+//    @Test
+//    public void deleteContract_25() throws Exception {
+//        this.mockMvc.perform(
+//                MockMvcRequestBuilders
+//                        .get("/api/contract/delete/{id}", "null"))
+//                .andDo(print())
+//                .andExpect(status().is4xxClientError());
+//    }
+//    // rỗng
+//    @Test
+//    public void deleteContract_26() throws Exception {
+//        this.mockMvc.perform(
+//                MockMvcRequestBuilders
+//                        .get("/api/contract/delete/{id}", " "))
+//                .andDo(print())
+//                .andExpect(status().is4xxClientError());
+//    }
+//    // có giá trị
+//    @Test
+//    public void deleteContract_28() throws Exception {
+//        this.mockMvc.perform(
+//                MockMvcRequestBuilders
+//                        .get("api/contract/delete/{id}", "1"))
+//                .andDo(print())
+//                .andExpect(status().is2xxSuccessful());
+//    }
 }

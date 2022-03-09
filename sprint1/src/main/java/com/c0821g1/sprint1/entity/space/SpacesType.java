@@ -14,18 +14,9 @@ public class SpacesType {
 
     private String spaceTypeName;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "spacesType")
+    @JsonBackReference
     private List<Spaces> spacesList;
-
-    public SpacesType(int spaceTypeId, String spaceTypeName, List<Spaces> spacesList) {
-        this.spaceTypeId = spaceTypeId;
-        this.spaceTypeName = spaceTypeName;
-        this.spacesList = spacesList;
-    }
-
-    public SpacesType() {
-    }
 
     public int getSpaceTypeId() {
         return spaceTypeId;

@@ -14,18 +14,10 @@ public class FloorsStatus {
 
     private String floorStatusName;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "floorsStatus")
+    @JsonBackReference
     private List<Floors> floorsList;
 
-    public FloorsStatus() {
-    }
-
-    public FloorsStatus(int floorStatusId, String floorStatusName, List<Floors> floorsList) {
-        this.floorStatusId = floorStatusId;
-        this.floorStatusName = floorStatusName;
-        this.floorsList = floorsList;
-    }
 
     public int getFloorStatusId() {
         return floorStatusId;

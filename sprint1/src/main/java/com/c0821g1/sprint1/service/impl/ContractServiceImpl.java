@@ -8,7 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -17,18 +17,18 @@ public class ContractServiceImpl implements ContractService {
     private ContractRepository contractRepository;
 
     @Override
-    public void delete(Integer contract_id) {
-        this.contractRepository.deleteContract(contract_id);
+    public void deleteContract(Integer id) {
+        this.contractRepository.deleteContract(id);
     }
 
     @Override
-    public Page<Contract> findAllContract(Pageable pageable) {
-        return this.contractRepository.findAllContract(pageable);
+    public Page<Contract> findAllContractByNameAndCodeAndDatePage(String name, String code, String start, String end, Pageable pageable) {
+        return contractRepository.findAllContractByNameAndCodeAndDate(name, code, start,end,(org.springframework.data.domain.Pageable) pageable);
     }
 
     @Override
-    public Page<Contract> findAllContractSearch(Pageable pageable, String name, String code, String start, String end) {
-        return this.contractRepository.searchContract(pageable,name,code,start,end);
+    public Optional<Contract> findContractById(Integer id) {
+        return this.contractRepository.findContractById(id);
     }
 
 }

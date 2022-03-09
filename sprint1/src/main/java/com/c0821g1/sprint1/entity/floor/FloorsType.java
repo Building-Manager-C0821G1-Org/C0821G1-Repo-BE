@@ -14,18 +14,11 @@ public class FloorsType {
 
     private String floorTypeName;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "floorsType")
+    @JsonBackReference
     private List<Floors> floors;
 
-    public FloorsType() {
-    }
 
-    public FloorsType(int floorTypeId, String floorTypeName, List<Floors> floors) {
-        this.floorTypeId = floorTypeId;
-        this.floorTypeName = floorTypeName;
-        this.floors = floors;
-    }
 
     public int getFloorTypeId() {
         return floorTypeId;

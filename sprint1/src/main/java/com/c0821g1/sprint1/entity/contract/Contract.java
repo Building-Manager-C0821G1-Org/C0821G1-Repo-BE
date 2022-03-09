@@ -14,14 +14,16 @@ public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int contractId;
+    private String contractCode;
 
     private String contractExpred;
     @Column()
-    private Date contractDateStart;
-    private Date contractDateEnd;
+    private String contractDateStart;
+    private String contractDateEnd;
     private String contractTotal;
     private String contractContent;
     private Boolean contractDeleteFlag;
+    private int checkFlag;
 
 
     @ManyToOne
@@ -36,21 +38,7 @@ public class Contract {
     @JoinColumn(name = "space_id",nullable = false)
     private Spaces spaces;
 
-    public Contract() {
-    }
 
-    public Contract(int contractId, String contractExpred, Date contractDateStart, Date contractDateEnd, String contractTotal, String contractContent, Boolean contractDeleteFlag, Customer customer, Employee employee, Spaces spaces) {
-        this.contractId = contractId;
-        this.contractExpred = contractExpred;
-        this.contractDateStart = contractDateStart;
-        this.contractDateEnd = contractDateEnd;
-        this.contractTotal = contractTotal;
-        this.contractContent = contractContent;
-        this.contractDeleteFlag = contractDeleteFlag;
-        this.customer = customer;
-        this.employee = employee;
-        this.spaces = spaces;
-    }
 
     public Spaces getSpaces() {
         return spaces;
@@ -93,19 +81,19 @@ public class Contract {
     }
 
 
-    public Date getContractDateStart() {
+    public String getContractDateStart() {
         return contractDateStart;
     }
 
-    public void setContractDateStart(Date contractDateStart) {
+    public void setContractDateStart(String contractDateStart) {
         this.contractDateStart = contractDateStart;
     }
 
-    public Date getContractDateEnd() {
+    public String getContractDateEnd() {
         return contractDateEnd;
     }
 
-    public void setContractDateEnd(Date contractDateEnd) {
+    public void setContractDateEnd(String contractDateEnd) {
         this.contractDateEnd = contractDateEnd;
     }
 
@@ -133,4 +121,19 @@ public class Contract {
         this.contractDeleteFlag = contractDeleteFlag;
     }
 
+    public int getCheckFlag() {
+        return checkFlag;
+    }
+
+    public void setCheckFlag(int checkFlag) {
+        this.checkFlag = checkFlag;
+    }
+
+    public String getContractCode() {
+        return contractCode;
+    }
+
+    public void setContractCode(String contractCode) {
+        this.contractCode = contractCode;
+    }
 }

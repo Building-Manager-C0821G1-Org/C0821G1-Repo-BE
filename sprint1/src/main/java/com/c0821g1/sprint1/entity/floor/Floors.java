@@ -27,24 +27,12 @@ public class Floors {
     @JoinColumn(name = "floor_status_id",nullable = false)
     private FloorsStatus floorsStatus;
 
-    @JsonBackReference
+
     @OneToMany(mappedBy = "floors")
+    @JsonBackReference
     private List<Spaces> spacesList;
 
-    public Floors() {
-    }
 
-    public Floors(int floorId, String floorCode, String floorName, String floorArea, String floorCapacity, Boolean floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
-        this.floorId = floorId;
-        this.floorCode = floorCode;
-        this.floorName = floorName;
-        this.floorArea = floorArea;
-        this.floorCapacity = floorCapacity;
-        this.floorDeleteFlag = floorDeleteFlag;
-        this.floorsType = floorsType;
-        this.floorsStatus = floorsStatus;
-        this.spacesList = spacesList;
-    }
 
     public FloorsStatus getFloorsStatus() {
         return floorsStatus;

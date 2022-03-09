@@ -14,23 +14,14 @@ public class AppUser {
     private String appUserName;
     private String appUserPassword;
 
-//    @ManyToOne
-//    @JoinColumn(name = "employee_id",nullable = false)
-//    private Employee employee;
+    @ManyToOne
+    @JoinColumn(name = "employee_id",nullable = false)
+    private Employee employee;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
     private List<Role> roles;
 
-    public AppUser() {
-    }
 
-    public AppUser(int appUserId, String appUserName, String appUserPassword, List<Role> roles) {
-        this.appUserId = appUserId;
-        this.appUserName = appUserName;
-        this.appUserPassword = appUserPassword;
-
-        this.roles = roles;
-    }
 
     public List<Role> getRoles() {
         return roles;

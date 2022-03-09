@@ -12,16 +12,34 @@ public class EmployeePosition {
     private int employeePositionId;
     private String employeePositionName;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "employeePosition")
+    @JsonBackReference
     private List<Employee> employeeList;
 
-    public EmployeePosition() {
+
+
+
+    public int getEmployeePositionId() {
+        return employeePositionId;
     }
 
-    public EmployeePosition(int employeePositionId, String employeePositionName, List<Employee> employeeList) {
+    public void setEmployeePositionId(int employeePositionId) {
         this.employeePositionId = employeePositionId;
+    }
+
+    public String getEmployeePositionName() {
+        return employeePositionName;
+    }
+
+    public void setEmployeePositionName(String employeePositionName) {
         this.employeePositionName = employeePositionName;
+    }
+
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<Employee> employeeList) {
         this.employeeList = employeeList;
     }
 }

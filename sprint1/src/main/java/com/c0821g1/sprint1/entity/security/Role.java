@@ -13,14 +13,6 @@ public class Role {
     @ManyToMany(mappedBy = "roles")
     private List<AppUser> appUsers;
 
-    public Role() {
-    }
-
-    public Role(int roleId, String roleName, List<AppUser> appUsers) {
-        this.roleId = roleId;
-        this.roleName = roleName;
-        this.appUsers = appUsers;
-    }
 
 
     public int getRoleId() {
