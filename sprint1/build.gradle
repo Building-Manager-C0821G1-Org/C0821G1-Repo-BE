@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.6.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id "org.sonarqube" version "3.0"
 }
 
 group = 'com.c0821g1'
@@ -25,4 +26,13 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://172.16.0.50:9000/'
+        property 'sonar.login', 'd64d546e682430442e912dc022425b698175efc6'
+        property 'sonar.projectKey', 'C0821G1_ReviewCode_LanhLV'
+        property 'sonar.projectName', 'C0821G1_ReviewCode_LanhLV'
+    }
 }

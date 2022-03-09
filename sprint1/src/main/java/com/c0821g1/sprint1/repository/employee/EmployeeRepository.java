@@ -11,6 +11,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
@@ -26,6 +28,10 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
     @Transactional
     @Modifying
-    @Query(value = "update employee  set employee_delete_flag = 1 where employee_id = :id", nativeQuery = true)
+    @Query(value = "update employee  set employee_delete_flag = true where employee_id = :id", nativeQuery = true)
     void deleteEmployee(@Param("id") Integer id);
+
+    // lấy id
+    @Query(value = "select * from employee where employee_id=?", nativeQuery = true)
+    Optional<Employee> findEployeeById(Integer id);
 }

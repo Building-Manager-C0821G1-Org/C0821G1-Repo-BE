@@ -17,8 +17,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     EmployeeRepository employeeRepository;
 
     @Override
-    public Page<Employee> findAllEmployeeSearch(Pageable pageable, String employee_name, String employee_date_0f_birth, String employee_email, String employee_address) {
-        return employeeRepository.searchEmployeeByNameOrDateOfBirthOrEmailOrAddress(pageable, employee_name, employee_date_0f_birth, employee_email, employee_address);
+    public Page<Employee> findAllEmployeeSearch(Pageable pageable, String employeeName, String employeeDateOfBirth, String employeeEmail, String employeeAddress) {
+        return employeeRepository.searchEmployeeByNameOrDateOfBirthOrEmailOrAddress(pageable, employeeName, employeeDateOfBirth, employeeEmail, employeeAddress);
     }
 
     @Override
@@ -33,6 +33,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Optional<Employee> findByIdOp(Integer id) {
-        return employeeRepository.findById(id);
+        return employeeRepository.findEployeeById(id);
     }
+
+
+
+
 }
