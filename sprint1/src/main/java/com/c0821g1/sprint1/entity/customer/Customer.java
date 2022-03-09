@@ -2,15 +2,15 @@ package com.c0821g1.sprint1.entity.customer;
 
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Customer {
+public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
+    private Integer customerId;
     private String customerCode;
     private String customerName;
     private String customerIdentifyNumber;
@@ -27,22 +27,14 @@ public class Customer {
     private List<Contract> contractList;
 
 
-
-
-
-    public List<Contract> getContractList() {
-        return contractList;
+    public Customer() {
     }
 
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
-    }
-
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
@@ -116,6 +108,14 @@ public class Customer {
 
     public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
         this.customerDeleteFlag = customerDeleteFlag;
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
     }
 }
 

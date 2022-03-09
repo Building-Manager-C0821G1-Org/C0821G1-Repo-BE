@@ -4,13 +4,15 @@ package com.c0821g1.sprint1.entity.space;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class SpacesType {
+public class SpacesType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int spaceTypeId;
+    private Integer spaceTypeId;
 
     private String spaceTypeName;
 
@@ -18,11 +20,15 @@ public class SpacesType {
     @JsonBackReference
     private List<Spaces> spacesList;
 
-    public int getSpaceTypeId() {
+    public SpacesType() {
+        //contructor
+    }
+
+    public Integer getSpaceTypeId() {
         return spaceTypeId;
     }
 
-    public void setSpaceTypeId(int spaceTypeId) {
+    public void setSpaceTypeId(Integer spaceTypeId) {
         this.spaceTypeId = spaceTypeId;
     }
 

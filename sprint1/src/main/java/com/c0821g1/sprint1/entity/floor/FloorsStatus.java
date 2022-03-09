@@ -4,13 +4,14 @@ package com.c0821g1.sprint1.entity.floor;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class FloorsStatus {
+public class FloorsStatus implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int floorStatusId;
+    private Integer floorStatusId;
 
     private String floorStatusName;
 
@@ -18,12 +19,14 @@ public class FloorsStatus {
     @JsonBackReference
     private List<Floors> floorsList;
 
+    public FloorsStatus() {
+    }
 
-    public int getFloorStatusId() {
+    public Integer getFloorStatusId() {
         return floorStatusId;
     }
 
-    public void setFloorStatusId(int floorStatusId) {
+    public void setFloorStatusId(Integer floorStatusId) {
         this.floorStatusId = floorStatusId;
     }
 

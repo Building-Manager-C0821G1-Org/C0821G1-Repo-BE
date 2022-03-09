@@ -1,25 +1,29 @@
 package com.c0821g1.sprint1.entity.security;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Role {
+public class Role  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int roleId;
+    private Integer roleId;
     private String roleName;
 
     @ManyToMany(mappedBy = "roles")
     private List<AppUser> appUsers;
 
 
+    public Role() {
+        //contructor
+    }
 
-    public int getRoleId() {
+    public Integer getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
 

@@ -1,15 +1,14 @@
 package com.c0821g1.sprint1.entity.security;
-
 import com.c0821g1.sprint1.entity.employee.Employee;
-
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class AppUser {
+public class AppUser  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int appUserId;
+    private Integer appUserId;
 
     private String appUserName;
     private String appUserPassword;
@@ -21,21 +20,14 @@ public class AppUser {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
     private List<Role> roles;
 
-
-
-    public List<Role> getRoles() {
-        return roles;
+    public AppUser() {
     }
 
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
-
-    public int getAppUserId() {
+    public Integer getAppUserId() {
         return appUserId;
     }
 
-    public void setAppUserId(int appUserId) {
+    public void setAppUserId(Integer appUserId) {
         this.appUserId = appUserId;
     }
 
@@ -55,4 +47,19 @@ public class AppUser {
         this.appUserPassword = appUserPassword;
     }
 
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 }

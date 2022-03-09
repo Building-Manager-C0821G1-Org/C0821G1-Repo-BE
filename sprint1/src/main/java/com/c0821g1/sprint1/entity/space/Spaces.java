@@ -6,13 +6,14 @@ import com.c0821g1.sprint1.entity.floor.Floors;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Spaces {
+public class Spaces  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int spaceId;
+    private Integer spaceId;
     private String spaceCode;
     private String spaceArea;
     private String spacePrice;
@@ -38,6 +39,10 @@ public class Spaces {
     private List<Contract> contractList;
 
 
+    public Spaces() {
+        //contructor
+    }
+
     public List<Contract> getContractList() {
         return contractList;
     }
@@ -54,11 +59,12 @@ public class Spaces {
         this.floors = floors;
     }
 
-    public int getSpaceId() {
+
+    public Integer getSpaceId() {
         return spaceId;
     }
 
-    public void setSpaceId(int spaceId) {
+    public void setSpaceId(Integer spaceId) {
         this.spaceId = spaceId;
     }
 
