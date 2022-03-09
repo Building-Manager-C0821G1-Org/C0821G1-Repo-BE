@@ -1,7 +1,7 @@
 package com.c0821g1.sprint1.entity.space;
 
 
-import com.c0821g1.sprint1.entity.contract.Contract;
+//import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.floors.Floors;
 
 import javax.persistence.*;
@@ -32,34 +32,21 @@ public class Spaces {
     @JoinColumn(name = "floor_id",nullable = false)
     private Floors floors;
 
-    @OneToMany(mappedBy = "spaces")
-    private List<Contract> contractList;
+//    @OneToMany(mappedBy = "spaces")
+//    private List<Contract> contractList;
 
     public Spaces() {
     }
 
-    public Spaces(int spaceId, String spaceCode, String spaceArea, String spacePrice, String spaceManagerFee, String spaceNote, String spaceImage, Boolean spaceDeleteFlag, SpacesType spacesType, SpacesStatus spaceStatus, Floors floors, List<Contract> contractList) {
-        this.spaceId = spaceId;
-        this.spaceCode = spaceCode;
-        this.spaceArea = spaceArea;
-        this.spacePrice = spacePrice;
-        this.spaceManagerFee = spaceManagerFee;
-        this.spaceNote = spaceNote;
-        this.spaceImage = spaceImage;
-        this.spaceDeleteFlag = spaceDeleteFlag;
-        this.spacesType = spacesType;
-        this.spaceStatus = spaceStatus;
-        this.floors = floors;
-        this.contractList = contractList;
-    }
 
-    public List<Contract> getContractList() {
-        return contractList;
-    }
 
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
-    }
+//    public List<Contract> getContractList() {
+//        return contractList;
+//    }
+//
+//    public void setContractList(List<Contract> contractList) {
+//        this.contractList = contractList;
+//    }
 
     public Floors getFloors() {
         return floors;

@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
-//@Table("floors")
-@Entity()
+
+
+@Entity(name = "floors")
 public class Floors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +18,10 @@ public class Floors {
     private Integer floorCapacity;
 
     private Integer floorDeleteFlag;
-    //    @JoinColumn()
     @ManyToOne(targetEntity = FloorsType.class)
     @JoinColumn(name = "floors_type", nullable = false)
-//    @JsonBackReference
+
     private FloorsType floorsType;
-    //    @JoinColumn()
     @ManyToOne(targetEntity = FloorsStatus.class)
     @JoinColumn(name = "floors_status", nullable = false)
     private FloorsStatus floorsStatus;
@@ -34,17 +33,6 @@ public class Floors {
     public Floors() {
     }
 
-    public Floors(Integer floorId, String floorCode, String floorName, Double floorArea, Integer floorCapacity, Integer floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
-        this.floorId = floorId;
-        this.floorCode = floorCode;
-        this.floorName = floorName;
-        this.floorArea = floorArea;
-        this.floorCapacity = floorCapacity;
-        this.floorDeleteFlag = floorDeleteFlag;
-        this.floorsType = floorsType;
-        this.floorsStatus = floorsStatus;
-        this.spacesList = spacesList;
-    }
 
     public Integer getFloorId() {
         return floorId;

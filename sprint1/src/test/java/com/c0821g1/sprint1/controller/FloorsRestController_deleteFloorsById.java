@@ -24,7 +24,7 @@ public class FloorsRestController_deleteFloorsById {
     public void deleteFloorsById_25() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders
-                        .delete("/floors/delete/{id}", "null"))
+                        .delete("/floors/delete-flag/{id}", "null"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -37,7 +37,7 @@ public class FloorsRestController_deleteFloorsById {
     public void deleteFloorsById_26() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders
-                        .delete("/floors/delete/{id}", ""))
+                        .delete("/floors/delete-flag/{id}", ""))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -50,7 +50,7 @@ public class FloorsRestController_deleteFloorsById {
     public void deleteFloorsById_27() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders
-                        .delete("/floors/delete/{id}", 6))
+                        .delete("/floors/delete-flag/{id}", 6))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -63,7 +63,7 @@ public class FloorsRestController_deleteFloorsById {
     public void deleteFloorsById_28() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders
-                        .delete("/floors/delete/{id}", 1))
+                        .delete("/floors/delete-flag/{id}", 1))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());
     }

@@ -15,12 +15,6 @@ public class SpacesType {
     @OneToMany(mappedBy = "spacesType")
     private List<Spaces> spacesList;
 
-    public SpacesType(int spaceTypeId, String spaceTypeName, List<Spaces> spacesList) {
-        this.spaceTypeId = spaceTypeId;
-        this.spaceTypeName = spaceTypeName;
-        this.spacesList = spacesList;
-    }
-
     public SpacesType() {
     }
 

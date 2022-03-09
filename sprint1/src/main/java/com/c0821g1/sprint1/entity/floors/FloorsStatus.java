@@ -20,12 +20,6 @@ public class FloorsStatus {
     public FloorsStatus() {
     }
 
-    public FloorsStatus(Integer floorStatusId, String floorStatusName, List<Floors> floorsList) {
-        this.floorStatusId = floorStatusId;
-        this.floorStatusName = floorStatusName;
-        this.floorsList = floorsList;
-    }
-
     public Integer getFloorStatusId() {
         return floorStatusId;
     }
