@@ -2,6 +2,8 @@ package com.c0821g1.sprint1.entity.space;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,8 +15,9 @@ public class SpacesType {
 
     private String spaceTypeName;
 
-    @OneToMany(mappedBy = "spacesType")
-    @JsonBackReference
+
+    @OneToMany(mappedBy = "spacesType", cascade =  CascadeType.ALL)
+    @JsonBackReference(value = "spacesType")
     private List<Spaces> spacesList;
 
     public SpacesType(int spaceTypeId, String spaceTypeName, List<Spaces> spacesList) {

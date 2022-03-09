@@ -6,12 +6,15 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnJava;
 
 import javax.persistence.*;
 import java.util.List;
-//@Table("floors")
 @Entity()
 public class Floors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer floorId;
+
+    public Floors() {
+    }
+
     private String floorCode;
     private String floorName;
     private Double floorArea;
@@ -28,27 +31,14 @@ public class Floors {
     private FloorsStatus floorsStatus;
 
     @OneToMany(mappedBy = "floors")
-    @JsonBackReference
+    @JsonBackReference(value = "floors")
     private List<Spaces> spacesList;
 
-    public Floors() {
-    }
-
-    public Floors(Integer floorId, String floorCode, String floorName, Double floorArea, Integer floorCapacity, Integer floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
+    public Floors(Integer floorId, String floorCode, String floorName) {
         this.floorId = floorId;
         this.floorCode = floorCode;
         this.floorName = floorName;
-        this.floorArea = floorArea;
-        this.floorCapacity = floorCapacity;
-        this.floorDeleteFlag = floorDeleteFlag;
-        this.floorsType = floorsType;
-        this.floorsStatus = floorsStatus;
-        this.spacesList = spacesList;
     }
-
-//    public Floors(Integer floorId) {
-//        this.floorId = floorId;
-//    }
 
     public Integer getFloorId() {
         return floorId;

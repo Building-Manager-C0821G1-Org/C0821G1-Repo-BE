@@ -2,7 +2,6 @@ package com.c0821g1.sprint1.entity.contract;
 
 import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.entity.employee.Employee;
-import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.entity.space.Spaces;
 
 import javax.persistence.*;
@@ -33,20 +32,14 @@ public class Contract {
     @JoinColumn(name = "space_id",nullable = false)
     private Spaces spaces;
 
-    public Contract() {
-    }
-
-    public Contract(int contractId, String contractExpred, String contractDateStart, String contractDateEnd, String contractTotal, String contractContent, Boolean contractDeleteFlag, Customer customer, Employee employee, Spaces spaces) {
+    public Contract(int contractId, String contractExpred, String contractDateStart, String contractDateEnd) {
         this.contractId = contractId;
         this.contractExpred = contractExpred;
         this.contractDateStart = contractDateStart;
         this.contractDateEnd = contractDateEnd;
-        this.contractTotal = contractTotal;
-        this.contractContent = contractContent;
-        this.contractDeleteFlag = contractDeleteFlag;
-        this.customer = customer;
-        this.employee = employee;
-        this.spaces = spaces;
+    }
+
+    public Contract() {
     }
 
     public Spaces getSpaces() {
