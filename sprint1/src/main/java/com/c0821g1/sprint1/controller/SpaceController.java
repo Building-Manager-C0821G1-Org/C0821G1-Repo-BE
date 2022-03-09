@@ -15,26 +15,23 @@ import javax.validation.Valid;
 
 @RestController
 @CrossOrigin
-@RequestMapping (value = "/space")
+@RequestMapping (value = "/spaces")
 public class SpaceController {
 
     @Autowired
-    SpaceService spaceService;
+    private SpaceService spaceService;
 
     @Autowired
-    SpaceTypeService spaceTypeService;
+    private SpaceTypeService spaceTypeService;
 
     @Autowired
-    SpaceStatusService spaceStatusService;
+    private SpaceStatusService spaceStatusService;
 //    DuDH - Tạo mới Space
-    @PostMapping (value = "/register", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping (value = "/create", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> registerSpace (@RequestBody @Valid SpacesDTO spacesDTO, BindingResult bindingResult){
         if(spaceService.existsSpaceByCode(spacesDTO.getSpaceCode())){
             bindingResult.rejectValue("spaceCode", "Mã mặt bằng đã tồn tại.");
         }
-//        if(spacesDTO.getSpaceArea().contains("-")){
-//            bindingResult.rejectValue("spaceArea", "Diện tích không được nhập số âm.");
-//        }
 
         if (bindingResult.hasErrors()){
             return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
