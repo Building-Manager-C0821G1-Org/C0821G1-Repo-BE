@@ -11,14 +11,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @NamedNativeQuery(name = "Spaces.findAllSpace",
-        query = "select s.space_id as spaceId, s.space_code as spaceCode, st.space_type_name as spaceTypeName, s.space_area as spaceArea, stt.spacer_status_name as spaceStatusName, s.space_price as spacePrice, s.space_manager_fee as spaceManagerFee\n" +
+        query = "select s.space_id as spaceId, s.space_code as spaceCode, st.space_type_name as spaceTypeName, s.space_area as spaceArea, stt.spacer_status_name as spaceStatusName, s.space_price as spacePrice, s.space_manager_fee as spaceManagerFee, f.floor_name as floorName\n" +
                 "from spaces s \n" +
                 "join spaces_type st on s.space_type_id = st.space_type_id\n" +
                 "join spaces_status stt on s.space_status_id = stt.space_status_id\n" +
+                "JOIN floors f ON s.floor_id = f.floor_id \n" +
                 "where s.space_delete_flag = 1",
         resultSetMapping = "Mapping.SpaceListDTO")
 @NamedNativeQuery(name = "Spaces.searchSpace",
-        query = "SELECT s.space_id AS spaceId, s.space_code AS spaceCode, st.space_type_name AS spaceTypeName, s.space_area AS spaceArea, stt.spacer_status_name AS spaceStatusName, s.space_price AS spacePrice, s.space_manager_fee AS spaceManagerFee\n" +
+        query = "SELECT s.space_id AS spaceId, s.space_code AS spaceCode, st.space_type_name AS spaceTypeName, s.space_area AS spaceArea, stt.spacer_status_name AS spaceStatusName, s.space_price AS spacePrice, s.space_manager_fee AS spaceManagerFee, f.floor_name as floorName\n" +
                 "FROM spaces s \n" +
                 "JOIN floors f ON s.floor_id = f.floor_id \n" +
                 "JOIN spaces_type st ON st.space_type_id = s.space_type_id \n" +
@@ -31,10 +32,11 @@ import java.util.List;
                 "s.space_delete_flag = 1 ",
         resultSetMapping = "Mapping.SpaceListDTO")
 @NamedNativeQuery(name = "Spaces.findSpaceById",
-        query = "SELECT s.space_id AS spaceId, s.space_code AS spaceCode, st.space_type_name AS spaceTypeName, s.space_area AS spaceArea, stt.spacer_status_name AS spaceStatusName, s.space_price AS spacePrice, s.space_manager_fee AS spaceManagerFee\n" +
+        query = "SELECT s.space_id AS spaceId, s.space_code AS spaceCode, st.space_type_name AS spaceTypeName, s.space_area AS spaceArea, stt.spacer_status_name AS spaceStatusName, s.space_price AS spacePrice, s.space_manager_fee AS spaceManagerFee, f.floor_name as floorName\n" +
                 "from spaces s \n" +
                 "join spaces_type st on s.space_type_id = st.space_type_id\n" +
                 "join spaces_status stt on s.space_status_id = stt.space_status_id\n" +
+                "JOIN floors f ON s.floor_id = f.floor_id " +
                 "where s.space_id = ?1",
         resultSetMapping = "Mapping.SpaceListDTO")
 @SqlResultSetMapping(name = "Mapping.SpaceListDTO",
@@ -45,7 +47,8 @@ import java.util.List;
                         @ColumnResult(name = "spaceArea"),
                         @ColumnResult(name = "spaceStatusName"),
                         @ColumnResult(name = "spacePrice"),
-                        @ColumnResult(name = "spaceManagerFee")
+                        @ColumnResult(name = "spaceManagerFee"),
+                        @ColumnResult(name = "floorName")
                 }))
 @Entity
 public class Spaces {

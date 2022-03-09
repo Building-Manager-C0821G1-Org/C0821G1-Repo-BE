@@ -8,8 +8,12 @@ public class SpaceListDTO {
     private String spaceStatusName;
     private String spacePrice;
     private String spaceManagerFee;
+    private String floorName;
 
-    public SpaceListDTO(int spaceId, String spaceCode, String spaceTypeName, String spaceArea, String spaceStatusName, String spacePrice, String spaceManagerFee) {
+    public SpaceListDTO() {
+    }
+
+    public SpaceListDTO(int spaceId, String spaceCode, String spaceTypeName, String spaceArea, String spaceStatusName, String spacePrice, String spaceManagerFee, String floorName) {
         this.spaceId = spaceId;
         this.spaceCode = spaceCode;
         this.spaceTypeName = spaceTypeName;
@@ -17,6 +21,7 @@ public class SpaceListDTO {
         this.spaceStatusName = spaceStatusName;
         this.spacePrice = spacePrice;
         this.spaceManagerFee = spaceManagerFee;
+        this.floorName = floorName;
     }
 
     public int getSpaceId() {
@@ -73,5 +78,13 @@ public class SpaceListDTO {
 
     public void setSpaceManagerFee(String spaceManagerFee) {
         this.spaceManagerFee = spaceManagerFee;
+    }
+
+    public String getFloorName() {
+        return floorName;
+    }
+
+    public void setFloorName(String floorName) {
+        this.floorName = floorName;
     }
 }
