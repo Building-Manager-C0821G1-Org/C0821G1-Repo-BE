@@ -2,7 +2,6 @@ package com.c0821g1.sprint1.config;
 import com.c0821g1.sprint1.accessdenied.CustomAccessDeniedHandler;
 import com.c0821g1.sprint1.jwt.JwtAuthenticationEntryPoint;
 import com.c0821g1.sprint1.jwt.JwtFilter;
-//import com.c0821g1.sprint1.service.account.impl.UserDetailsServiceImpl;
 import com.c0821g1.sprint1.service.account.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -55,10 +54,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 //phan quyen
                 .and().authorizeRequests().antMatchers( "/api/customers/edit-customer/**",
-                "/api/customers/**","/api/public/password")
+                "/api/customers/**", "/api/floors/**" )
                 .hasAnyRole( "EMPLOYEE", "ADMIN")
-                .and().authorizeRequests().antMatchers("/api/customers/**")
-                .hasAnyRole("EMPLOYEE", "ADMIN")
                 .and().authorizeRequests().antMatchers("/api/**","api/employee/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and().cors()

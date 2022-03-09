@@ -4,7 +4,6 @@ import com.c0821g1.sprint1.entity.employee.Employee;
 import com.c0821g1.sprint1.jwt.JwtUtils;
 import com.c0821g1.sprint1.payload.request.LoginRequest;
 import com.c0821g1.sprint1.payload.response.JwtResponse;
-//import com.c0821g1.sprint1.service.account.impl.AppUserServiceImpl;
 import com.c0821g1.sprint1.service.account.impl.MyUserDetailsImpl;
 import com.c0821g1.sprint1.service.impl.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
