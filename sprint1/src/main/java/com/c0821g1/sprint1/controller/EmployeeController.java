@@ -29,52 +29,12 @@ public class EmployeeController {
     AppUserService appUserService;
 
 
-
-    //Bảo thêm mới nhân viên và đăng ký tài khoản cho nhân viên
-    @PostMapping(value = "/create")
-    public ResponseEntity<Object> createEmployee(@RequestBody @Valid EmployeeDTO employeeDTO, BindingResult bindingResult) {
-
-        //        Kiểm tra email và mã nhân viên có tồn tại trong DB hay không
-        if(employeeService.existsEmployeeByCode(employeeDTO.getEmployeeCode())){
-            bindingResult.rejectValue("employeeCode", "Mã nhân viên đã tồn tại!");
-        }
-        else if(employeeService.existsEmployeeByEmail(employeeDTO.getEmployeeEmail())){
-            System.out.println("Test");
-            bindingResult.rejectValue("employeeEmail", "Email đã tồn tại!");
-        }
-        if (bindingResult.hasErrors()) {
-            return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
-        }
-
-
-
-        //tạo tài khoản cho nhân viên với username là email và mật khẩu mặc định là 123456
-        Employee employee = new Employee();
-        BeanUtils.copyProperties(employeeDTO, employee);
-        AppUser appUser = new AppUser();
-        appUser.setAppUserName(employee.getEmployeeEmail());
-        appUser.setAppUserPassword("123456");
-        employeeService.createEmployeeAccount(appUser);
-        appUser = appUserService.findAppUserByEmail(appUser.getAppUserName());
-        employee.setAppUser(appUser);
-
-        //set role
-        List<Role> roleList = new ArrayList<>();
-        Role role = new Role();
-        if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            role.setRoleId(1);
-        } else {
-            role.setRoleId(2);
-        }
-        roleList.add(role);
-        appUser.setRoles(roleList);
-
-        //tạo mới nhân viên
-        employee.setEmployeeDeleteFlag(false);
-        employeeService.saveEmployee(employee);
-
-        return new ResponseEntity<>(HttpStatus.OK);
+    @GetMapping(value = "/list")
+    public ResponseEntity<Object> getListEmployee(){
+        List<Employee> employeeList = employeeService.findALL();
+        return new ResponseEntity<>(employeeList,HttpStatus.OK);
     }
+
 
     //Bảo chỉnh sửa thông tin nhân viên
     @PatchMapping(value = "/update/{id}")
@@ -111,10 +71,52 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.findEmployeeByID(id), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/list")
-    public ResponseEntity<Object> getListEmployee(){
-        List<Employee> employeeList = employeeService.findALL();
-        return new ResponseEntity<>(employeeList,HttpStatus.OK);
+    //Bảo thêm mới nhân viên và đăng ký tài khoản cho nhân viên
+    @PostMapping(value = "/create")
+    public ResponseEntity<Object> createEmployee(@RequestBody @Valid EmployeeDTO employeeDTO, BindingResult bindingResult) {
+
+
+//        Kiểm tra email và mã nhân viên có tồn tại trong DB hay không
+        if(employeeService.existsEmployeeByCode(employeeDTO.getEmployeeCode())){
+            System.out.println("Test");
+            bindingResult.rejectValue("employeeCode", "Mã nhân viên đã tồn tại!");
+        }
+        if(employeeService.existsEmployeeByEmail(employeeDTO.getEmployeeEmail())){
+            System.out.println("Test");
+            bindingResult.rejectValue("employeeEmail", "Email đã tồn tại!");
+        }
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
+        }
+        //tạo tài khoản cho nhân viên với username là email và mật khẩu mặc định là 123456
+        Employee employee = new Employee();
+        BeanUtils.copyProperties(employeeDTO, employee);
+        AppUser appUser = new AppUser();
+        appUser.setAppUserName(employee.getEmployeeEmail());
+        appUser.setAppUserPassword("123456");
+        employeeService.createEmployeeAccount(appUser);
+        appUser = appUserService.findAppUserByEmail(appUser.getAppUserName());
+        employee.setAppUser(appUser);
+
+        //set role
+        List<Role> roleList = new ArrayList<>();
+        Role role = new Role();
+        if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
+            role.setRoleId(2);
+        } else {
+            role.setRoleId(1);
+        }
+        roleList.add(role);
+        appUser.setRoles(roleList);
+
+        //tạo mới nhân viên
+        employee.setEmployeeDeleteFlag(false);
+        employeeService.saveEmployee(employee);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
+
+
 }
+

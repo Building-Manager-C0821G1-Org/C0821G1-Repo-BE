@@ -62,10 +62,12 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
             "where employee_email =?1", nativeQuery = true)
     Employee existsEmployeeByEmail(String employeeEmail);
 
-
     //Bảo kiểm tra mã nhân viên có tồn tại trong DB hay không
     @Query(value = "SELECT * " +
             "from employee  " +
             "where employee_code =?1", nativeQuery = true)
     Employee existsEmployeeByCode(String employeeCode);
+
+
+
 }

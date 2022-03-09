@@ -1,6 +1,5 @@
 package com.c0821g1.sprint1.entity.security;
 
-import com.c0821g1.sprint1.entity.employee.Employee;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

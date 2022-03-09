@@ -51,6 +51,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Boolean existsEmployeeByCode(String employeeCode) {
+        return employeeRepository.existsEmployeeByCode(employeeCode) != null;
+    }
+
+    @Override
     public List<Employee> findALL() {
         return employeeRepository.findAll();
     }
@@ -61,8 +66,5 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.save(employee);
     }
     
-    @Override
-    public Boolean existsEmployeeByCode(String employeeCode) {
-        return employeeRepository.existsEmployeeByCode(employeeCode) != null;
-    }
+   
 }
