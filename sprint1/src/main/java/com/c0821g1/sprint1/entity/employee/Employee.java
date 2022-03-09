@@ -33,8 +33,6 @@ public class Employee {
     @JoinColumn(name = "employee_position_id", nullable = false)
     private EmployeePosition employeePosition;
 
-    @OneToMany(mappedBy = "employee")
-    private List<AppUser> appUserList;
 
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.MERGE})
     private AppUser appUser;

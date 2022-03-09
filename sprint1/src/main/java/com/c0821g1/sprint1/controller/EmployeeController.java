@@ -33,17 +33,20 @@ public class EmployeeController {
     //Bảo thêm mới nhân viên và đăng ký tài khoản cho nhân viên
     @PostMapping(value = "/create")
     public ResponseEntity<Object> createEmployee(@RequestBody @Valid EmployeeDTO employeeDTO, BindingResult bindingResult) {
+
+        //        Kiểm tra email và mã nhân viên có tồn tại trong DB hay không
+        if(employeeService.existsEmployeeByCode(employeeDTO.getEmployeeCode())){
+            bindingResult.rejectValue("employeeCode", "Mã nhân viên đã tồn tại!");
+        }
+        else if(employeeService.existsEmployeeByEmail(employeeDTO.getEmployeeEmail())){
+            System.out.println("Test");
+            bindingResult.rejectValue("employeeEmail", "Email đã tồn tại!");
+        }
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
         }
 
-        //Kiểm tra email có tồn tại trong DB
-//        List listErrors = new ArrayList();
-//        if(employeeService.existsEmployeeByEmail(employeeDTO.getEmployeeEmail())){
-//            System.out.println("Test");
-//            listErrors.add("Email đã tồn tại");
-//            return ResponseEntity.badRequest().body(listErrors);
-//        }
+
 
         //tạo tài khoản cho nhân viên với username là email và mật khẩu mặc định là 123456
         Employee employee = new Employee();
@@ -59,9 +62,9 @@ public class EmployeeController {
         List<Role> roleList = new ArrayList<>();
         Role role = new Role();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            role.setRoleId(2);
-        } else {
             role.setRoleId(1);
+        } else {
+            role.setRoleId(2);
         }
         roleList.add(role);
         appUser.setRoles(roleList);
@@ -74,7 +77,7 @@ public class EmployeeController {
     }
 
     //Bảo chỉnh sửa thông tin nhân viên
-    @PatchMapping(value = "/edit/{id}")
+    @PatchMapping(value = "/update/{id}")
     public ResponseEntity<Object> updateEmployee(@RequestBody @Valid EmployeeDTO employeeDTO,
                                                  BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -90,9 +93,9 @@ public class EmployeeController {
         List<Role> roleList =new ArrayList<>();
         Role role = new Role();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            role.setRoleId(2);
-        } else {
             role.setRoleId(1);
+        } else {
+            role.setRoleId(2);
         }
         roleList.add(role);
         appUser.setRoles(roleList);
@@ -101,6 +104,7 @@ public class EmployeeController {
         employeeService.editEmployee(employee);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
     //  Bảo tìm kiếm nhân viên theo id
     @GetMapping(value = "/{id}")
     public ResponseEntity<Employee> findByID(@PathVariable Integer id) {

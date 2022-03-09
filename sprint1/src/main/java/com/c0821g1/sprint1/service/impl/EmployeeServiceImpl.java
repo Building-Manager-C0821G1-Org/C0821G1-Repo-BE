@@ -60,4 +60,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void saveEmployee(Employee employee) {
         employeeRepository.save(employee);
     }
+    
+    @Override
+    public Boolean existsEmployeeByCode(String employeeCode) {
+        return employeeRepository.existsEmployeeByCode(employeeCode) != null;
+    }
 }
