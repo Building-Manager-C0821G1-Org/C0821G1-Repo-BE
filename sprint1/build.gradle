@@ -16,10 +16,12 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    // https://mvnrepository.com/artifact/org.hibernate.hql/hibernate-hql-parser
-    implementation group: 'org.hibernate.hql', name: 'hibernate-hql-parser', version: '1.1.2.Final'
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    testImplementation 'org.springframework.security:spring-security-test'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.6.0'
+
 }
 
 tasks.named('test') {
@@ -33,5 +35,14 @@ sonarqube {
         property 'sonar.login', 'd64d546e682430442e912dc022425b698175efc6'
         property 'sonar.projectKey', 'C0821G1_ReviewCode_PhienLD'
         property 'sonar.projectName', 'C0821G1_ReviewCode_PhienLD'
+    }
+}
+
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://172.16.0.50:9000/'
+        property 'sonar.login', 'd64d546e682430442e912dc022425b698175efc6'
+        property 'sonar.projectKey', 'C0821G1_ReviewCode_DuDH'
+        property 'sonar.projectName', 'C0821G1_ReviewCode_DuDH'
     }
 }

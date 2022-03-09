@@ -2,10 +2,10 @@ package com.c0821g1.sprint1.entity.floor;
 
 import com.c0821g1.sprint1.entity.space.Spaces;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnJava;
 
 import javax.persistence.*;
 import java.util.List;
-//@Table("floors")
 @Entity()
 public class Floors {
     @Id
@@ -23,12 +23,10 @@ public class Floors {
     private Integer floorDeleteFlag;
 
     @ManyToOne
-    @JsonBackReference
     @JoinColumn(name = "floor_type_id",nullable = false)
     private FloorsType floorsType;
 
     @ManyToOne
-    @JsonBackReference
     @JoinColumn(name = "floor_status_id",nullable = false)
     private FloorsStatus floorsStatus;
 
