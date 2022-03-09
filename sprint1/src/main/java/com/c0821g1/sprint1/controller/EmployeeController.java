@@ -4,7 +4,7 @@ package com.c0821g1.sprint1.controller;
 import com.c0821g1.sprint1.dto.EmployeeDTO;
 import com.c0821g1.sprint1.entity.employee.Employee;
 import com.c0821g1.sprint1.entity.security.AppUser;
-import com.c0821g1.sprint1.entity.security.Roles;
+import com.c0821g1.sprint1.entity.security.Role;
 import com.c0821g1.sprint1.service.AppUserService;
 import com.c0821g1.sprint1.service.EmployeeService;
 import org.springframework.beans.BeanUtils;
@@ -58,15 +58,15 @@ public class EmployeeController {
         employee.setAppUser(appUser);
 
         //set role
-        List<Roles> rolesList = new ArrayList<>();
-        Roles roles = new Roles();
+        List<Role> roleList = new ArrayList<>();
+        Role role = new Role();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            roles.setRoleId(2);
+            role.setRoleId(2);
         } else {
-            roles.setRoleId(1);
+            role.setRoleId(1);
         }
-        rolesList.add(roles);
-        appUser.setRoles(rolesList);
+        roleList.add(role);
+        appUser.setRoles(roleList);
 
         //tạo mới nhân viên
         employee.setEmployeeDeleteFlag(false);
@@ -89,15 +89,15 @@ public class EmployeeController {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
         AppUser appUser = appUserService.findAppUserByEmail(employeeDTO.getAppUser().getAppUserName());
-        List<Roles> rolesList =new ArrayList<>();
-        Roles roles = new Roles();
+        List<Role> roleList =new ArrayList<>();
+        Role role = new Role();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            roles.setRoleId(2);
+            role.setRoleId(2);
         } else {
-            roles.setRoleId(1);
+            role.setRoleId(1);
         }
-        rolesList.add(roles);
-        appUser.setRoles(rolesList);
+        roleList.add(role);
+        appUser.setRoles(roleList);
 
         // chỉnh sửa nhân viên
         employeeService.editEmployee(employee);

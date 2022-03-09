@@ -19,14 +19,14 @@ public class AppUser {
 //    @JoinColumn(name = "employee_id",nullable = false)
 //    private Employee employee;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, targetEntity = Roles.class)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, targetEntity = Role.class)
     @JsonBackReference
-    private List<Roles> roles;
+    private List<Role> roles;
 
     public AppUser() {
     }
 
-    public AppUser(int appUserId, String appUserName, String appUserPassword, List<Roles> roles) {
+    public AppUser(int appUserId, String appUserName, String appUserPassword, List<Role> roles) {
         this.appUserId = appUserId;
         this.appUserName = appUserName;
         this.appUserPassword = appUserPassword;
@@ -34,11 +34,11 @@ public class AppUser {
         this.roles = roles;
     }
 
-    public List<Roles> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Roles> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 
