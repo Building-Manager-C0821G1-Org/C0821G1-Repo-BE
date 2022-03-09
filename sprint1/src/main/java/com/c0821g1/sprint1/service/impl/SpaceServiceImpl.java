@@ -39,4 +39,9 @@ public class SpaceServiceImpl implements SpaceService {
                 spaces.getSpaceManagerFee(),spaces.getSpaceNote(),spaces.getSpacePrice(),
                 spaces.getSpaceStatus().getSpaceStatusId(),spaces.getSpacesType().getSpaceTypeId(), spaces.getSpaceId());
     }
+
+    @Override
+    public boolean existsSpaceByCode(String spaceCode) {
+        return spaceRepository.existsSpaceByCode(spaceCode)!=null;
+    }
 }

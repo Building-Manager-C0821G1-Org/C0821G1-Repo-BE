@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
 @Repository
 public interface SpaceRepository extends JpaRepository<Spaces,Integer> {
 
@@ -31,4 +30,8 @@ public interface SpaceRepository extends JpaRepository<Spaces,Integer> {
                    String space_image, String space_manager_fee, String space_note,
                    String space_price, Integer space_status_id, Integer space_type_id, Integer space_id);
 
+    @Query(value = "SELECT * " +
+            "from spaces  " +
+            "where space_code =?1", nativeQuery = true)
+    Spaces existsSpaceByCode(String spaceCode);
 }

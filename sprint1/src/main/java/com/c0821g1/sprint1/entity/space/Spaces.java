@@ -1,6 +1,5 @@
 package com.c0821g1.sprint1.entity.space;
 
-
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.floor.Floors;
 import com.fasterxml.jackson.annotation.JsonBackReference;

@@ -12,4 +12,7 @@ public interface SpaceService {
     void save(Spaces spaces);
 
     void editSpace(Spaces spaces);
+
+    boolean existsSpaceByCode(String spaceCode);
+
 }
