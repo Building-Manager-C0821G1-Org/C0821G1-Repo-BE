@@ -17,6 +17,26 @@ import java.util.List;
                 "join spaces_status stt on s.space_status_id = stt.space_status_id\n" +
                 "where s.space_delete_flag = 1",
         resultSetMapping = "Mapping.SpaceListDTO")
+@NamedNativeQuery(name = "Spaces.searchSpace",
+        query = "SELECT s.space_id AS spaceId, s.space_code AS spaceCode, st.space_type_name AS spaceTypeName, s.space_area AS spaceArea, stt.spacer_status_name AS spaceStatusName, s.space_price AS spacePrice, s.space_manager_fee AS spaceManagerFee\n" +
+                "FROM spaces s \n" +
+                "JOIN floors f ON s.floor_id = f.floor_id \n" +
+                "JOIN spaces_type st ON st.space_type_id = s.space_type_id \n" +
+                "JOIN spaces_status stt ON stt.space_status_id = s.space_status_id\n" +
+                "WHERE f.floor_name LIKE concat('%',?1,'%') AND \n" +
+                "s.space_code LIKE concat('%',?2,'%') AND\n" +
+                "s.space_area LIKE concat('%',?3,'%') AND\n" +
+                "st.space_type_name LIKE concat('%',?4,'%') AND\n" +
+                "stt.spacer_status_name LIKE concat('%',?5,'%') AND\n" +
+                "s.space_delete_flag = 1 ",
+        resultSetMapping = "Mapping.SpaceListDTO")
+@NamedNativeQuery(name = "Spaces.findSpaceById",
+        query = "SELECT s.space_id AS spaceId, s.space_code AS spaceCode, st.space_type_name AS spaceTypeName, s.space_area AS spaceArea, stt.spacer_status_name AS spaceStatusName, s.space_price AS spacePrice, s.space_manager_fee AS spaceManagerFee\n" +
+                "from spaces s \n" +
+                "join spaces_type st on s.space_type_id = st.space_type_id\n" +
+                "join spaces_status stt on s.space_status_id = stt.space_status_id\n" +
+                "where s.space_id = ?1",
+        resultSetMapping = "Mapping.SpaceListDTO")
 @SqlResultSetMapping(name = "Mapping.SpaceListDTO",
         classes = @ConstructorResult(targetClass = SpaceListDTO.class,
                 columns = {@ColumnResult(name = "spaceId"),
@@ -26,12 +46,12 @@ import java.util.List;
                         @ColumnResult(name = "spaceStatusName"),
                         @ColumnResult(name = "spacePrice"),
                         @ColumnResult(name = "spaceManagerFee")
-        }))
+                }))
 @Entity
 public class Spaces {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int spaceId;
+    private Integer spaceId;
     private String spaceCode;
     private String spaceArea;
     private String spacePrice;
@@ -55,14 +75,14 @@ public class Spaces {
     @JsonManagedReference
     private Floors floors;
 
-    @OneToMany(mappedBy = "spaces",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "spaces", cascade = CascadeType.ALL)
     @JsonBackReference(value = "spaces")
     private List<Contract> contractList;
 
     public Spaces() {
     }
 
-    public Spaces(int spaceId, String spaceCode, String spaceArea, String spacePrice, String spaceManagerFee, String spaceNote, String spaceImage, Boolean spaceDeleteFlag, SpacesType spacesType, SpacesStatus spaceStatus, Floors floors, List<Contract> contractList) {
+    public Spaces(Integer spaceId, String spaceCode, String spaceArea, String spacePrice, String spaceManagerFee, String spaceNote, String spaceImage, Boolean spaceDeleteFlag, SpacesType spacesType, SpacesStatus spaceStatus, Floors floors, List<Contract> contractList) {
         this.spaceId = spaceId;
         this.spaceCode = spaceCode;
         this.spaceArea = spaceArea;
@@ -93,11 +113,11 @@ public class Spaces {
         this.floors = floors;
     }
 
-    public int getSpaceId() {
+    public Integer getSpaceId() {
         return spaceId;
     }
 
-    public void setSpaceId(int spaceId) {
+    public void setSpaceId(Integer spaceId) {
         this.spaceId = spaceId;
     }
 

@@ -8,7 +8,6 @@ public class EmployeePosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeePositionId;
-    private String employeePositionName;
 
     @OneToMany(mappedBy = "employeePosition")
     private List<Employee> employeeList;
@@ -16,9 +15,8 @@ public class EmployeePosition {
     public EmployeePosition() {
     }
 
-    public EmployeePosition(int employeePositionId, String employeePositionName, List<Employee> employeeList) {
+    public EmployeePosition(int employeePositionId, List<Employee> employeeList) {
         this.employeePositionId = employeePositionId;
-        this.employeePositionName = employeePositionName;
         this.employeeList = employeeList;
     }
 }

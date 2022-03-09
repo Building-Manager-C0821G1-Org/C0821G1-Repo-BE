@@ -24,22 +24,6 @@ public class Customer {
     private List<Contract> contractList;
 
 
-    public Customer() {
-    }
-
-    public Customer(int customerId, String customerCode, String customerName, String customerIdentifyNumber, String customerEmail, String customerPhone, String customerDateOfBirth, String customerAddress, String customerStatus, Boolean customerDeleteFlag, List<Contract> contractList) {
-        this.customerId = customerId;
-        this.customerCode = customerCode;
-        this.customerName = customerName;
-        this.customerIdentifyNumber = customerIdentifyNumber;
-        this.customerEmail = customerEmail;
-        this.customerPhone = customerPhone;
-        this.customerDateOfBirth = customerDateOfBirth;
-        this.customerAddress = customerAddress;
-        this.customerStatus = customerStatus;
-        this.customerDeleteFlag = customerDeleteFlag;
-        this.contractList = contractList;
-    }
 
     public List<Contract> getContractList() {
         return contractList;

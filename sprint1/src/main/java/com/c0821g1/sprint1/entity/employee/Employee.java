@@ -20,7 +20,6 @@ public class Employee {
     private String employeeEmail;
     private String employeeStartDate;
     private String employeeImage;
-    private Boolean employeeDeleteFlag;
 
     @OneToMany(mappedBy = "employee")
     private List<Contract> contractList;
@@ -29,31 +28,17 @@ public class Employee {
     @JoinColumn(name = "employee_position_id", nullable = false)
     private EmployeePosition employeePosition;
 
-//    @OneToMany(mappedBy = "employee")
-//    private List<AppUser> appUserList;
-
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
     private AppUser appUser;
 
     public Employee() {
     }
 
-
-    public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth, String employeeGender, String employeeAddress, String employeePhone, String employeeEmail, String employeeStartDate, String employeeImage, Boolean employeeDeleteFlag, List<Contract> contractList, EmployeePosition employeePosition, AppUser appUser) {
+    public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth) {
         this.employeeId = employeeId;
         this.employeeCode = employeeCode;
         this.employeeName = employeeName;
         this.employeeDateOfBirth = employeeDateOfBirth;
-        this.employeeGender = employeeGender;
-        this.employeeAddress = employeeAddress;
-        this.employeePhone = employeePhone;
-        this.employeeEmail = employeeEmail;
-        this.employeeStartDate = employeeStartDate;
-        this.employeeImage = employeeImage;
-        this.employeeDeleteFlag = employeeDeleteFlag;
-        this.contractList = contractList;
-        this.employeePosition = employeePosition;
-        this.appUser = appUser;
     }
 
     public AppUser getAppUser() {
@@ -72,13 +57,7 @@ public class Employee {
         this.contractList = contractList;
     }
 
-    public Boolean getCustomerDeleteFlag() {
-        return employeeDeleteFlag;
-    }
 
-    public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
-        this.employeeDeleteFlag = customerDeleteFlag;
-    }
 
     public int getEmployeeId() {
         return employeeId;
@@ -88,13 +67,6 @@ public class Employee {
         this.employeeId = employeeId;
     }
 
-    public Boolean getEmployeeDeleteFlag() {
-        return employeeDeleteFlag;
-    }
-
-    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
-        this.employeeDeleteFlag = employeeDeleteFlag;
-    }
 
     public String getEmployeeCode() {
         return employeeCode;
