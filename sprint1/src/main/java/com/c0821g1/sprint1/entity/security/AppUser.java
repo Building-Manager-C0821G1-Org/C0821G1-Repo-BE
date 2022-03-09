@@ -1,10 +1,11 @@
 package com.c0821g1.sprint1.entity.security;
 
-import org.hibernate.annotations.GenericGenerator;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "app_users")
@@ -19,8 +20,14 @@ public class AppUser {
     private String password;
     private Boolean isEnabled;
     private String verificationCode;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
-    private Set<Role> roles;
+    //    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
+//    private Set<Role> roles;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "app_users_roles",
+            joinColumns = @JoinColumn(name = "app_users_id"),
+            inverseJoinColumns = @JoinColumn(name = "roles_id"))
+    private Set<Role> roles = new HashSet<>();
+
     private Boolean deleted = Boolean.FALSE;
 
     public AppUser() {
@@ -101,15 +108,5 @@ public class AppUser {
         this.roles = roles;
     }
 
-    @Override
-    public String toString() {
-        return "AppUser{" +
-                "id='" + id + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", isEnabled=" + isEnabled +
-                ", verificationCode='" + verificationCode + '\'' +
-                ", roles=" + roles +
-                '}';
-    }
+
 }
