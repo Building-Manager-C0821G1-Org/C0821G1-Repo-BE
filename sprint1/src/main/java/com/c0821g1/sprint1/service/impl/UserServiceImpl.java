@@ -1,55 +1,59 @@
 package com.c0821g1.sprint1.service.impl;
 
-import com.c0821g1.sprint1.dto.ChangePasswordDTO;
-import com.c0821g1.sprint1.entity.user.User;
+import com.c0821g1.sprint1.dto.UserDTO;
+import com.c0821g1.sprint1.entity.security.AppUser;
 import com.c0821g1.sprint1.repository.UserRepository;
 import com.c0821g1.sprint1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.bcrypt.BCrypt;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-//    @Autowired
-//    BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
     @Autowired
     UserRepository userRepository;
 
     @Override
-    public boolean changePassword(int id, ChangePasswordDTO changePasswordDTO) {
-        User user = userRepository.findById(id).orElse(null);
-        String currentPassword = user.getPassword();
-        String targetPassword = changePasswordDTO.getCurrentPassword();
-        String newPassword = changePasswordDTO.getNewPassword();
-        String confirmPassword = changePasswordDTO.getConfirmPassword();
-        System.out.println(user);
-        boolean compareCurrentPassword = compareCurrentPassword(currentPassword, targetPassword);
-        boolean compareNewPasswordAndConfirmPassword = compareNewPasswordAndConfirmPassword(newPassword, confirmPassword);
-        if (!compareCurrentPassword) {
-            return false;
-        }
+    public AppUser changePassword( UserDTO userDTO) {
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+//           String a = bCryptPasswordEncoder.encode("123");
+//           System.out.println("aaa"+a);
+           AppUser appUser = userRepository.findById(userDTO.getId()).orElse(null);
+        System.out.println(appUser.getPassword());
+           if (appUser != null) {
+//               appUser.getPassword()
+//                       .equals(bCryptPasswordEncoder.encode(changePasswordDTO.getCurrentPassword()))
 
-        if (!compareNewPasswordAndConfirmPassword) {
-            return false;
-        }
-        return true;
+               if (bCryptPasswordEncoder.matches(userDTO.getCurrentPassword(),appUser.getPassword())) {
+                   System.out.println("vào");
+                   if (userDTO.getNewPassword().equals(userDTO.getConfirmPassword())) {
+                       appUser.setPassword(bCryptPasswordEncoder.encode(userDTO.getNewPassword()));
+                       System.out.println("hahha" +
+                               appUser.getPassword());
+                       return userRepository.save(appUser);
+                   }
+               }
+           }
+        return null;
     }
 
     @Override
-    public User findById(Integer id) {
+    public AppUser findById(Integer id) {
         return userRepository.findById(id).orElse(null);
     }
 
+
     @Override
-    public void save(User user) {
-        userRepository.save(user);
+    public void save(AppUser appUser) {
+        userRepository.save(appUser);
     }
 
     @Override
-    public List<User> findAll() {
+    public List<AppUser> findAll() {
         return userRepository.findAll();
     }
 
@@ -65,7 +69,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private boolean compareNewPasswordAndConfirmPassword(String newPassword, String confirmPassword) {
-        if(newPassword.equals(confirmPassword) ){
+        if (newPassword.equals(confirmPassword)) {
             return false;
         }
         return true;

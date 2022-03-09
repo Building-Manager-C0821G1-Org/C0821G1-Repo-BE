@@ -1,5 +1,8 @@
 package com.c0821g1.sprint1.dto;
 
+import com.sun.istack.NotNull;
+
+
 public class UserDTO {
     private Integer id;
     private String currentPassword;

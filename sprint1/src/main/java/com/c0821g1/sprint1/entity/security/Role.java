@@ -10,8 +10,8 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    @ManyToMany(mappedBy = "roles")
-    private Set<AppUser> appUsers;
+//    @ManyToMany(mappedBy = "roles")
+//    private Set<AppUser> appUsers;
 
     public Role() {
     }
@@ -34,13 +34,13 @@ public class Role {
         this.id = id;
     }
 
-    public Set<AppUser> getAppUsers() {
-        return appUsers;
-    }
-
-    public void setAppUsers(Set<AppUser> appUsers) {
-        this.appUsers = appUsers;
-    }
+//    public Set<AppUser> getAppUsers() {
+//        return appUsers;
+//    }
+//
+//    public void setAppUsers(Set<AppUser> appUsers) {
+//        this.appUsers = appUsers;
+//    }
 
     public String getName() {
         return name;
@@ -50,11 +50,5 @@ public class Role {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Role{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
+
 }
