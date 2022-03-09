@@ -1,6 +1,5 @@
 package com.c0821g1.sprint1.service.impl;
 
-import com.c0821g1.sprint1.dto.CustomerDTO;
 import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.repository.CustomerRepository;
 import com.c0821g1.sprint1.service.CustomerService;
@@ -9,7 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 

@@ -4,15 +4,12 @@ import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 
@@ -26,9 +23,7 @@ public class CustomerController {
     /**
      * created by VyLTT
      * method getAllCustomer with pageable
-     * <p>
      * @param pageable
-     *
      * @return
      */
     @GetMapping(value = "/list")
@@ -43,21 +38,20 @@ public class CustomerController {
 //          VyLTT- detail customer
     @GetMapping(value = "/{id}")
     public ResponseEntity<Customer> getDetailCustomer(@PathVariable Integer id) {
-        Customer customerObj = this.customerService.findById(id).get();
-        if (customerObj == null) {
+        Optional<Customer> customerObj = this.customerService.findById(id);
+        if (!customerObj.isPresent()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(customerObj, HttpStatus.OK);
+        return new ResponseEntity<>((Customer) customerObj.get(), HttpStatus.OK);
     }
 
     //      VyLTT- delete customer
     @DeleteMapping(value = "/delete/{id}")
     public ResponseEntity<Customer> deleteCustomer(@PathVariable("id") Integer id) {
         Optional<Customer> customerObj = this.customerService.findById(id);
-        if (customerObj == null) {
+        if (!customerObj.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-//        customerObj.setCustomerDeleteFlag(true);
         this.customerService.deleteCustomer(id);
         return new ResponseEntity<>(customerObj.get(), HttpStatus.OK);
     }
@@ -71,7 +65,6 @@ public class CustomerController {
             @RequestParam(defaultValue = "") String customer_phone,
             @RequestParam(defaultValue = "") String customer_identify_number
     ) {
-//        Pageable pageable = PageRequest.of(page, 10, Sort.by("customer_id"));
         Page<Customer> customersNewPage = customerService.findCustomerByNameAndEmailAndPhoneAndIdentify
                 (pageable, customer_name, customer_email, customer_phone, customer_identify_number);
 

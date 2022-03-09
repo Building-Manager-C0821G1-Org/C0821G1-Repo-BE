@@ -29,7 +29,10 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer customerId, String customerCode, String customerName, String customerIdentifyNumber, String customerEmail, String customerPhone, String customerDateOfBirth, String customerAddress, String customerStatus, Boolean customerDeleteFlag, List<Contract> contractList) {
+    public Customer(Integer customerId, String customerCode, String customerName,
+                    String customerIdentifyNumber, String customerEmail, String customerPhone,
+                    String customerDateOfBirth, String customerAddress, String customerStatus,
+                    Boolean customerDeleteFlag, List<Contract> contractList) {
         this.customerId = customerId;
         this.customerCode = customerCode;
         this.customerName = customerName;
@@ -41,9 +44,6 @@ public class Customer {
         this.customerStatus = customerStatus;
         this.customerDeleteFlag = customerDeleteFlag;
         this.contractList = contractList;
-    }
-
-    public Customer(Integer customerId, String customerCode, String customerName, String customerIdentifyNumber, String customerEmail, String customerPhone, String customerDateOfBirth, String customerAddress, String customerStatus, Boolean customerDeleteFlag) {
     }
 
     public List<Contract> getContractList() {
