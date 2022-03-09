@@ -19,11 +19,6 @@ public class FloorsType {
     public FloorsType() {
     }
 
-    public FloorsType(Integer floorTypeId, String floorTypeName, List<Floors> floors) {
-        this.floorTypeId = floorTypeId;
-        this.floorTypeName = floorTypeName;
-        this.floors = floors;
-    }
 
     public Integer getFloorTypeId() {
         return floorTypeId;

@@ -4,8 +4,6 @@ import com.c0821g1.sprint1.entity.floors.Floors;
 import com.c0821g1.sprint1.repository.FloorsRepository;
 import com.c0821g1.sprint1.service.FloorsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +17,7 @@ public class FloorServiceImpl implements FloorsService {
     @Override
     public List<Floors> findAllFloors() {
 
-        return this.floorsRepository.findAll();
+        return this.floorsRepository.findAllFloors();
     }
 
     @Override

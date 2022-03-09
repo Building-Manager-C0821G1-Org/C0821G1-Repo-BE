@@ -23,9 +23,9 @@ public class FloorsRestController {
      * @param
      * @returnResponseEntity<>(floors, HttpStatus.OK)
      */
-    @GetMapping(value = "/list")
+    @GetMapping("/list")
     public ResponseEntity<List<Floors>> findAllFloors() {
-        List<Floors> floors = this.floorService.findAllFloors();
+        List<Floors> floors = floorService.findAllFloors();
         if (floors.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -48,22 +48,6 @@ public class FloorsRestController {
     }
     /**
      * Created: DuyNP
-     * Method: delete floors by id
-     * @param id
-     * @return ResponseEntity<>(HttpStatus.OK)
-     */
-    @DeleteMapping(value = "/delete/{id}")
-    public ResponseEntity<Floors> deleteFloorsById(@PathVariable Integer id) {
-        Optional<Floors> floors = this.floorService.findFloorsById(id);
-        if (!floors.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        this.floorService.deleteFloorsById(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    /**
-     * Created: DuyNP
      * Method: delete flag floors by id
      * @param id
      * @return ResponseEntity<>(floors,HttpStatus.OK);
@@ -75,7 +59,7 @@ public class FloorsRestController {
         if (floors==null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        floors.setFloorDeleteFlag(0);
+        floors.setFloorDeleteFlag(1);
         this.floorService.editFloors(floors);
 
         return new ResponseEntity<>(HttpStatus.OK);
