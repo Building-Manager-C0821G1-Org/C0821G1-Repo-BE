@@ -1,65 +1,60 @@
 package com.c0821g1.sprint1.entity.space;
 
 
-import com.c0821g1.sprint1.entity.contract.Contract;
-import com.c0821g1.sprint1.entity.floor.Floors;
+//import com.c0821g1.sprint1.entity.contract.Contract;
+import com.c0821g1.sprint1.entity.floors.Floors;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "spaces")
 public class Spaces {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "spaces_id",nullable = false)
     private int spaceId;
+    @JoinColumn(name = "space_code",nullable = false)
     private String spaceCode;
+    @JoinColumn(name = "space_area",nullable = false)
     private String spaceArea;
+    @JoinColumn(name = "space_price",nullable = false)
     private String spacePrice;
+    @JoinColumn(name = "space_manager_fee",nullable = false)
     private String spaceManagerFee;
+    @JoinColumn(name = "space_note",nullable = false)
     private String spaceNote;
+    @JoinColumn(name = "space_image",nullable = false)
     private String spaceImage;
+    @JoinColumn(name = "delete_flag",nullable = false)
     private Boolean spaceDeleteFlag;
 
     @ManyToOne
-    @JoinColumn(name = "space_type_id",nullable = false)
+    @JoinColumn(name = "space_type",nullable = false)
     private SpacesType spacesType;
 
     @ManyToOne
-    @JoinColumn(name = "space_status_id",nullable = false)
+    @JoinColumn(name = "space_status",nullable = false)
     private SpacesStatus spaceStatus;
 
     @ManyToOne
-    @JoinColumn(name = "floor_id",nullable = false)
+    @JoinColumn(name = "floors",nullable = false)
     private Floors floors;
 
-    @OneToMany(mappedBy = "spaces")
-    private List<Contract> contractList;
+//    @OneToMany(mappedBy = "spaces")
+//    private List<Contract> contractList;
 
     public Spaces() {
     }
 
-    public Spaces(int spaceId, String spaceCode, String spaceArea, String spacePrice, String spaceManagerFee, String spaceNote, String spaceImage, Boolean spaceDeleteFlag, SpacesType spacesType, SpacesStatus spaceStatus, Floors floors, List<Contract> contractList) {
-        this.spaceId = spaceId;
-        this.spaceCode = spaceCode;
-        this.spaceArea = spaceArea;
-        this.spacePrice = spacePrice;
-        this.spaceManagerFee = spaceManagerFee;
-        this.spaceNote = spaceNote;
-        this.spaceImage = spaceImage;
-        this.spaceDeleteFlag = spaceDeleteFlag;
-        this.spacesType = spacesType;
-        this.spaceStatus = spaceStatus;
-        this.floors = floors;
-        this.contractList = contractList;
-    }
 
-    public List<Contract> getContractList() {
-        return contractList;
-    }
 
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
-    }
+//    public List<Contract> getContractList() {
+//        return contractList;
+//    }
+//
+//    public void setContractList(List<Contract> contractList) {
+//        this.contractList = contractList;
+//    }
 
     public Floors getFloors() {
         return floors;
