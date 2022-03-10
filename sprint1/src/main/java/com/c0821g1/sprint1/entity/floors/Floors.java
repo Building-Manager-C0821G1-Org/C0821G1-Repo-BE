@@ -11,20 +11,29 @@ import java.util.List;
 public class Floors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "floor_id", nullable = false)
     private Integer floorId;
+    @JoinColumn(name = "floor_code", nullable = false)
     private String floorCode;
+    @JoinColumn(name = "floor_name", nullable = false)
     private String floorName;
+    @JoinColumn(name = "floor_area", nullable = false)
     private Double floorArea;
+    @JoinColumn(name = "floor_delete_flag", nullable = false)
+    private Integer floorDeleteFlag;
+    @JoinColumn(name = "floor_capacity", nullable = false)
     private Integer floorCapacity;
 
-    private Integer floorDeleteFlag;
-    @ManyToOne(targetEntity = FloorsType.class)
-    @JoinColumn(name = "floors_type", nullable = false)
 
+    @ManyToOne(targetEntity = FloorsType.class)
+    @JoinColumn(name = "floor_type", nullable = false)
     private FloorsType floorsType;
+
+
     @ManyToOne(targetEntity = FloorsStatus.class)
-    @JoinColumn(name = "floors_status", nullable = false)
+    @JoinColumn(name = "floor_status", nullable = false)
     private FloorsStatus floorsStatus;
+
 
     @OneToMany(mappedBy = "floors", cascade = CascadeType.REMOVE)
     @JsonBackReference

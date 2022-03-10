@@ -1,18 +1,22 @@
 package com.c0821g1.sprint1.entity.space;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "space_status")
 public class SpacesStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "space_status_id",nullable = false)
     private int spaceStatusId;
-
-    private String spacerStatusName;
+    @JoinColumn(name = "space_status_name",nullable = false)
+    private String spaceStatusName;
 
     @OneToMany(mappedBy = "spaceStatus")
+    @JsonBackReference
     private List<Spaces> spacesList;
 
 
@@ -28,12 +32,12 @@ public class SpacesStatus {
         this.spaceStatusId = spaceStatusId;
     }
 
-    public String getSpacerStatusName() {
-        return spacerStatusName;
+    public String getSpaceStatusName() {
+        return spaceStatusName;
     }
 
-    public void setSpacerStatusName(String spacerStatusName) {
-        this.spacerStatusName = spacerStatusName;
+    public void setSpaceStatusName(String spaceStatusName) {
+        this.spaceStatusName = spaceStatusName;
     }
 
     public List<Spaces> getSpacesList() {
