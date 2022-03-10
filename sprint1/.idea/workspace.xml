@@ -33,15 +33,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/SpaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/SpaceController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/Spaces.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/Spaces.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/SpaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/SpaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/space/SpacesDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/space/SpacesDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +242,8 @@
       <workItem from="1646660094860" duration="1189000" />
       <workItem from="1646703962944" duration="10233000" />
       <workItem from="1646788823575" duration="12780000" />
-      <workItem from="1646879011631" duration="3530000" />
+      <workItem from="1646879011631" duration="5274000" />
+      <workItem from="1646900078236" duration="886000" />
     </task>
     <servers />
   </component>
@@ -282,38 +279,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646378329448" />
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom" timestamp="1646883880274">
+    <state width="1323" height="173" key="GridCell.Tab.0.bottom" timestamp="1646899743779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646883880274" />
-    <state width="1323" height="173" key="GridCell.Tab.0.center" timestamp="1646883880274">
+    <state width="1323" height="173" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
+    <state width="1323" height="173" key="GridCell.Tab.0.center" timestamp="1646899743778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646883880274" />
-    <state width="1323" height="173" key="GridCell.Tab.0.left" timestamp="1646883880274">
+    <state width="1323" height="173" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646899743778" />
+    <state width="1323" height="173" key="GridCell.Tab.0.left" timestamp="1646899743778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646883880274" />
-    <state width="1323" height="173" key="GridCell.Tab.0.right" timestamp="1646883880274">
+    <state width="1323" height="173" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646899743778" />
+    <state width="1323" height="173" key="GridCell.Tab.0.right" timestamp="1646899743778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646883880274" />
-    <state width="1323" height="173" key="GridCell.Tab.1.bottom" timestamp="1646883880275">
+    <state width="1323" height="173" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646899743778" />
+    <state width="1323" height="173" key="GridCell.Tab.1.bottom" timestamp="1646899743779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646883880275" />
-    <state width="1323" height="173" key="GridCell.Tab.1.center" timestamp="1646883880275">
+    <state width="1323" height="173" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
+    <state width="1323" height="173" key="GridCell.Tab.1.center" timestamp="1646899743779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1646883880275" />
-    <state width="1323" height="173" key="GridCell.Tab.1.left" timestamp="1646883880275">
+    <state width="1323" height="173" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
+    <state width="1323" height="173" key="GridCell.Tab.1.left" timestamp="1646899743779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1646883880275" />
-    <state width="1323" height="173" key="GridCell.Tab.1.right" timestamp="1646883880275">
+    <state width="1323" height="173" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
+    <state width="1323" height="173" key="GridCell.Tab.1.right" timestamp="1646899743779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1646883880275" />
+    <state width="1323" height="173" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
     <state width="1323" height="214" key="GridCell.Tab.2.bottom" timestamp="1646829247076">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
