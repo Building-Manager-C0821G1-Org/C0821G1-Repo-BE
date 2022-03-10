@@ -3,18 +3,13 @@ package com.c0821g1.sprint1.entity.employee;
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.security.AppUser;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-<<<<<<< HEAD
-=======
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
->>>>>>> employee-create-BaoNHG
 
 import javax.persistence.*;
 import java.util.List;
 
-<<<<<<< HEAD
-=======
+
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
->>>>>>> employee-create-BaoNHG
 @Entity
 public class Employee {
     @Id
@@ -32,10 +27,7 @@ public class Employee {
     private Boolean employeeDeleteFlag;
 
     @OneToMany(mappedBy = "employee")
-<<<<<<< HEAD
-=======
     @JsonBackReference
->>>>>>> employee-create-BaoNHG
     private List<Contract> contractList;
 
     @ManyToOne
@@ -43,12 +35,8 @@ public class Employee {
     private EmployeePosition employeePosition;
 
 
-<<<<<<< HEAD
+
     @JsonBackReference
-    @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
-    private AppUser appUser;
-    
-=======
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.MERGE})
     private AppUser appUser;
 
@@ -73,13 +61,13 @@ public class Employee {
         this.appUser = appUser;
     }
 
->>>>>>> employee-create-BaoNHG
-    public AppUser getAppUser() {
-        return appUser;
+
+    public Boolean getEmployeeDeleteFlag() {
+        return employeeDeleteFlag;
     }
 
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
+    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
+        this.employeeDeleteFlag = employeeDeleteFlag;
     }
 
     public List<Contract> getContractList() {
@@ -90,12 +78,13 @@ public class Employee {
         this.contractList = contractList;
     }
 
-<<<<<<< HEAD
-    public Boolean getCustomerDeleteFlag() {
-        return employeeDeleteFlag;
+    public AppUser getAppUser() {
+        return appUser;
     }
-=======
->>>>>>> employee-create-BaoNHG
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
+    }
 
     public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
         this.employeeDeleteFlag = customerDeleteFlag;
@@ -109,16 +98,6 @@ public class Employee {
         this.employeeId = employeeId;
     }
 
-<<<<<<< HEAD
-=======
-    public Boolean getEmployeeDeleteFlag() {
-        return employeeDeleteFlag;
-    }
-
-    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
-        this.employeeDeleteFlag = employeeDeleteFlag;
-    }
->>>>>>> employee-create-BaoNHG
 
     public String getEmployeeCode() {
         return employeeCode;

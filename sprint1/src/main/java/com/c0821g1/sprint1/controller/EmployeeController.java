@@ -4,6 +4,7 @@ package com.c0821g1.sprint1.controller;
 import com.c0821g1.sprint1.entity.employee.Employee;
 import com.c0821g1.sprint1.service.EmployeePositionService;
 import com.c0821g1.sprint1.service.EmployeeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 
@@ -15,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
@@ -97,15 +99,11 @@ public class EmployeeController {
         return new ResponseEntity<>(employee.get(),HttpStatus.OK);
     }
 }
-=======
+
+
     AppUserService appUserService;
 
 
-    @GetMapping(value = "/list")
-    public ResponseEntity<Object> getListEmployee(){
-        List<Employee> employeeList = employeeService.findALL();
-        return new ResponseEntity<>(employeeList,HttpStatus.OK);
-    }
 
 
     //Bảo chỉnh sửa thông tin nhân viên

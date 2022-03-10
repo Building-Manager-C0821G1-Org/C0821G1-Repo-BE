@@ -1,7 +1,6 @@
 package com.c0821g1.sprint1.annotation.validator;
 
 import com.c0821g1.sprint1.annotation.EmailConstraint;
-import com.c0821g1.sprint1.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;

@@ -1,26 +1,13 @@
 package com.c0821g1.sprint1.entity.security;
-
-<<<<<<< HEAD
 import javax.persistence.*;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity(name = "roles")
-public class Role {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
-    @ManyToMany(mappedBy = "roles")
-    private Set<AppUser> appUsers;
-=======
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.*;
-import java.util.List;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Entity
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,53 +17,11 @@ public class Role {
     @ManyToMany(mappedBy = "roles")
     @JsonBackReference
     private List<AppUser> appUsers;
->>>>>>> employee-create-BaoNHG
+
 
     public Role() {
     }
 
-<<<<<<< HEAD
-    public Role(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public Role(String name) {
-        this.name = name;
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Role{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-}
-
-
-
-
-
-
-=======
     public Role(int roleId, String roleName, List<AppUser> appUsers) {
         this.roleId = roleId;
         this.roleName = roleName;
@@ -108,4 +53,4 @@ public class Role {
         this.appUsers = appUsers;
     }
 }
->>>>>>> employee-create-BaoNHG
+
