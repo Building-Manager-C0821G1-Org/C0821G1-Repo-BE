@@ -2,14 +2,18 @@ package com.c0821g1.sprint1.entity.security;
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
+
 
 @Entity(name = "roles")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Role {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+//    @ManyToMany(mappedBy = "roles")
+//    private Set<AppUser> appUsers;
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int roleId;
     private String roleName;
@@ -37,6 +41,14 @@ public class Role {
         this.roleId = roleId;
     }
 
+
+//    public Set<AppUser> getAppUsers() {
+//        return appUsers;
+//    }
+//
+//    public void setAppUsers(Set<AppUser> appUsers) {
+//        this.appUsers = appUsers;
+//    }
     public String getRoleName() {
         return roleName;
     }
@@ -53,4 +65,5 @@ public class Role {
         this.appUsers = appUsers;
     }
 }
+
 

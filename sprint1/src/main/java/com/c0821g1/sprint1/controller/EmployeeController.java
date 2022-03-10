@@ -18,14 +18,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-
+import java.util.*;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
-
-
-
 
 @RestController
 @CrossOrigin
@@ -37,6 +32,7 @@ public class EmployeeController {
     EmployeePositionService employeePositionService;
     @Autowired
     AppUserService appUserService;
+
 
     //Hiển thị danh sách
     @GetMapping(value = "/list")
@@ -63,6 +59,7 @@ public class EmployeeController {
         }
         return new ResponseEntity<>(employeeListSearch, HttpStatus.OK);
     }
+
 
     // xóa nhân viên.
     @DeleteMapping("/delete/{id}")
@@ -99,7 +96,7 @@ public class EmployeeController {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
         AppUser appUser = appUserService.findAppUserByEmail(employeeDTO.getAppUser().getUsername());
-        List<Role> roleList = new ArrayList<>();
+        Set<Role> roleList = new HashSet<>();
         Role role = new Role();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
             role.setRoleId(1);
@@ -113,7 +110,6 @@ public class EmployeeController {
         employeeService.editEmployee(employee);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 
 
     //Bảo thêm mới nhân viên và đăng ký tài khoản cho nhân viên
@@ -145,7 +141,7 @@ public class EmployeeController {
         employee.setAppUser(appUser);
 
         //set role
-        List<Role> roleList = new ArrayList<>();
+        Set<Role> roleList = new HashSet<>();
         Role role = new Role();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
             role.setRoleId(2);
@@ -162,6 +158,6 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
 }
+
 
