@@ -15,10 +15,8 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-//    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.springframework.security:spring-security-test'
@@ -28,6 +26,16 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+
+}
+
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://172.16.0.50:9000'
+        property 'sonar.login', 'd64d546e682430442e912dc022425b698175efc6'
+        property 'sonar.projectKey', 'C0821G1_ReviewCode_PhienLD'
+        property 'sonar.projectName', 'C0821G1_ReviewCode_PhienLD'
+    }
 }
 
 sonarqube {

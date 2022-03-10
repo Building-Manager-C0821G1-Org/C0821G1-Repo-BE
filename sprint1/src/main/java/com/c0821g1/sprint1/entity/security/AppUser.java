@@ -1,6 +1,5 @@
 package com.c0821g1.sprint1.entity.security;
 
-import com.c0821g1.sprint1.entity.employee.Employee;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,9 +13,6 @@ public class AppUser {
     private String appUserName;
     private String appUserPassword;
 
-//    @ManyToOne
-//    @JoinColumn(name = "employee_id",nullable = false)
-//    private Employee employee;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
     private List<Role> roles;
