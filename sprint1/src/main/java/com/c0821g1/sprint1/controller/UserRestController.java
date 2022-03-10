@@ -34,7 +34,10 @@ public class UserRestController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         System.out.println("controller" + userDTO);
-        AppUser appUser= userServiceImpl.changePassword(userDTO);
+        AppUser appUser = userServiceImpl.changePassword(userDTO);
+        if(appUser==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
 //        appUser = userServiceImpl.findById(userDTO.getId());
 //        appUser.setPassword(userDTO.getNewPassword());
 //        System.out.println(appUser.toString());
@@ -43,14 +46,14 @@ public class UserRestController {
 
         return new ResponseEntity<>(appUser,HttpStatus.OK);
     }
-    @GetMapping("/getById/{id}")
-    public ResponseEntity<AppUser> getById(@PathVariable Integer id) {
-       AppUser appUser= userServiceImpl.findById(id);
-        if (appUser == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>( appUser ,HttpStatus.OK);
-    }
+//    @GetMapping("/getById/{id}")
+//    public ResponseEntity<AppUser> getById(@PathVariable Integer id) {
+//       AppUser appUser= userServiceImpl.findById(id);
+//        if (appUser == null) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//        return new ResponseEntity<>( appUser ,HttpStatus.OK);
+//    }
 
 //    @PatchMapping("/student/update2")
 //    public ResponseEntity<Student> updateCustomer2( @RequestBody Student student) {

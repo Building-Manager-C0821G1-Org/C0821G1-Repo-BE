@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 //           System.out.println("aaa"+a);
            AppUser appUser = userRepository.findById(userDTO.getId()).orElse(null);
         System.out.println(appUser.getPassword());
-           if (appUser != null) {
+           if (appUser != null ) {
 //               appUser.getPassword()
 //                       .equals(bCryptPasswordEncoder.encode(changePasswordDTO.getCurrentPassword()))
 
@@ -36,6 +36,8 @@ public class UserServiceImpl implements UserService {
                                appUser.getPassword());
                        return userRepository.save(appUser);
                    }
+               } else {
+                   return null;
                }
            }
         return null;

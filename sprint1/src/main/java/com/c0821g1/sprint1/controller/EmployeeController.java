@@ -23,14 +23,14 @@ public class EmployeeController<IEmployeeService> {
     @Autowired
     EmployeeService iEmployeeService;
 
-    @GetMapping(value = "/list")
-    public ResponseEntity<Employee> showEmployee(@RequestParam String username) {
-        Employee employees = iEmployeeService.findEmployeeByAppUser(username);
-        if (employees==null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(employees, HttpStatus.OK);
-    }
+//    @GetMapping(value = "/list")
+//    public ResponseEntity<Employee> showEmployee(@RequestParam String username) {
+//        Employee employees = iEmployeeService.findEmployeeByAppUser(username);
+//        if (employees==null) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//        return new ResponseEntity<>(employees, HttpStatus.OK);
+//    }
 
     @GetMapping("/getById/{id}")
     public ResponseEntity<Employee> getById(@PathVariable Integer id) {
