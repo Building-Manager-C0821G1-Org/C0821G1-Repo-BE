@@ -27,7 +27,7 @@ public class FloorsRestController {
     public ResponseEntity<List<Floors>> findAllFloors() {
         List<Floors> floors = floorService.findAllFloors();
         if (floors.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(floors, HttpStatus.OK);
     }
@@ -42,7 +42,7 @@ public class FloorsRestController {
     public ResponseEntity<Floors> findFloorsById(@PathVariable Integer id) {
         Floors floors = floorService.findById(id);
         if (floors==null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(floors, HttpStatus.OK);
     }
@@ -57,7 +57,7 @@ public class FloorsRestController {
     public ResponseEntity<Floors> deleteFlagFloorsById(@PathVariable Integer id) {
         Floors floors = this.floorService.findById(id);
         if (floors==null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         floors.setFloorDeleteFlag(1);
         this.floorService.editFloors(floors);

@@ -7,29 +7,37 @@ import com.c0821g1.sprint1.entity.floors.Floors;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "spaces")
 public class Spaces {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "spaces_id",nullable = false)
     private int spaceId;
+    @JoinColumn(name = "space_code",nullable = false)
     private String spaceCode;
+    @JoinColumn(name = "space_area",nullable = false)
     private String spaceArea;
+    @JoinColumn(name = "space_price",nullable = false)
     private String spacePrice;
+    @JoinColumn(name = "space_manager_fee",nullable = false)
     private String spaceManagerFee;
+    @JoinColumn(name = "space_note",nullable = false)
     private String spaceNote;
+    @JoinColumn(name = "space_image",nullable = false)
     private String spaceImage;
+    @JoinColumn(name = "delete_flag",nullable = false)
     private Boolean spaceDeleteFlag;
 
     @ManyToOne
-    @JoinColumn(name = "space_type_id",nullable = false)
+    @JoinColumn(name = "space_type",nullable = false)
     private SpacesType spacesType;
 
     @ManyToOne
-    @JoinColumn(name = "space_status_id",nullable = false)
+    @JoinColumn(name = "space_status",nullable = false)
     private SpacesStatus spaceStatus;
 
     @ManyToOne
-    @JoinColumn(name = "floor_id",nullable = false)
+    @JoinColumn(name = "floors",nullable = false)
     private Floors floors;
 
 //    @OneToMany(mappedBy = "spaces")

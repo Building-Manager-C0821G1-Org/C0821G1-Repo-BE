@@ -6,11 +6,13 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = ("floor_status"))
 public class FloorsStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "floor_status_id", nullable = false)
     private Integer floorStatusId;
+    @JoinColumn(name = "floor_status_name", nullable = false)
     private String floorStatusName;
 
     @OneToMany(mappedBy = "floorsStatus")
