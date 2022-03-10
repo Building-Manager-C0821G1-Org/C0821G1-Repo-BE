@@ -22,7 +22,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a369dd-b1cc-448c-9ad2-41e0c433d5a3" name="Default Changelist" comment="" />
+    <list default="true" id="95a369dd-b1cc-448c-9ad2-41e0c433d5a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -268,88 +277,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1646810812892">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1646810812892" />
-    <state x="292" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1646730374065">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="292" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1646730374065" />
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1646366562667">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1646366562667" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1646378329448">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646378329448" />
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom" timestamp="1646899743779">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
-    <state width="1323" height="173" key="GridCell.Tab.0.center" timestamp="1646899743778">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646899743778" />
-    <state width="1323" height="173" key="GridCell.Tab.0.left" timestamp="1646899743778">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646899743778" />
-    <state width="1323" height="173" key="GridCell.Tab.0.right" timestamp="1646899743778">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646899743778" />
-    <state width="1323" height="173" key="GridCell.Tab.1.bottom" timestamp="1646899743779">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="173" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
-    <state width="1323" height="173" key="GridCell.Tab.1.center" timestamp="1646899743779">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="173" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
-    <state width="1323" height="173" key="GridCell.Tab.1.left" timestamp="1646899743779">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="173" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
-    <state width="1323" height="173" key="GridCell.Tab.1.right" timestamp="1646899743779">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="173" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1646899743779" />
-    <state width="1323" height="214" key="GridCell.Tab.2.bottom" timestamp="1646829247076">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="214" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646829247076" />
-    <state width="1323" height="214" key="GridCell.Tab.2.center" timestamp="1646829247076">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="214" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1646829247076" />
-    <state width="1323" height="214" key="GridCell.Tab.2.left" timestamp="1646829247076">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="214" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1646829247076" />
-    <state width="1323" height="214" key="GridCell.Tab.2.right" timestamp="1646829247076">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="214" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1646829247076" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1646366666505">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1646366666505" />
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1646223894826">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1646223894826" />
-    <state x="343" y="77" width="887" height="574" key="git4idea.branch.GitSmartOperationDialog" timestamp="1646367314514">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="343" y="77" width="887" height="574" key="git4idea.branch.GitSmartOperationDialog/0.0.1366.728@0.0.1366.728" timestamp="1646367314514" />
-    <state x="65" y="0" key="new project wizard" timestamp="1646380299220">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1646380299220" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
