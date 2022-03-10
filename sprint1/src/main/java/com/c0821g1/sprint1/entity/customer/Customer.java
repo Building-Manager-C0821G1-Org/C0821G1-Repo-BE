@@ -1,6 +1,6 @@
 package com.c0821g1.sprint1.entity.customer;
 
-//import com.c0821g1.sprint1.entity.contract.Contract;
+import com.c0821g1.sprint1.entity.contract.Contract;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
@@ -31,23 +31,18 @@ public class Customer {
     @JoinColumn(name = "customer_delete_flag", nullable = false)
     private Boolean customerDeleteFlag;
 
-//    @OneToMany(mappedBy = "customer")
-//    @JsonBackReference
-//    private List<Contract> contractList;
+    @OneToMany(mappedBy = "customer")
+    @JsonBackReference
+    private List<Contract> contractList;
+
 
 
     public Customer() {
     }
 
-
-
-//    public List<Contract> getContractList() {
-//        return contractList;
-//    }
-//
-//    public void setContractList(List<Contract> contractList) {
-//        this.contractList = contractList;
-//    }
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
+    }
 
     public int getCustomerId() {
         return customerId;

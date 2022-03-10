@@ -1,5 +1,4 @@
 package com.c0821g1.sprint1.entity.floors;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;

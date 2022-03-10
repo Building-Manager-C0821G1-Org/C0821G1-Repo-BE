@@ -35,7 +35,7 @@ public class CustomerController {
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 
-//          VyLTT- detail customer
+    //          VyLTT- detail customer
     @GetMapping(value = "/{id}")
     public ResponseEntity<Customer> getDetailCustomer(@PathVariable Integer id) {
         Optional<Customer> customerObj = this.customerService.findById(id);

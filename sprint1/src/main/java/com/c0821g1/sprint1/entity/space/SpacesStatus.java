@@ -1,6 +1,7 @@
 package com.c0821g1.sprint1.entity.space;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,8 +14,9 @@ public class SpacesStatus {
     @JoinColumn(name = "space_status_name",nullable = false)
     private String spaceStatusName;
 
+
     @OneToMany(mappedBy = "spaceStatus")
-    @JsonBackReference
+    @JsonBackReference(value = "spaceStatus")
     private List<Spaces> spacesList;
 
 
