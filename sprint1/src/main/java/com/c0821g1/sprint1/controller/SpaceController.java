@@ -22,7 +22,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/spaces")
+@RequestMapping (value = "/spaces")
 public class SpaceController {
 
     @Autowired
@@ -33,22 +33,19 @@ public class SpaceController {
 
     @Autowired
     private SpaceStatusService spaceStatusService;
-
-    //    DuDH - Tạo mới Space
-    @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> registerSpace(@RequestBody @Valid SpacesDTO spacesDTO, BindingResult bindingResult) {
-        if (spaceService.existsSpaceByCode(spacesDTO.getSpaceCode())) {
-            bindingResult.rejectValue("spaceCode", "Mã mặt bằng đã tồn tại.");
+//    DuDH - Tạo mới Space
+    @PostMapping (value = "/create", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> registerSpace (@RequestBody @Valid SpacesDTO spacesDTO, BindingResult bindingResult){
+        if(spaceService.existsSpaceByCode(spacesDTO.getSpaceCode())){
+            bindingResult.rejectValue("spaceCode","Mã mặt bằng đã tồn tại");
         }
-//        if(spacesDTO.getSpaceArea().contains("-")){
-//            bindingResult.rejectValue("spaceArea", "Diện tích không được nhập số âm.");
-//        }
 
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
         }
         Spaces spacesObj = new Spaces();
         BeanUtils.copyProperties(spacesDTO, spacesObj);
+        spacesObj.setSpaceDeleteFlag(true);
         spaceService.saveNewSpace(spacesObj);
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -67,6 +64,7 @@ public class SpaceController {
         }
         Spaces spacesObj = new Spaces();
         BeanUtils.copyProperties(spacesDTO, spacesObj);
+        spacesObj.setSpaceDeleteFlag(true);
         spaceService.editSpace(spacesObj);
         return new ResponseEntity<>(HttpStatus.OK);
     }

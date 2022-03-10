@@ -1,13 +1,11 @@
 package com.c0821g1.sprint1.dto.space;
 
-
-
 import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.entity.space.SpacesStatus;
 import com.c0821g1.sprint1.entity.space.SpacesType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+
 
 
 public class SpacesDTO {

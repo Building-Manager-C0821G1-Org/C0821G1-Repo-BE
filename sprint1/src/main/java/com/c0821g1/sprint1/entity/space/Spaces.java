@@ -1,16 +1,9 @@
 package com.c0821g1.sprint1.entity.space;
 
-
-
 import com.c0821g1.sprint1.dto.SpaceListDTO;
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.floor.Floors;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.c0821g1.sprint1.entity.contract.Contract;
-import com.c0821g1.sprint1.entity.floor.Floors;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -68,18 +61,15 @@ public class  Spaces {
     private Boolean spaceDeleteFlag;
 
     @ManyToOne
-    @JsonManagedReference
     @JoinColumn(name = "space_type_id", nullable = false)
     private SpacesType spacesType;
 
     @ManyToOne
-    @JsonManagedReference
     @JoinColumn(name = "space_status_id", nullable = false)
     private SpacesStatus spaceStatus;
 
     @ManyToOne
     @JoinColumn(name = "floor_id", nullable = false)
-    @JsonManagedReference
     private Floors floors;
 
 
