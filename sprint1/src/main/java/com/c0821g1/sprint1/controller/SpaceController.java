@@ -37,7 +37,7 @@ public class SpaceController {
     @PostMapping (value = "/create", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> registerSpace (@RequestBody @Valid SpacesDTO spacesDTO, BindingResult bindingResult){
         if(spaceService.existsSpaceByCode(spacesDTO.getSpaceCode())){
-            
+            bindingResult.rejectValue("spaceCode","Mã mặt bằng đã tồn tại");
         }
 
         if (bindingResult.hasErrors()) {
@@ -45,6 +45,7 @@ public class SpaceController {
         }
         Spaces spacesObj = new Spaces();
         BeanUtils.copyProperties(spacesDTO, spacesObj);
+        spacesObj.setSpaceDeleteFlag(true);
         spaceService.saveNewSpace(spacesObj);
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -63,6 +64,7 @@ public class SpaceController {
         }
         Spaces spacesObj = new Spaces();
         BeanUtils.copyProperties(spacesDTO, spacesObj);
+        spacesObj.setSpaceDeleteFlag(true);
         spaceService.editSpace(spacesObj);
         return new ResponseEntity<>(HttpStatus.OK);
     }
