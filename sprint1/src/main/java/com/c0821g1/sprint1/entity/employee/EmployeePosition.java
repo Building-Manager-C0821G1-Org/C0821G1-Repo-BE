@@ -1,18 +1,37 @@
 package com.c0821g1.sprint1.entity.employee;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+<<<<<<< HEAD
 
 import javax.persistence.*;
 import java.util.List;
 
+=======
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.List;
+
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+>>>>>>> employee-create-BaoNHG
 @Entity
 public class EmployeePosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
     private int employeePositionId;
     private String employeePositionName;
     @JsonBackReference
     @OneToMany(mappedBy = "employeePosition")
+=======
+    @NotBlank(message = "Lỗi")
+    private int employeePositionId;
+    private String employeePositionName;
+
+    @OneToMany(mappedBy = "employeePosition")
+    @JsonBackReference
+>>>>>>> employee-create-BaoNHG
     private List<Employee> employeeList;
 
     public EmployeePosition() {
