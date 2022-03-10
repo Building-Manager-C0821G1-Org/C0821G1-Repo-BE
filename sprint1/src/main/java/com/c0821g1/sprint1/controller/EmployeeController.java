@@ -77,7 +77,8 @@ public class EmployeeController {
 
 
 //        Kiểm tra email và mã nhân viên có tồn tại trong DB hay không
-        if(employeeService.existsEmployeeByCode(employeeDTO.getEmployeeCode())){
+
+         if(employeeService.existsEmployeeByCode(employeeDTO.getEmployeeCode())){
             System.out.println("Test");
             bindingResult.rejectValue("employeeCode", "Mã nhân viên đã tồn tại!");
         }
