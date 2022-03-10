@@ -1,6 +1,7 @@
 package com.c0821g1.sprint1.entity.security;
 
 
+import javax.management.relation.Role;
 import javax.persistence.*;
 import java.util.List;
 

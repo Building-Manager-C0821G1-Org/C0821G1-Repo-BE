@@ -1,6 +1,6 @@
 package com.c0821g1.sprint1.dto.space;
 
-import com.c0821g1.sprint1.entity.floor.Floors;
+import com.c0821g1.sprint1.entity.floors.Floors;
 import com.c0821g1.sprint1.entity.space.SpacesStatus;
 import com.c0821g1.sprint1.entity.space.SpacesType;
 import javax.validation.constraints.NotBlank;
