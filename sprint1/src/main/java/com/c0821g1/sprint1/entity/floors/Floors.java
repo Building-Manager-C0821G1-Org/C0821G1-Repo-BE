@@ -1,50 +1,47 @@
-package com.c0821g1.sprint1.entity.floor;
+package com.c0821g1.sprint1.entity.floors;
 
 import com.c0821g1.sprint1.entity.space.Spaces;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
-//@Table("floors")
-@Entity()
+
+
+@Entity(name = "floors")
 public class Floors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "floor_id", nullable = false)
     private Integer floorId;
+    @JoinColumn(name = "floor_code", nullable = false)
     private String floorCode;
+    @JoinColumn(name = "floor_name", nullable = false)
     private String floorName;
+    @JoinColumn(name = "floor_area", nullable = false)
     private Double floorArea;
+    @JoinColumn(name = "floor_delete_flag", nullable = false)
+    private Integer floorDeleteFlag;
+    @JoinColumn(name = "floor_capacity", nullable = false)
     private Integer floorCapacity;
 
-    private Integer floorDeleteFlag;
 
-    @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name = "floor_type_id",nullable = false)
+    @ManyToOne(targetEntity = FloorsType.class)
+    @JoinColumn(name = "floor_type", nullable = false)
     private FloorsType floorsType;
 
-    @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name = "floor_status_id",nullable = false)
+
+    @ManyToOne(targetEntity = FloorsStatus.class)
+    @JoinColumn(name = "floor_status", nullable = false)
     private FloorsStatus floorsStatus;
 
-    @OneToMany(mappedBy = "floors")
+
+    @OneToMany(mappedBy = "floors", cascade = CascadeType.REMOVE)
+    @JsonBackReference
     private List<Spaces> spacesList;
 
     public Floors() {
     }
 
-    public Floors(Integer floorId, String floorCode, String floorName, Double floorArea, Integer floorCapacity, Integer floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
-        this.floorId = floorId;
-        this.floorCode = floorCode;
-        this.floorName = floorName;
-        this.floorArea = floorArea;
-        this.floorCapacity = floorCapacity;
-        this.floorDeleteFlag = floorDeleteFlag;
-        this.floorsType = floorsType;
-        this.floorsStatus = floorsStatus;
-        this.spacesList = spacesList;
-    }
 
     public Integer getFloorId() {
         return floorId;
