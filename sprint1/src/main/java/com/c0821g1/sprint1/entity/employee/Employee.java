@@ -3,10 +3,13 @@ package com.c0821g1.sprint1.entity.employee;
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.security.AppUser;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.List;
 
+
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class Employee {
     @Id
@@ -31,11 +34,9 @@ public class Employee {
     @JoinColumn(name = "employee_position_id", nullable = false)
     private EmployeePosition employeePosition;
 
-//    @OneToMany(mappedBy = "employee")
-//    private List<AppUser> appUserList;
 
-    @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
     @JsonBackReference
+    @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.MERGE})
     private AppUser appUser;
 
     public Employee() {
@@ -59,46 +60,12 @@ public class Employee {
         this.appUser = appUser;
     }
 
-
-
-    public AppUser getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
-    }
-
-    public List<Contract> getContractList() {
-        return contractList;
-    }
-
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
-    }
-
-    public Boolean getCustomerDeleteFlag() {
-        return employeeDeleteFlag;
-    }
-
-    public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
-        this.employeeDeleteFlag = customerDeleteFlag;
-    }
-
     public int getEmployeeId() {
         return employeeId;
     }
 
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
-    }
-
-    public Boolean getEmployeeDeleteFlag() {
-        return employeeDeleteFlag;
-    }
-
-    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
-        this.employeeDeleteFlag = employeeDeleteFlag;
     }
 
     public String getEmployeeCode() {
@@ -173,11 +140,35 @@ public class Employee {
         this.employeeImage = employeeImage;
     }
 
+    public Boolean getEmployeeDeleteFlag() {
+        return employeeDeleteFlag;
+    }
+
+    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
+        this.employeeDeleteFlag = employeeDeleteFlag;
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
+    }
+
     public EmployeePosition getEmployeePosition() {
         return employeePosition;
     }
 
     public void setEmployeePosition(EmployeePosition employeePosition) {
         this.employeePosition = employeePosition;
+    }
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 }

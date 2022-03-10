@@ -1,10 +1,6 @@
 package com.c0821g1.sprint1.entity.security;
-
-import com.c0821g1.sprint1.entity.employee.Employee;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
@@ -27,7 +23,6 @@ public class AppUser {
             inverseJoinColumns = @JoinColumn(name = "roles_id"))
     private Set<Role> roles = new HashSet<>();
 
-//    private Set<Role> roles;
     private Boolean deleted = Boolean.FALSE;
 
     public AppUser() {
@@ -110,3 +105,6 @@ public class AppUser {
 
 
 }
+
+
+
