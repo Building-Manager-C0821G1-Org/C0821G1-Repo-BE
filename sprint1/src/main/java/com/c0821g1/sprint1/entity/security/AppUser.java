@@ -5,6 +5,7 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity(name = "app_users")
@@ -18,14 +19,16 @@ import java.util.Set;
         private String password;
         private Boolean isEnabled;
         private String verificationCode;
+
+
         @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
-        private Set<Role> roles;
+        private List<Role> roles;
         private Boolean deleted = Boolean.FALSE;
 
         public AppUser() {
         }
 
-        public AppUser(int id, String username, String password, Boolean isEnabled, String verificationCode, Set<Role> roles, Boolean deleted) {
+        public AppUser(int id, String username, String password, Boolean isEnabled, String verificationCode, List<Role> roles, Boolean deleted) {
             this.id = id;
             this.username = username;
             this.password = password;
@@ -35,7 +38,7 @@ import java.util.Set;
             this.deleted = deleted;
         }
 
-        public AppUser(int id, String username, String password, Boolean isEnabled, String verificationCode, Set<Role> roles) {
+        public AppUser(int id, String username, String password, Boolean isEnabled, String verificationCode, List<Role> roles) {
             this.id = id;
             this.username = username;
             this.password = password;
@@ -92,11 +95,11 @@ import java.util.Set;
             this.verificationCode = verificationCode;
         }
 
-        public Set<Role> getRoles() {
+        public List<Role> getRoles() {
             return roles;
         }
 
-        public void setRoles(Set<Role> roles) {
+        public void setRoles(List<Role> roles) {
             this.roles = roles;
         }
 

@@ -51,7 +51,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 employee.getEmployeeName(),
                 employee.getEmployeePhone(),
                 employee.getEmployeeStartDate(),
-                employee.getAppUser().getAppUserId(),
+                (int) employee.getAppUser().getId(),
                 employee.getEmployeePosition().getEmployeePositionId(),
                 employee.getEmployeeId());
     }
@@ -60,7 +60,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     //Bảo tạo mới tài khoản nhân viên
     @Override
     public void createEmployeeAccount(AppUser appUser) {
-        employeeRepository.createEmployeeAccount(appUser.getAppUserName(), appUser.getAppUserPassword());
+        employeeRepository.createEmployeeAccount(appUser.getUsername(), appUser.getPassword());
     }
 
     //Bảo kiểm tra email có tồn tại trong DB

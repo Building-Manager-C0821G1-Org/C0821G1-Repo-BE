@@ -17,7 +17,7 @@ public class EmployeePossitionController {
     EmployeePositionService employeePositionService;
     @GetMapping(value ="/list")
     public ResponseEntity<Object> getListEmployeePossition(){
-        List<EmployeePosition> employeePositionList = employeePositionService.findALL();
+        List<EmployeePosition> employeePositionList = employeePositionService.findAll();
         return new ResponseEntity<>(employeePositionList,HttpStatus.OK);
     }
 }
