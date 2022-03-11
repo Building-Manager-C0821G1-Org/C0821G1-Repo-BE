@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/C0821G1-Repo-BE.iml" filepath="$PROJECT_DIR$/.idea/C0821G1-Repo-BE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sprint1.iml" filepath="$PROJECT_DIR$/.idea/modules/sprint1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sprint1.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sprint1.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sprint1.test.iml" filepath="$PROJECT_DIR$/.idea/modules/sprint1.test.iml" />
     </modules>
   </component>
 </project>

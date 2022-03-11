@@ -19,7 +19,7 @@ import java.sql.SQLOutput;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+@CrossOrigin()
 @RequestMapping("api/contract")
 public class ContractController {
 
