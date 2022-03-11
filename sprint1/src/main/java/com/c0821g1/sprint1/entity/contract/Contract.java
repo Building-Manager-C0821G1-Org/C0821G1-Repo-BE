@@ -14,17 +14,17 @@ public class Contract implements Serializable{
     private int contractId;
     private String contractCode;
 
-    private String contractExpired;
+    private Integer contractExpired;
     private String contractDateStart;
     private String contractDateEnd;
-    private String contractTotal;
+    private Integer contractTotal;
     private Integer price;
     private Integer contractDeposit;
     private String contractTaxCode;
     private String contractContent;
     private String contractImageUrl;
     private Boolean contractDeleteFlag;
-    private int checkFlag;
+    private Integer checkFlag;
 
 
     @ManyToOne
@@ -58,11 +58,11 @@ public class Contract implements Serializable{
         this.contractCode = contractCode;
     }
 
-    public String getContractExpired() {
+    public Integer getContractExpired() {
         return contractExpired;
     }
 
-    public void setContractExpired(String contractExpired) {
+    public void setContractExpired(Integer contractExpired) {
         this.contractExpired = contractExpired;
     }
 
@@ -82,11 +82,11 @@ public class Contract implements Serializable{
         this.contractDateEnd = contractDateEnd;
     }
 
-    public String getContractTotal() {
+    public Integer getContractTotal() {
         return contractTotal;
     }
 
-    public void setContractTotal(String contractTotal) {
+    public void setContractTotal(Integer contractTotal) {
         this.contractTotal = contractTotal;
     }
 

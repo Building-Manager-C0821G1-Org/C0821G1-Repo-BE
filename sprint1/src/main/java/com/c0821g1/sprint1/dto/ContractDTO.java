@@ -51,27 +51,18 @@ public class ContractDTO implements Validator {
     private Integer employeeId;
     private Integer customerId;
     private Integer spaceId;
+    private Integer checkFlag;
     private Boolean contractDeleteFlag;
 
     public ContractDTO() {
     }
 
-    public ContractDTO(int contractId, String contractCode, @NotNull Integer contractExpired, String contractDateStart, String contractDateEnd, @NotNull Integer price, @NotNull Integer contractDeposit, @NotBlank String contractTaxCode, String contractImageUrl, @NotNull Integer contractTotal, @NotBlank String contractContent, Integer employeeId, Integer customerId, Integer spaceId, Boolean contractDeleteFlag) {
-        this.contractId = contractId;
-        this.contractCode = contractCode;
-        this.contractExpired = contractExpired;
-        this.contractDateStart = contractDateStart;
-        this.contractDateEnd = contractDateEnd;
-        this.price = price;
-        this.contractDeposit = contractDeposit;
-        this.contractTaxCode = contractTaxCode;
-        this.contractImageUrl = contractImageUrl;
-        this.contractTotal = contractTotal;
-        this.contractContent = contractContent;
-        this.employeeId = employeeId;
-        this.customerId = customerId;
-        this.spaceId = spaceId;
-        this.contractDeleteFlag = contractDeleteFlag;
+    public Integer getCheckFlag() {
+        return checkFlag;
+    }
+
+    public void setCheckFlag(Integer checkFlag) {
+        this.checkFlag = checkFlag;
     }
 
     public String getContractImageUrl() {

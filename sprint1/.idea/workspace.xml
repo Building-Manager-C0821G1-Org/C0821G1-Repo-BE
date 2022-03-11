@@ -20,64 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cee23cce-0f5e-4333-a56b-5945862cdd8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/C0821G1-Repo-BE.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/ContractDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/exception/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/ContractRestController_createContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/ContractRestController_editContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/ContractController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/ContractController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/contract/Contract.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/contract/Contract.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/customer/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/customer/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/employee/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/employee/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/employee/EmployeePosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/employee/EmployeePosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/Floors.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/Floors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/security/AppUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/security/AppUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/security/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/security/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/Spaces.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/Spaces.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/ContractRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/ContractRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/ContractService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/ContractService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/ContractServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/ContractServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/ContractDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/ContractDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/contract/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/contract/Contract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/EmployeePosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/EmployeePosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/Floors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/Floors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/ContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/ContractServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/ContractServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/Sprint1ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/Sprint1ApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +75,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../sprint1" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RunManager" selected="Spring Boot.Sprint1Application">
@@ -236,7 +198,12 @@
       <workItem from="1646646743352" duration="615000" />
       <workItem from="1646660978399" duration="2926000" />
       <workItem from="1646702966545" duration="9479000" />
-      <workItem from="1646792194815" duration="11276000" />
+      <workItem from="1646792194815" duration="12107000" />
+      <workItem from="1646876514807" duration="3453000" />
+      <workItem from="1646885499143" duration="13291000" />
+      <workItem from="1646911542662" duration="3403000" />
+      <workItem from="1646922164513" duration="5075000" />
+      <workItem from="1646961652554" duration="845000" />
     </task>
     <servers />
   </component>
@@ -260,50 +227,66 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1646295235267" />
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1646825560946">
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1646887809872">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1646825560946" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1646887809871" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1646825811264">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1646825811264" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1646402961077">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1646962322027">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1646402961077" />
-    <state width="1493" height="270" key="GridCell.Tab.0.bottom" timestamp="1646826209956">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1646962322027" />
+    <state width="1493" height="145" key="GridCell.Tab.0.bottom" timestamp="1646962659350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="270" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646826209956" />
-    <state width="1493" height="270" key="GridCell.Tab.0.center" timestamp="1646826209956">
+    <state width="1493" height="145" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646962659350" />
+    <state width="1493" height="145" key="GridCell.Tab.0.center" timestamp="1646962659350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="270" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646826209956" />
-    <state width="1493" height="270" key="GridCell.Tab.0.left" timestamp="1646826209955">
+    <state width="1493" height="145" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646962659350" />
+    <state width="1493" height="145" key="GridCell.Tab.0.left" timestamp="1646962659350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="270" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646826209955" />
-    <state width="1493" height="270" key="GridCell.Tab.0.right" timestamp="1646826209956">
+    <state width="1493" height="145" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646962659350" />
+    <state width="1493" height="145" key="GridCell.Tab.0.right" timestamp="1646962659350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="270" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646826209956" />
-    <state width="1493" height="270" key="GridCell.Tab.1.bottom" timestamp="1646826209956">
+    <state width="1493" height="145" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646962659350" />
+    <state width="1493" height="145" key="GridCell.Tab.1.bottom" timestamp="1646962659351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="270" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646826209956" />
-    <state width="1493" height="270" key="GridCell.Tab.1.center" timestamp="1646826209956">
+    <state width="1493" height="145" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646962659351" />
+    <state width="1493" height="145" key="GridCell.Tab.1.center" timestamp="1646962659351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="270" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1646826209956" />
-    <state width="1493" height="270" key="GridCell.Tab.1.left" timestamp="1646826209956">
+    <state width="1493" height="145" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1646962659351" />
+    <state width="1493" height="145" key="GridCell.Tab.1.left" timestamp="1646962659351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="270" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1646826209956" />
-    <state width="1493" height="270" key="GridCell.Tab.1.right" timestamp="1646826209956">
+    <state width="1493" height="145" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1646962659351" />
+    <state width="1493" height="145" key="GridCell.Tab.1.right" timestamp="1646962659351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="270" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1646826209956" />
+    <state width="1493" height="145" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1646962659351" />
+    <state width="1493" height="285" key="GridCell.Tab.2.bottom" timestamp="1646887007699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="285" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646887007699" />
+    <state width="1493" height="285" key="GridCell.Tab.2.center" timestamp="1646887007699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="285" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1646887007699" />
+    <state width="1493" height="285" key="GridCell.Tab.2.left" timestamp="1646887007699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="285" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1646887007699" />
+    <state width="1493" height="285" key="GridCell.Tab.2.right" timestamp="1646887007699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="285" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1646887007699" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1646622700820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

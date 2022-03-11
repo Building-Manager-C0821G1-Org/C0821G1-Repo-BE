@@ -1,4 +1,5 @@
 package com.c0821g1.sprint1.controller;
+
 import com.c0821g1.sprint1.dto.ContractDTO;
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.service.ContractService;
@@ -14,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.sql.SQLOutput;
 import java.util.Optional;
 
 @RestController
@@ -22,22 +24,23 @@ import java.util.Optional;
 public class ContractController {
 
     @Qualifier("contractServiceImpl")
-
     @Autowired
     private ContractService contractService;
 
-//      tim kiem + phan trang
+    //      tim kiem + phan trang
 //      Đông nguyễn
     @GetMapping("/contract-list")
     public ResponseEntity<Page<Contract>> findContractByNameAndCodeAndDate(
             @RequestParam(defaultValue = "") String name,
             @RequestParam(defaultValue = "") String code,
             @RequestParam(defaultValue = "") String start,
+//            @RequestParam(defaultValue = "") String start1,
             @RequestParam(defaultValue = "") String end,
+//            @RequestParam(defaultValue = "") String end1,
             @RequestParam(defaultValue = "0") int page
     ) {
-        Pageable pageable = PageRequest.of(page, 2);
-        Page<Contract> contractNewPage = contractService.findAllContractByNameAndCodeAndDatePage(name,code,start,end,pageable);
+        Pageable pageable = PageRequest.of(page, 7);
+        Page<Contract> contractNewPage = contractService.findAllContractByNameAndCodeAndDatePage(name, code, start, end, pageable);
 
         if (contractNewPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -46,7 +49,7 @@ public class ContractController {
 
     }
 
-//      Xoá danh sách hợp đồng
+    //      Xoá danh sách hợp đồng
 //      Đông nguyễn
     @DeleteMapping("delete-contract/{id}")
     public ResponseEntity<Contract> deleteCustomer(@PathVariable Integer id) {
@@ -58,62 +61,63 @@ public class ContractController {
         return new ResponseEntity<>(contractOptional.get(), HttpStatus.NO_CONTENT);
     }
 
-//      Xoá danh sách hợp đồng
+    //      Xoá danh sách hợp đồng
 //      Đông nguyễn
     @GetMapping("/{id}")
-    public ResponseEntity<Object> findContractById(@PathVariable Integer id){
+    public ResponseEntity<Object> findContractById(@PathVariable Integer id) {
         Optional<Contract> contractOptional = contractService.findContractById(id);
-        if (!contractOptional.isPresent()){
+        if (!contractOptional.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(contractOptional,HttpStatus.OK);
+        return new ResponseEntity<>(contractOptional, HttpStatus.OK);
     }
-
-
-
-
 
 
     //    Tây chức năng create hợp đồng
     @PostMapping("/add")
     public ResponseEntity<Object> addContract(@Valid @RequestBody ContractDTO contractDTO, BindingResult bindingResult) {
 
-                if(contractService.existsContractByCode(contractDTO.getContractCode())){
-                bindingResult.rejectValue("contractCode", "Mã hợp đồng đã tồn tại.");
-                return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
-            }
+        if (contractService.existsContractByCode(contractDTO.getContractCode())) {
+            bindingResult.rejectValue("contractCode", "Mã hợp đồng đã tồn tại.");
+            System.out.println("Lỗi ở đây nè");
+            return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
+        }
 
-            new ContractDTO().validate(contractDTO, bindingResult);
-            if (bindingResult.hasErrors()) {
-                return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.NOT_MODIFIED);
-            }
-            Contract contract = new Contract();
-            BeanUtils.copyProperties(contractDTO, contract);
-            contractService.addContract(contractDTO);
-            return new ResponseEntity<>(contractDTO,HttpStatus.CREATED);
+        new ContractDTO().validate(contractDTO, bindingResult);
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.NOT_MODIFIED);
+        }
+//        Contract contract = new Contract();
+//        BeanUtils.copyProperties(contractDTO, contract);
+        contractService.addContract(contractDTO);
+        return new ResponseEntity<>( HttpStatus.CREATED);
 
 
     }
 
 
-//    Tây chức năng edit hợp đồng
+    //    Tây chức năng edit hợp đồng
     @PatchMapping("/update/{id}")
     public ResponseEntity<Object> updateContract(@Valid @RequestBody ContractDTO contractDTO, BindingResult bindingResult, @PathVariable("id") Integer id) {
         try {
-            new ContractDTO().validate(contractDTO,bindingResult);
-            if (bindingResult.hasErrors()){
+            new ContractDTO().validate(contractDTO, bindingResult);
+            if (bindingResult.hasErrors()) {
                 return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.NOT_MODIFIED);
             }
 
             contractDTO.setContractId(id);
             contractService.editContract(contractDTO);
             return new ResponseEntity<>(HttpStatus.OK);
-        }catch (RuntimeException e){
+        } catch (RuntimeException e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
-
+    @GetMapping("/check")
+    public ResponseEntity<Boolean> checkDate(@RequestParam("date1")String date, @RequestParam("date2") String date2){
+        boolean check = this.contractService.checkDate(date,date2);
+        return new ResponseEntity<>(check,HttpStatus.OK);
+    }
 }
 

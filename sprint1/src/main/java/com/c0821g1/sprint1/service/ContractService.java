@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface ContractService {
 
 
-    Page<Contract> findAllContractByNameAndCodeAndDatePage(String name, String code, String start , String end, Pageable pageable);
+    Page<Contract> findAllContractByNameAndCodeAndDatePage(String name, String code, String start, String end, Pageable pageable);
 
     Optional<Contract> findContractById(Integer id);
     void editContract(ContractDTO contractDTO);
@@ -18,5 +18,5 @@ public interface ContractService {
     void addContract(ContractDTO contractDTO);
     boolean existsContractByCode(String contractCode);
     void deleteContract(Integer id);
-
+    public boolean checkDate(String date, String date2);
 }
