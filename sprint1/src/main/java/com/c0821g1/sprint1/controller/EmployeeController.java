@@ -18,11 +18,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-
-import javax.validation.Valid;
 import java.util.*;
+import javax.validation.Valid;
 
-
+import java.util.Optional;
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/employee")
@@ -34,15 +33,7 @@ public class EmployeeController {
     @Autowired
     AppUserService appUserService;
 
-    //Hiển thị danh sách
-//    @GetMapping(value = "/list")
-//    public ResponseEntity<Page<Employee>> showListEmployee(@PageableDefault(value = 5) Pageable pageable) {
-//        Page<Employee> employeeList = employeeService.findAllEmployeePage(pageable);
-//        if (employeeList.isEmpty()) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//        return new ResponseEntity<>(employeeList, HttpStatus.OK);
-//    }
+
 
     // Tìm kiếm nhân viên
     @GetMapping(value = "/search")
@@ -59,6 +50,7 @@ public class EmployeeController {
         }
         return new ResponseEntity<>(employeeListSearch, HttpStatus.OK);
     }
+
 
     // xóa nhân viên.
     @DeleteMapping("/delete/{id}")
@@ -112,7 +104,6 @@ public class EmployeeController {
     }
 
 
-
     //Bảo thêm mới nhân viên và đăng ký tài khoản cho nhân viên
     @PostMapping(value = "/create")
     public ResponseEntity<Object> createEmployee(@RequestBody @Valid EmployeeDTO employeeDTO, BindingResult bindingResult) {
@@ -161,6 +152,6 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
 }
+
 

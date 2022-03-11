@@ -1,9 +1,10 @@
 package com.c0821g1.sprint1.entity.employee;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
-import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.validation.constraints.NotBlank;
+
+import java.util.List;
 
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})

@@ -61,35 +61,6 @@ public class Employee {
         this.appUser = appUser;
     }
 
-
-    public Boolean getEmployeeDeleteFlag() {
-        return employeeDeleteFlag;
-    }
-
-    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
-        this.employeeDeleteFlag = employeeDeleteFlag;
-    }
-
-    public List<Contract> getContractList() {
-        return contractList;
-    }
-
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
-    }
-
-    public AppUser getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
-    }
-
-    public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
-        this.employeeDeleteFlag = customerDeleteFlag;
-    }
-
     public int getEmployeeId() {
         return employeeId;
     }
@@ -97,7 +68,6 @@ public class Employee {
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
     }
-
 
     public String getEmployeeCode() {
         return employeeCode;
@@ -171,11 +141,35 @@ public class Employee {
         this.employeeImage = employeeImage;
     }
 
+    public Boolean getEmployeeDeleteFlag() {
+        return employeeDeleteFlag;
+    }
+
+    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
+        this.employeeDeleteFlag = employeeDeleteFlag;
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
+    }
+
     public EmployeePosition getEmployeePosition() {
         return employeePosition;
     }
 
     public void setEmployeePosition(EmployeePosition employeePosition) {
         this.employeePosition = employeePosition;
+    }
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 }
