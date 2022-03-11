@@ -16,11 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     //    VyLTT - customer list
-    @Query(value = "select * from customer where customer_delete_flag = false ", nativeQuery = true)
+    @Query(value = "select * from customers where customer_delete_flag = false ", nativeQuery = true)
     Page<Customer> findAllCustomer(Pageable pageable);
 
     //    VyLTT - search by name, email, phone, identify number
-    @Query(value = "select * from customer where customer_name like concat('%',:customer_name,'%') " +
+    @Query(value = "select * from customers where customer_name like concat('%',:customer_name,'%') " +
             "and customer_email like concat('%',:customer_email,'%') and customer_phone like concat('%',:customer_phone,'%')" +
             " and customer_identify_number like concat('%',:customer_identify_number,'%') and customer_delete_flag = false", nativeQuery = true)
     Page<Customer> getByCustomerNameAndCustomerEmailAndCustomerPhoneAndCustomerIdentifyNumber(Pageable pageable,
@@ -31,7 +31,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
     @Transactional
     @Modifying
-    @Query(value = "update customer set customer_delete_flag = 1 where customer_id = :id", nativeQuery = true)
+    @Query(value = "update customers set customer_delete_flag = 1 where customer_id = :id", nativeQuery = true)
     void deleteCustomer(@Param("id") Integer id);
 }
 

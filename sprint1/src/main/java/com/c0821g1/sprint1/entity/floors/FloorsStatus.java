@@ -1,8 +1,5 @@
 package com.c0821g1.sprint1.entity.floors;
-
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,6 +9,7 @@ public class FloorsStatus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "floor_status_id", nullable = false)
     private Integer floorStatusId;
+
     @JoinColumn(name = "floor_status_name", nullable = false)
     private String floorStatusName;
 

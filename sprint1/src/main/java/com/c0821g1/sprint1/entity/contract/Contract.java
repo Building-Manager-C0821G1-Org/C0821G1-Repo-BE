@@ -6,18 +6,33 @@ import com.c0821g1.sprint1.entity.space.Spaces;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "contracts")
 public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int contractId;
+    @JoinColumn(name = "contract_id", nullable = false)
+    private Integer contractId;
 
+    @JoinColumn(name = "contract_expired", nullable = false)
     private String contractExpred;
+
+    @JoinColumn(name = "contract_date_start", nullable = false)
     private String contractDateStart;
+
+    @JoinColumn(name = "contract_date_end", nullable = false)
     private String contractDateEnd;
+
+    @JoinColumn(name = "contract_total", nullable = false)
     private String contractTotal;
+
+    @JoinColumn(name = "contract_content", nullable = false)
     private String contractContent;
+
+    @JoinColumn(name = "contract_delete_flag", nullable = false)
     private Boolean contractDeleteFlag;
+
+    @JoinColumn(name = "contract_price", nullable = false)
+    private Boolean contractPrice;
 
 
     @ManyToOne
@@ -33,52 +48,16 @@ public class Contract {
     private Spaces spaces;
 
 
-    public Contract(int contractId, String contractExpred, String contractDateStart, String contractDateEnd) {
-        this.contractId = contractId;
-        this.contractExpred = contractExpred;
-        this.contractDateStart = contractDateStart;
-        this.contractDateEnd = contractDateEnd;
-        this.contractTotal = contractTotal;
-        this.contractContent = contractContent;
-        this.contractDeleteFlag = contractDeleteFlag;
-        this.customer = customer;
-        this.employee = employee;
-        this.spaces = spaces;
-    }
 
     public Contract() {
 
     }
 
-    public Spaces getSpaces() {
-        return spaces;
-    }
-
-    public void setSpaces(Spaces spaces) {
-        this.spaces = spaces;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public int getContractId() {
+    public Integer getContractId() {
         return contractId;
     }
 
-    public void setContractId(int contractId) {
+    public void setContractId(Integer contractId) {
         this.contractId = contractId;
     }
 
@@ -128,5 +107,37 @@ public class Contract {
 
     public void setContractDeleteFlag(Boolean contractDeleteFlag) {
         this.contractDeleteFlag = contractDeleteFlag;
+    }
+
+    public Boolean getContractPrice() {
+        return contractPrice;
+    }
+
+    public void setContractPrice(Boolean contractPrice) {
+        this.contractPrice = contractPrice;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Spaces getSpaces() {
+        return spaces;
+    }
+
+    public void setSpaces(Spaces spaces) {
+        this.spaces = spaces;
     }
 }

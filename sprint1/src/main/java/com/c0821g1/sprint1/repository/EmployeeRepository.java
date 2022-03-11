@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
-    @Query(value = "SELECT * from employee e join app_users a on e.app_user_id = a.id where a.username =?1", nativeQuery = true)
+    @Query(value = "SELECT * from employees e join app_users a on e.app_user_id = a.id where a.username =?1", nativeQuery = true)
     Employee findEmployeeByAppUser(String username);
 }

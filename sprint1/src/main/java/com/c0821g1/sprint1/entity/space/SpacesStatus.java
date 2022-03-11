@@ -11,6 +11,7 @@ public class SpacesStatus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "space_status_id",nullable = false)
     private int spaceStatusId;
+
     @JoinColumn(name = "space_status_name",nullable = false)
     private String spaceStatusName;
 

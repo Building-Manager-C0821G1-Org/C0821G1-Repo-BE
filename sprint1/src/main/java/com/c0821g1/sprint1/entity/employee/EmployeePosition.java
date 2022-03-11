@@ -7,8 +7,10 @@ import java.util.List;
 public class EmployeePosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int employeePositionId;
+    @JoinColumn(name = "employee_position_id", nullable = false)
+    private Integer employeePositionId;
 
+    @JoinColumn(name = "employee_position_name", nullable = false)
     private String employeePositionName;
 
 
@@ -19,14 +21,27 @@ public class EmployeePosition {
     public EmployeePosition() {
     }
 
-    public EmployeePosition(int employeePositionId, String employeePositionName, List<Employee> employeeList) {
+    public Integer getEmployeePositionId() {
+        return employeePositionId;
+    }
+
+    public void setEmployeePositionId(Integer employeePositionId) {
         this.employeePositionId = employeePositionId;
+    }
+
+    public String getEmployeePositionName() {
+        return employeePositionName;
+    }
+
+    public void setEmployeePositionName(String employeePositionName) {
         this.employeePositionName = employeePositionName;
     }
 
-    public EmployeePosition(int employeePositionId, List<Employee> employeeList) {
-        this.employeePositionId = employeePositionId;
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
 
+    public void setEmployeeList(List<Employee> employeeList) {
         this.employeeList = employeeList;
     }
 }

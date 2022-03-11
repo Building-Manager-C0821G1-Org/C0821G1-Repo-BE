@@ -11,6 +11,7 @@ public class SpacesType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "space_type_id",nullable = false)
+
     private int spaceTypeId;
     @JoinColumn(name = "space_type_name",nullable = false)
     private String spaceTypeName;

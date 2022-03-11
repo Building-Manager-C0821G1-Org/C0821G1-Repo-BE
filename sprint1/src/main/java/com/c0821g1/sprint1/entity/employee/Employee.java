@@ -7,20 +7,41 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "employees")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private int employeeId;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeeCode;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeeName;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeeDateOfBirth;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeeGender;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeeAddress;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeePhone;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeeEmail;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeeStartDate;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private String employeeImage;
+
+    @JoinColumn(name = "employee_position_id", nullable = false)
     private Boolean employeeDeleteFlag;
 
     @OneToMany(mappedBy = "employee")
@@ -28,7 +49,7 @@ public class Employee {
     private List<Contract> contractList;
 
     @ManyToOne
-    @JoinColumn(name = "employee_position_id", nullable = false)
+    @JoinColumn(name = "employee_position", nullable = false)
     private EmployeePosition employeePosition;
 
 //    @OneToMany(mappedBy = "employee")
