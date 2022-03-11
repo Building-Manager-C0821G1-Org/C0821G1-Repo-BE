@@ -2,8 +2,9 @@ package com.c0821g1.sprint1.entity.space;
 
 import com.c0821g1.sprint1.dto.SpaceListDTO;
 import com.c0821g1.sprint1.entity.contract.Contract;
-import com.c0821g1.sprint1.entity.floor.Floors;
+import com.c0821g1.sprint1.entity.floors.Floors;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -53,11 +54,17 @@ public class  Spaces {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer spaceId;
     private String spaceCode;
+    @JoinColumn(name = "space_area",nullable = false)
     private String spaceArea;
+    @JoinColumn(name = "space_price",nullable = false)
     private String spacePrice;
+    @JoinColumn(name = "space_manager_fee",nullable = false)
     private String spaceManagerFee;
+    @JoinColumn(name = "space_note",nullable = false)
     private String spaceNote;
+    @JoinColumn(name = "space_image",nullable = false)
     private String spaceImage;
+    @JoinColumn(name = "delete_flag",nullable = false)
     private Boolean spaceDeleteFlag;
 
     @ManyToOne
@@ -95,9 +102,6 @@ public class  Spaces {
         this.contractList = contractList;
     }
 
-    public List<Contract> getContractList() {
-        return contractList;
-    }
 
     public void setContractList(List<Contract> contractList) {
         this.contractList = contractList;

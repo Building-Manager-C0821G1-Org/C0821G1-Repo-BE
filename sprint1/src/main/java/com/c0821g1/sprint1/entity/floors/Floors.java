@@ -1,44 +1,47 @@
-package com.c0821g1.sprint1.entity.floor;
+package com.c0821g1.sprint1.entity.floors;
 
 import com.c0821g1.sprint1.entity.space.Spaces;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnJava;
 
 import javax.persistence.*;
 import java.util.List;
-@Entity()
+
+
+@Entity(name = "floors")
 public class Floors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "floor_id", nullable = false)
     private Integer floorId;
+    @JoinColumn(name = "floor_code", nullable = false)
+    private String floorCode;
+    @JoinColumn(name = "floor_name", nullable = false)
+    private String floorName;
+    @JoinColumn(name = "floor_area", nullable = false)
+    private Double floorArea;
+    @JoinColumn(name = "floor_delete_flag", nullable = false)
+    private Integer floorDeleteFlag;
+    @JoinColumn(name = "floor_capacity", nullable = false)
+    private Integer floorCapacity;
+
+
+    @ManyToOne(targetEntity = FloorsType.class)
+    @JoinColumn(name = "floor_type", nullable = false)
+    private FloorsType floorsType;
+
+
+    @ManyToOne(targetEntity = FloorsStatus.class)
+    @JoinColumn(name = "floor_status", nullable = false)
+    private FloorsStatus floorsStatus;
+
+
+    @OneToMany(mappedBy = "floors", cascade = CascadeType.REMOVE)
+    @JsonBackReference
+    private List<Spaces> spacesList;
 
     public Floors() {
     }
 
-    private String floorCode;
-    private String floorName;
-    private Double floorArea;
-    private Integer floorCapacity;
-
-    private Integer floorDeleteFlag;
-
-    @ManyToOne
-    @JoinColumn(name = "floor_type_id",nullable = false)
-    private FloorsType floorsType;
-
-    @ManyToOne
-    @JoinColumn(name = "floor_status_id",nullable = false)
-    private FloorsStatus floorsStatus;
-
-    @OneToMany(mappedBy = "floors")
-    @JsonBackReference(value = "floors")
-    private List<Spaces> spacesList;
-
-    public Floors(Integer floorId, String floorCode, String floorName) {
-        this.floorId = floorId;
-        this.floorCode = floorCode;
-        this.floorName = floorName;
-    }
 
     public Integer getFloorId() {
         return floorId;

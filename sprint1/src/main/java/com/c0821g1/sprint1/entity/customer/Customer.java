@@ -6,19 +6,29 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Integer customerId;
+    @JoinColumn(name = "customer_code", nullable = false)
     private String customerCode;
+    @JoinColumn(name = "customer_name", nullable = false)
     private String customerName;
+    @JoinColumn(name = "customer_identify_number", nullable = false)
     private String customerIdentifyNumber;
+    @JoinColumn(name = "customer_email", nullable = false)
     private String customerEmail;
+    @JoinColumn(name = "customer_phone", nullable = false)
     private String customerPhone;
+    @JoinColumn(name = "customer_date_of_birth", nullable = false)
     private String customerDateOfBirth;
+    @JoinColumn(name = "customer_address", nullable = false)
     private String customerAddress;
+    @JoinColumn(name = "customer_status", nullable = false)
     private String customerStatus;
+    @JoinColumn(name = "customer_delete_flag", nullable = false)
     private Boolean customerDeleteFlag;
 
     @OneToMany(mappedBy = "customer")
@@ -27,8 +37,7 @@ public class Customer {
 
 
 
-    public List<Contract> getContractList() {
-        return contractList;
+    public Customer() {
     }
 
     public void setContractList(List<Contract> contractList) {
