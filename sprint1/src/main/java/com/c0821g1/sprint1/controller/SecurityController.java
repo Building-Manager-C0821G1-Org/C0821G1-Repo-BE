@@ -44,6 +44,8 @@ public class SecurityController {
     // Đăng Nhập (NghiaDM)
     @PostMapping("/login")
     public ResponseEntity<Object> authenticateUser(@RequestBody LoginRequest loginRequest) {
+        System.out.println("test");
+        System.out.println(loginRequest.getUsername());
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
                         loginRequest.getPassword()));

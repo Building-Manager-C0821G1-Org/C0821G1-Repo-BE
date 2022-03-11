@@ -5,6 +5,7 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,9 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @NotBlank(message = " Tên đăng nhập không được để trống")
     private String username;
+    @NotBlank(message = " Mật khẩu không được để trống")
     private String password;
     private Boolean isEnabled;
     private String verificationCode;

@@ -1,4 +1,5 @@
 package com.c0821g1.sprint1.config;
+
 import com.c0821g1.sprint1.accessdenied.CustomAccessDeniedHandler;
 import com.c0821g1.sprint1.jwt.JwtAuthenticationEntryPoint;
 import com.c0821g1.sprint1.jwt.JwtFilter;
@@ -47,29 +48,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-
+        http.rememberMe().key("uniqueAndSecret").tokenValiditySeconds(1296000);
         http.authorizeRequests()
                 // Các trang không yêu cầu login
-                .antMatchers("/api/public/**", "/api/customers/**",  "/**/*.jpg", "/**/*.png")
+                .antMatchers("/api/public/**", "/api/customer/**", "/**/*.jpg", "/**/*.png")
                 .permitAll()
                 //phan quyen
-                .and().authorizeRequests().antMatchers( "/api/customers/edit-customer/**",
-                "/api/customers/**", "/api/floors/**" )
-                .hasAnyRole( "EMPLOYEE", "ADMIN")
-                .and().authorizeRequests().antMatchers("/api/**","api/employee/**").hasRole("ADMIN")
+                .and().authorizeRequests().antMatchers("/api/customer/update/**","/api/employee/list/**",
+                "/api/customer/**", "/api/floors/update/**")
+                .hasAnyRole("EMPLOYEE", "ADMIN")
+                .and().authorizeRequests().antMatchers("/api/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and().cors()
                 .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler())
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 // make sure we use stateless session; session won't be used to
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
         // Add a filter to validate the tokens with every request
 //        thêm lọc filter trước khi xác thực
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+
     }
 
     @Bean
-    public AccessDeniedHandler accessDeniedHandler(){
+    public AccessDeniedHandler accessDeniedHandler() {
         return new CustomAccessDeniedHandler();
     }
 }
