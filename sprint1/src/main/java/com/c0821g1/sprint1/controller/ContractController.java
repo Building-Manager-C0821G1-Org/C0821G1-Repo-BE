@@ -29,6 +29,24 @@ public class ContractController {
 
     //      tim kiem + phan trang
 //      Đông nguyễn
+//    @GetMapping("/contract-list")
+//    public ResponseEntity<Page<Contract>> findContractByNameAndCodeAndDate(
+//            @RequestParam(defaultValue = "") String name,
+//            @RequestParam(defaultValue = "") String code,
+//            @RequestParam(defaultValue = "") String start,
+//            @RequestParam(defaultValue = "") String end,
+//            @RequestParam(defaultValue = "0") int page
+//    ) {
+//        Pageable pageable = PageRequest.of(page, 7);
+//        Page<Contract> contractNewPage = contractService.findAllContractByNameAndCodeAndDatePage(name, code, start, end, pageable);
+//
+//        if (contractNewPage.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(contractNewPage, HttpStatus.OK);
+//
+//    }
+
     @GetMapping("/contract-list")
     public ResponseEntity<Page<Contract>> findContractByNameAndCodeAndDate(
             @RequestParam(defaultValue = "") String name,
@@ -44,7 +62,6 @@ public class ContractController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(contractNewPage, HttpStatus.OK);
-
     }
 
     //      Xoá danh sách hợp đồng

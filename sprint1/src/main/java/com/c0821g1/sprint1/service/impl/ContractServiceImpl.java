@@ -21,8 +21,11 @@ import javax.transaction.Transactional;
 @Transactional
 public class ContractServiceImpl implements ContractService {
 
-    @Autowired
-    private ContractRepository contractRepository;
+    private final ContractRepository contractRepository;
+
+    public ContractServiceImpl(ContractRepository contractRepository) {
+        this.contractRepository = contractRepository;
+    }
 
     @Override
     public void deleteContract(Integer id) {
@@ -33,6 +36,7 @@ public class ContractServiceImpl implements ContractService {
     public Page<Contract> findAllContractByNameAndCodeAndDatePage(String name, String code, String start, String end, Pageable pageable) {
         return contractRepository.findAllContractByNameAndCodeAndDate(name, code, start, end,(org.springframework.data.domain.Pageable) pageable);
     }
+
 
     @Override
     public Optional<Contract> findContractById(Integer id) {

@@ -101,6 +101,10 @@ public class  Spaces {
         this.contractList = contractList;
     }
 
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
     public void setContractList(List<Contract> contractList) {
         this.contractList = contractList;
     }
