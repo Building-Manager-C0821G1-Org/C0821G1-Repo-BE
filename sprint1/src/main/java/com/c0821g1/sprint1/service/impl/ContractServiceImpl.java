@@ -33,7 +33,7 @@ public class ContractServiceImpl implements ContractService {
 
     @Override
     public Page<Contract> findAllContractByNameAndCodeAndDatePage(String name, String code, String start, String end, Pageable pageable) {
-        return contractRepository.findAllContractByNameAndCodeAndDate(name, code, start,end,(org.springframework.data.domain.Pageable) pageable);
+        return contractRepository.findAllContractByNameAndCodeAndDate(name, code, start, end,(org.springframework.data.domain.Pageable) pageable);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class ContractServiceImpl implements ContractService {
     public boolean checkDate(String date, String date2) {
         System.out.println(date);
         System.out.println(date2);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date date1 = simpleDateFormat.parse(date);
             Date date3 = simpleDateFormat.parse(date2);

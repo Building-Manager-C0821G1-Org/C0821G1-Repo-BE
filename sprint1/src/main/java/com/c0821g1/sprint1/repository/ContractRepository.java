@@ -35,7 +35,7 @@ public interface ContractRepository  extends JpaRepository<Contract,Integer> {
 //            " and contract.contract_date_start between ('%',:start,'%') and ('%',:start1,'%') \n "+
 //            " and contract.contract_date_end between ('%',:end,'%') and ('%',:end1,'%') "
             ,nativeQuery = true,
-            countQuery = " select count(*) from contract \n " +
+            countQuery = " select count(*) from contract \n" +
                     " left Join customer on contract.customer_id = customer.customer_id \n" +
                     " left Join spaces on contract.space_id = spaces.space_id \n" +
                     " where contract.contract_delete_flag = 0 " +
