@@ -10,20 +10,31 @@ import java.util.List;
 
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Entity
+@Entity(name = "employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "employee_id",nullable = false)
     private int employeeId;
+    @JoinColumn(name = "employee_code",nullable = false)
     private String employeeCode;
+    @JoinColumn(name = "employee_name",nullable = false)
     private String employeeName;
+    @JoinColumn(name = "employee_date_of_birthyee_id",nullable = false)
     private String employeeDateOfBirth;
+    @JoinColumn(name = "employee_gender",nullable = false)
     private String employeeGender;
+    @JoinColumn(name = "employee_address",nullable = false)
     private String employeeAddress;
+    @JoinColumn(name = "employee_phone",nullable = false)
     private String employeePhone;
+    @JoinColumn(name = "employee_email",nullable = false)
     private String employeeEmail;
+    @JoinColumn(name = "employee_start_date",nullable = false)
     private String employeeStartDate;
+    @JoinColumn(name = "employee_image",nullable = false)
     private String employeeImage;
+    @JoinColumn(name = "employee_delete_flag",nullable = false)
     private Boolean employeeDeleteFlag;
 
     @JsonBackReference

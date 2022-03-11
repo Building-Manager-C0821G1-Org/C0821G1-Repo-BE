@@ -8,11 +8,13 @@ import java.util.List;
 
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Entity
+@Entity(name = "employee_position")
 public class EmployeePosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "employee_position_id",nullable = false)
     private int employeePositionId;
+    @JoinColumn(name = "employee_position_name",nullable = false)
     private String employeePositionName;
 
 
