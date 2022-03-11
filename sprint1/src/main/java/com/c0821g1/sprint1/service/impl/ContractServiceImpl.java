@@ -13,7 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 import com.c0821g1.sprint1.dto.ContractDTO;
-import com.c0821g1.sprint1.exception.UserNotFoundException;
 
 
 import javax.transaction.Transactional;
