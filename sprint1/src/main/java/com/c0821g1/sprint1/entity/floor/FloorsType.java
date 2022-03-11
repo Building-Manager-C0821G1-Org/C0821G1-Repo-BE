@@ -1,29 +1,39 @@
 package com.c0821g1.sprint1.entity.floor;
+
+
+import com.c0821g1.sprint1.entity.employee.Employee;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class FloorsType  implements Serializable {
+public class FloorsType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer floorTypeId;
+    private int floorTypeId;
 
     private String floorTypeName;
 
     @OneToMany(mappedBy = "floorsType")
     @JsonBackReference
+
     private List<Floors> floors;
 
     public FloorsType() {
     }
 
-    public Integer getFloorTypeId() {
+    public FloorsType(int floorTypeId, String floorTypeName, List<Floors> floors) {
+        this.floorTypeId = floorTypeId;
+        this.floorTypeName = floorTypeName;
+        this.floors = floors;
+    }
+
+    public int getFloorTypeId() {
         return floorTypeId;
     }
 
-    public void setFloorTypeId(Integer floorTypeId) {
+    public void setFloorTypeId(int floorTypeId) {
         this.floorTypeId = floorTypeId;
     }
 

@@ -16,7 +16,6 @@ import com.c0821g1.sprint1.dto.ContractDTO;
 
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Service
 @Transactional

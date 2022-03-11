@@ -1,16 +1,18 @@
 package com.c0821g1.sprint1.entity.floor;
 
 import com.c0821g1.sprint1.entity.space.Spaces;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnJava;
+
 import javax.persistence.*;
 import java.util.List;
-import java.io.Serializable;
 
 @Entity
-public class Floors  implements Serializable {
+public class Floors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer floorId;
+    private int floorId;
     private String floorCode;
     private String floorName;
     private String floorArea;
@@ -33,11 +35,50 @@ public class Floors  implements Serializable {
     public Floors() {
     }
 
-    public Integer getFloorId() {
+
+    public Floors(int floorId, String floorCode, String floorName, String floorArea, String floorCapacity, Boolean floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
+        this.floorId = floorId;
+        this.floorCode = floorCode;
+        this.floorName = floorName;
+        this.floorArea = floorArea;
+        this.floorCapacity = floorCapacity;
+        this.floorDeleteFlag = floorDeleteFlag;
+        this.floorsType = floorsType;
+        this.floorsStatus = floorsStatus;
+        this.spacesList = spacesList;
+    }
+
+
+
+    public FloorsStatus getFloorsStatus() {
+        return floorsStatus;
+    }
+
+    public void setFloorsStatus(FloorsStatus floorsStatus) {
+        this.floorsStatus = floorsStatus;
+    }
+
+    public List<Spaces> getSpacesList() {
+        return spacesList;
+    }
+
+    public void setSpacesList(List<Spaces> spacesList) {
+        this.spacesList = spacesList;
+    }
+
+    public Boolean getFloorDeleteFlag() {
+        return floorDeleteFlag;
+    }
+
+    public void setFloorDeleteFlag(Boolean floorDeleteFlag) {
+        this.floorDeleteFlag = floorDeleteFlag;
+    }
+
+    public int getFloorId() {
         return floorId;
     }
 
-    public void setFloorId(Integer floorId) {
+    public void setFloorId(int floorId) {
         this.floorId = floorId;
     }
 
@@ -73,13 +114,6 @@ public class Floors  implements Serializable {
         this.floorCapacity = floorCapacity;
     }
 
-    public Boolean getFloorDeleteFlag() {
-        return floorDeleteFlag;
-    }
-
-    public void setFloorDeleteFlag(Boolean floorDeleteFlag) {
-        this.floorDeleteFlag = floorDeleteFlag;
-    }
 
     public FloorsType getFloorsType() {
         return floorsType;
@@ -89,19 +123,6 @@ public class Floors  implements Serializable {
         this.floorsType = floorsType;
     }
 
-    public FloorsStatus getFloorsStatus() {
-        return floorsStatus;
-    }
 
-    public void setFloorsStatus(FloorsStatus floorsStatus) {
-        this.floorsStatus = floorsStatus;
-    }
 
-    public List<Spaces> getSpacesList() {
-        return spacesList;
-    }
-
-    public void setSpacesList(List<Spaces> spacesList) {
-        this.spacesList = spacesList;
-    }
 }

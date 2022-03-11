@@ -19,4 +19,5 @@ public interface ContractService {
     boolean existsContractByCode(String contractCode);
     void deleteContract(Integer id);
     public boolean checkDate(String date, String date2);
+
 }

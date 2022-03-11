@@ -1,38 +1,43 @@
 package com.c0821g1.sprint1.entity.space;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
-@Entity
-public class SpacesStatus  implements Serializable {
+@Entity(name = "space_status")
+public class SpacesStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer spaceStatusId;
+    @JoinColumn(name = "space_status_id",nullable = false)
+    private int spaceStatusId;
+    @JoinColumn(name = "space_status_name",nullable = false)
+    private String spaceStatusName;
 
-    private String spacerStatusName;
 
     @OneToMany(mappedBy = "spaceStatus")
-    @JsonBackReference
+    @JsonBackReference(value = "spaceStatus")
     private List<Spaces> spacesList;
+
 
     public SpacesStatus() {
     }
 
-    public Integer getSpaceStatusId() {
+
+    public int getSpaceStatusId() {
         return spaceStatusId;
     }
 
-    public void setSpaceStatusId(Integer spaceStatusId) {
+    public void setSpaceStatusId(int spaceStatusId) {
         this.spaceStatusId = spaceStatusId;
     }
 
-    public String getSpacerStatusName() {
-        return spacerStatusName;
+    public String getSpaceStatusName() {
+        return spaceStatusName;
     }
 
-    public void setSpacerStatusName(String spacerStatusName) {
-        this.spacerStatusName = spacerStatusName;
+    public void setSpaceStatusName(String spaceStatusName) {
+        this.spaceStatusName = spaceStatusName;
     }
 
     public List<Spaces> getSpacesList() {
@@ -42,4 +47,5 @@ public class SpacesStatus  implements Serializable {
     public void setSpacesList(List<Spaces> spacesList) {
         this.spacesList = spacesList;
     }
+
 }

@@ -138,11 +138,11 @@ public class Contract implements Serializable{
         this.contractDeleteFlag = contractDeleteFlag;
     }
 
-    public int getCheckFlag() {
+    public Integer getCheckFlag() {
         return checkFlag;
     }
 
-    public void setCheckFlag(int checkFlag) {
+    public void setCheckFlag(Integer checkFlag) {
         this.checkFlag = checkFlag;
     }
 

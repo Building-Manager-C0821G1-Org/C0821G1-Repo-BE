@@ -1,45 +1,53 @@
 package com.c0821g1.sprint1.entity.security;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.List;
 
-@Entity
-public class Role  implements Serializable {
+import java.util.Set;
+
+@Entity(name = "roles")
+public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer roleId;
-    private String roleName;
-
-    @ManyToMany(mappedBy = "roles")
-    private List<AppUser> appUsers;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+//    @ManyToMany(mappedBy = "roles")
+//    private Set<AppUser> appUsers;
 
     public Role() {
-        //contructor
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public Role(Integer id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public Role(String name) {
+        this.name = name;
+
     }
 
-    public String getRoleName() {
-        return roleName;
+    public Integer getId() {
+        return id;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public List<AppUser> getAppUsers() {
-        return appUsers;
+//    public Set<AppUser> getAppUsers() {
+//        return appUsers;
+//    }
+//
+//    public void setAppUsers(Set<AppUser> appUsers) {
+//        this.appUsers = appUsers;
+//    }
+
+    public String getName() {
+        return name;
     }
 
-    public void setAppUsers(List<AppUser> appUsers) {
-        this.appUsers = appUsers;
+    public void setName(String name) {
+        this.name = name;
     }
+
 }

@@ -34,9 +34,7 @@ public class ContractController {
             @RequestParam(defaultValue = "") String name,
             @RequestParam(defaultValue = "") String code,
             @RequestParam(defaultValue = "") String start,
-            @RequestParam(defaultValue = "") String start1,
             @RequestParam(defaultValue = "") String end,
-            @RequestParam(defaultValue = "") String end1,
             @RequestParam(defaultValue = "0") int page
     ) {
         Pageable pageable = PageRequest.of(page, 7);

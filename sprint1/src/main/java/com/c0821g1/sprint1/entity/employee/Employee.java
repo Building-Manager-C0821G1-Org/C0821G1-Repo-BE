@@ -3,15 +3,16 @@ package com.c0821g1.sprint1.entity.employee;
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.security.AppUser;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
+
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Employee implements Serializable {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer employeeId;
+    private int employeeId;
     private String employeeCode;
     private String employeeName;
     private String employeeDateOfBirth;
@@ -31,24 +32,79 @@ public class Employee implements Serializable {
     @JoinColumn(name = "employee_position_id", nullable = false)
     private EmployeePosition employeePosition;
 
-    @OneToMany(mappedBy = "employee")
-    @JsonBackReference
-    private List<AppUser> appUserList;
+
+//    @OneToMany(mappedBy = "employee")
+//    private List<AppUser> appUserList;
+
 
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
-    @JsonBackReference
     private AppUser appUser;
-
 
     public Employee() {
     }
 
-    public Integer getEmployeeId() {
+    public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth, String employeeGender, String employeeAddress, String employeePhone, String employeeEmail, String employeeStartDate, String employeeImage, Boolean employeeDeleteFlag, List<Contract> contractList, EmployeePosition employeePosition, AppUser appUser) {
+        this.employeeId = employeeId;
+        this.employeeCode = employeeCode;
+        this.employeeName = employeeName;
+        this.employeeDateOfBirth = employeeDateOfBirth;
+        this.employeeGender = employeeGender;
+        this.employeeAddress = employeeAddress;
+        this.employeePhone = employeePhone;
+        this.employeeEmail = employeeEmail;
+        this.employeeStartDate = employeeStartDate;
+        this.employeeImage = employeeImage;
+        this.employeeDeleteFlag = employeeDeleteFlag;
+        this.contractList = contractList;
+        this.employeePosition = employeePosition;
+        this.appUser = appUser;
+    }
+
+    public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth) {
+        this.employeeId = employeeId;
+        this.employeeCode = employeeCode;
+        this.employeeName = employeeName;
+        this.employeeDateOfBirth = employeeDateOfBirth;
+
+    }
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
+    }
+
+    public Boolean getCustomerDeleteFlag() {
+        return employeeDeleteFlag;
+    }
+
+    public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
+        this.employeeDeleteFlag = customerDeleteFlag;
+    }
+
+    public int getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(Integer employeeId) {
+    public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
+    }
+    public Boolean getEmployeeDeleteFlag() {
+        return employeeDeleteFlag;
+    }
+
+    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
+        this.employeeDeleteFlag = employeeDeleteFlag;
     }
 
     public String getEmployeeCode() {
@@ -123,21 +179,6 @@ public class Employee implements Serializable {
         this.employeeImage = employeeImage;
     }
 
-    public Boolean getEmployeeDeleteFlag() {
-        return employeeDeleteFlag;
-    }
-
-    public void setEmployeeDeleteFlag(Boolean employeeDeleteFlag) {
-        this.employeeDeleteFlag = employeeDeleteFlag;
-    }
-
-    public List<Contract> getContractList() {
-        return contractList;
-    }
-
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
-    }
 
     public EmployeePosition getEmployeePosition() {
         return employeePosition;
@@ -147,19 +188,4 @@ public class Employee implements Serializable {
         this.employeePosition = employeePosition;
     }
 
-    public List<AppUser> getAppUserList() {
-        return appUserList;
-    }
-
-    public void setAppUserList(List<AppUser> appUserList) {
-        this.appUserList = appUserList;
-    }
-
-    public AppUser getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
-    }
 }
