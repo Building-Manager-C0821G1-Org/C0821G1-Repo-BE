@@ -2,6 +2,7 @@ package com.c0821g1.sprint1.entity.employee;
 
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.security.AppUser;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,6 +24,7 @@ public class Employee {
     private Boolean employeeDeleteFlag;
 
     @OneToMany(mappedBy = "employee")
+    @JsonBackReference
     private List<Contract> contractList;
 
     @ManyToOne
@@ -32,12 +34,12 @@ public class Employee {
 //    @OneToMany(mappedBy = "employee")
 //    private List<AppUser> appUserList;
 
+
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
     private AppUser appUser;
 
     public Employee() {
     }
-
 
     public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth, String employeeGender, String employeeAddress, String employeePhone, String employeeEmail, String employeeStartDate, String employeeImage, Boolean employeeDeleteFlag, List<Contract> contractList, EmployeePosition employeePosition, AppUser appUser) {
         this.employeeId = employeeId;
@@ -54,6 +56,14 @@ public class Employee {
         this.contractList = contractList;
         this.employeePosition = employeePosition;
         this.appUser = appUser;
+    }
+
+    public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth) {
+        this.employeeId = employeeId;
+        this.employeeCode = employeeCode;
+        this.employeeName = employeeName;
+        this.employeeDateOfBirth = employeeDateOfBirth;
+
     }
 
     public AppUser getAppUser() {
@@ -87,7 +97,6 @@ public class Employee {
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
     }
-
     public Boolean getEmployeeDeleteFlag() {
         return employeeDeleteFlag;
     }

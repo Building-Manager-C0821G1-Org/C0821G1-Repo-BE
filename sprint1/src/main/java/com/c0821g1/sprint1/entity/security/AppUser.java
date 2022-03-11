@@ -110,6 +110,4 @@ public class AppUser {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
-
-
 }
