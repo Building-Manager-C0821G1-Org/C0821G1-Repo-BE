@@ -1,17 +1,6 @@
 package com.c0821g1.sprint1.space_controller;
 
-import com.c0821g1.sprint1.controller.SpaceController;
-import com.c0821g1.sprint1.dto.SpaceListDTO;
-import com.c0821g1.sprint1.entity.space.Spaces;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.http.ResponseEntity;
-
-import java.util.List;
 
 
 @SpringBootTest

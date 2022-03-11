@@ -1,5 +1,6 @@
 package com.c0821g1.sprint1.service.impl;
-
+import com.c0821g1.sprint1.service.SpaceService;
+import org.springframework.stereotype.Service;
 import com.c0821g1.sprint1.dto.SpaceListDTO;
 import com.c0821g1.sprint1.entity.space.Spaces;
 import com.c0821g1.sprint1.repository.SpaceRepository;

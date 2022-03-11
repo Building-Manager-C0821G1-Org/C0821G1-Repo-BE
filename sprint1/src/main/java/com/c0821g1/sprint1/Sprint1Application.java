@@ -2,12 +2,13 @@ package com.c0821g1.sprint1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-
 import java.util.Arrays;
+
 
 @SpringBootApplication
 public class Sprint1Application {
@@ -15,6 +16,7 @@ public class Sprint1Application {
     public static void main(String[] args) {
         SpringApplication.run(Sprint1Application.class, args);
     }
+
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -30,4 +32,5 @@ public class Sprint1Application {
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsFilter(urlBasedCorsConfigurationSource);
     }
+
 }

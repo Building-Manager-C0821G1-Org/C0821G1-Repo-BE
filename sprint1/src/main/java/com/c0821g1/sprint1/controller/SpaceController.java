@@ -33,7 +33,7 @@ public class SpaceController {
 
     @Autowired
     private SpaceStatusService spaceStatusService;
-//    DuDH - Tạo mới Space
+    //    DuDH - Tạo mới Space
     @PostMapping (value = "/create", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> registerSpace (@RequestBody @Valid SpacesDTO spacesDTO, BindingResult bindingResult){
         if(spaceService.existsSpaceByCode(spacesDTO.getSpaceCode())){

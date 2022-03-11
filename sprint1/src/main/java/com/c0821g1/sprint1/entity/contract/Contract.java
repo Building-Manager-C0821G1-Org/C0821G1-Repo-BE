@@ -21,25 +21,33 @@ public class Contract {
 
 
     @ManyToOne
-    @JoinColumn(name = "customer_id",nullable = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id",nullable = false)
+    @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "space_id",nullable = false)
+    @JoinColumn(name = "space_id", nullable = false)
     private Spaces spaces;
+
 
     public Contract(int contractId, String contractExpred, String contractDateStart, String contractDateEnd) {
         this.contractId = contractId;
         this.contractExpred = contractExpred;
         this.contractDateStart = contractDateStart;
         this.contractDateEnd = contractDateEnd;
+        this.contractTotal = contractTotal;
+        this.contractContent = contractContent;
+        this.contractDeleteFlag = contractDeleteFlag;
+        this.customer = customer;
+        this.employee = employee;
+        this.spaces = spaces;
     }
 
     public Contract() {
+
     }
 
     public Spaces getSpaces() {
@@ -121,5 +129,4 @@ public class Contract {
     public void setContractDeleteFlag(Boolean contractDeleteFlag) {
         this.contractDeleteFlag = contractDeleteFlag;
     }
-
 }

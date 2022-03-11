@@ -3,7 +3,6 @@ package com.c0821g1.sprint1.service;
 import com.c0821g1.sprint1.entity.space.Spaces;
 import org.springframework.stereotype.Service;
 import com.c0821g1.sprint1.dto.SpaceListDTO;
-
 import java.util.List;
 
 public interface SpaceService {
@@ -24,5 +23,4 @@ public interface SpaceService {
     void editSpace(Spaces spaces);
 
     boolean existsSpaceByCode(String spaceCode);
-
 }

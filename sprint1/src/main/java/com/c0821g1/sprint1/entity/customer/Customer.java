@@ -124,4 +124,3 @@ public class Customer {
         this.customerDeleteFlag = customerDeleteFlag;
     }
 }
-
