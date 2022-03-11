@@ -91,6 +91,9 @@ public class ContractServiceImpl implements ContractService {
 
     @Override
     public boolean checkDate(String date, String date2) {
+        if (date.equals("") | date2.equals("")){
+            return false;
+        }
         System.out.println(date);
         System.out.println(date2);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
