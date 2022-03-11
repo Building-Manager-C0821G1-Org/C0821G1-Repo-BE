@@ -60,19 +60,25 @@ public class EmployeeServiceImpl implements EmployeeService {
     //Bảo tạo mới tài khoản nhân viên
     @Override
     public void createEmployeeAccount(AppUser appUser) {
-        employeeRepository.createEmployeeAccount(appUser.getUsername(), appUser.getPassword());
+        employeeRepository.createEmployeeAccount1(appUser.getDeleted(), appUser.getEnabled(),appUser.getPassword(),appUser.getUsername());
+//        employeeRepository.createEmployeeAccount(appUser.getUsername(), appUser.getPassword());
+    }
+
+    @Override
+    public Employee getEmployeeByUsername(String username) {
+        return employeeRepository.findEmployeeByAppUser(username);
     }
 
     //Bảo kiểm tra email có tồn tại trong DB
     @Override
     public Boolean existsEmployeeByEmail(String employeEmail) {
-        return employeeRepository.existsEmployeeByEmail(employeEmail) != null;
+        return employeeRepository.getEmployeeByEmail(employeEmail) != null;
     }
 
     //Bảo kiểm tra Code có tồn tại trong DB
     @Override
     public Boolean existsEmployeeByCode(String employeeCode) {
-        return employeeRepository.existsEmployeeByCode(employeeCode) != null;
+        return employeeRepository.getEmployeeByCode(employeeCode).size() != 0;
     }
 
 

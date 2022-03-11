@@ -16,8 +16,8 @@ public class EmployeePosition {
 
 
 
-    @OneToMany(mappedBy = "employeePosition")
     @JsonBackReference
+    @OneToMany(mappedBy = "employeePosition")
     private List<Employee> employeeList;
 
     public EmployeePosition() {

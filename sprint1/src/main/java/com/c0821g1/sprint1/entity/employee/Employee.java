@@ -26,8 +26,8 @@ public class Employee {
     private String employeeImage;
     private Boolean employeeDeleteFlag;
 
-    @OneToMany(mappedBy = "employee")
     @JsonBackReference
+    @OneToMany(mappedBy = "employee")
     private List<Contract> contractList;
 
     @ManyToOne
@@ -36,7 +36,7 @@ public class Employee {
 
 
 
-    @JsonBackReference
+
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.MERGE})
     private AppUser appUser;
 

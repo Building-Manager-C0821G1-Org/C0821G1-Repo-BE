@@ -5,6 +5,8 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -12,106 +14,185 @@ import java.util.Set;
     @SQLDelete(sql = "UPDATE app_users SET deleted = true WHERE id=?")
     @Where(clause = "deleted=false")
     public class AppUser {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int id;
-        private String username;
-        private String password;
-        private Boolean isEnabled;
-        private String verificationCode;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @NotBlank(message = " Tên đăng nhập không được để trống")
+    private String username;
+    @NotBlank(message = " Mật khẩu không được để trống")
+    private String password;
+    private Boolean isEnabled;
+    private String verificationCode;
+    //    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
+//    private Set<Role> roles;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "app_users_roles",
+            joinColumns = @JoinColumn(name = "app_users_id"),
+            inverseJoinColumns = @JoinColumn(name = "roles_id"))
+    private Set<Role> roles = new HashSet<>();
 
+    private Boolean deleted = Boolean.FALSE;
 
-        @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
-        private List<Role> roles;
-        private Boolean deleted = Boolean.FALSE;
+    public AppUser() {
+    }
 
-        public AppUser() {
-        }
+    public AppUser(Integer id, @NotBlank(message = " Tên đăng nhập không được để trống") String username, @NotBlank(message = " Mật khẩu không được để trống") String password, Boolean isEnabled, String verificationCode, Set<Role> roles, Boolean deleted) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.isEnabled = isEnabled;
+        this.verificationCode = verificationCode;
+        this.roles = roles;
+        this.deleted = deleted;
+    }
 
-        public AppUser(int id, String username, String password, Boolean isEnabled, String verificationCode, List<Role> roles, Boolean deleted) {
-            this.id = id;
-            this.username = username;
-            this.password = password;
-            this.isEnabled = isEnabled;
-            this.verificationCode = verificationCode;
-            this.roles = roles;
-            this.deleted = deleted;
-        }
+    public Integer getId() {
+        return id;
+    }
 
-        public AppUser(int id, String username, String password, Boolean isEnabled, String verificationCode, List<Role> roles) {
-            this.id = id;
-            this.username = username;
-            this.password = password;
-            this.isEnabled = isEnabled;
-            this.verificationCode = verificationCode;
-            this.roles = roles;
-        }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-        public long getId() {
-            return id;
-        }
+    public String getUsername() {
+        return username;
+    }
 
-        public void setId(int id) {
-            this.id = id;
-        }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-        public Boolean getDeleted() {
-            return deleted;
-        }
+    public String getPassword() {
+        return password;
+    }
 
-        public void setDeleted(Boolean deleted) {
-            this.deleted = deleted;
-        }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-        public String getUsername() {
-            return username;
-        }
+    public Boolean getEnabled() {
+        return isEnabled;
+    }
 
-        public void setUsername(String username) {
-            this.username = username;
-        }
+    public void setEnabled(Boolean enabled) {
+        isEnabled = enabled;
+    }
 
-        public String getPassword() {
-            return password;
-        }
+    public String getVerificationCode() {
+        return verificationCode;
+    }
 
-        public void setPassword(String password) {
-            this.password = password;
-        }
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
 
-        public Boolean getEnabled() {
-            return isEnabled;
-        }
+    public Set<Role> getRoles() {
+        return roles;
+    }
 
-        public void setEnabled(Boolean enabled) {
-            isEnabled = enabled;
-        }
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
-        public String getVerificationCode() {
-            return verificationCode;
-        }
+    public Boolean getDeleted() {
+        return deleted;
+    }
 
-        public void setVerificationCode(String verificationCode) {
-            this.verificationCode = verificationCode;
-        }
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
 
-        public List<Role> getRoles() {
-            return roles;
-        }
-
-        public void setRoles(List<Role> roles) {
-            this.roles = roles;
-        }
-
-        @Override
-        public String toString() {
-            return "AppUser{" +
-                    "id='" + id + '\'' +
-                    ", username='" + username + '\'' +
-                    ", password='" + password + '\'' +
-                    ", isEnabled=" + isEnabled +
-                    ", verificationCode='" + verificationCode + '\'' +
-                    ", roles=" + roles +
-                    '}';
-        }
+    //        @Id
+//        @GeneratedValue(strategy = GenerationType.IDENTITY)
+//        private int id;
+//        private String username;
+//        private String password;
+//        private Boolean isEnabled;
+//        private String verificationCode;
+//
+//
+//        @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, targetEntity = Role.class)
+//        private List<Role> roles;
+//        private Boolean deleted = Boolean.FALSE;
+//
+//        public AppUser() {
+//        }
+//
+//        public AppUser(int id, String username, String password, Boolean isEnabled, String verificationCode, List<Role> roles, Boolean deleted) {
+//            this.id = id;
+//            this.username = username;
+//            this.password = password;
+//            this.isEnabled = isEnabled;
+//            this.verificationCode = verificationCode;
+//            this.roles = roles;
+//            this.deleted = deleted;
+//        }
+//
+//        public AppUser(int id, String username, String password, Boolean isEnabled, String verificationCode, List<Role> roles) {
+//            this.id = id;
+//            this.username = username;
+//            this.password = password;
+//            this.isEnabled = isEnabled;
+//            this.verificationCode = verificationCode;
+//            this.roles = roles;
+//        }
+//
+//        public long getId() {
+//            return id;
+//        }
+//
+//        public void setId(int id) {
+//            this.id = id;
+//        }
+//
+//        public Boolean getDeleted() {
+//            return deleted;
+//        }
+//
+//        public void setDeleted(Boolean deleted) {
+//            this.deleted = deleted;
+//        }
+//
+//        public String getUsername() {
+//            return username;
+//        }
+//
+//        public void setUsername(String username) {
+//            this.username = username;
+//        }
+//
+//        public String getPassword() {
+//            return password;
+//        }
+//
+//        public void setPassword(String password) {
+//            this.password = password;
+//        }
+//
+//        public Boolean getEnabled() {
+//            return isEnabled;
+//        }
+//
+//        public void setEnabled(Boolean enabled) {
+//            isEnabled = enabled;
+//        }
+//
+//        public String getVerificationCode() {
+//            return verificationCode;
+//        }
+//
+//        public void setVerificationCode(String verificationCode) {
+//            this.verificationCode = verificationCode;
+//        }
+//
+//        public List<Role> getRoles() {
+//            return roles;
+//        }
+//
+//        public void setRoles(List<Role> roles) {
+//            this.roles = roles;
+//        }
+//
+//
+//        }
     }

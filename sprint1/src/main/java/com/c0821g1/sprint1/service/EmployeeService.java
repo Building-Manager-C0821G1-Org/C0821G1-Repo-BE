@@ -30,6 +30,8 @@ public interface EmployeeService {
 
     void createEmployeeAccount(AppUser appUser);
 
+    Employee getEmployeeByUsername(String username);
+
 }
 
 

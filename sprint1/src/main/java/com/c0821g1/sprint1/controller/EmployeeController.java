@@ -20,11 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-
+import java.util.*;
 
 
 @RestController
@@ -39,25 +35,25 @@ public class EmployeeController {
     AppUserService appUserService;
 
     //Hiển thị danh sách
-    @GetMapping(value = "/list")
-    public ResponseEntity<Page<Employee>> showListEmployee(@PageableDefault(value = 5) Pageable pageable) {
-        Page<Employee> employeeList = employeeService.findAllEmployeePage(pageable);
-        if (employeeList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(employeeList, HttpStatus.OK);
-    }
+//    @GetMapping(value = "/list")
+//    public ResponseEntity<Page<Employee>> showListEmployee(@PageableDefault(value = 5) Pageable pageable) {
+//        Page<Employee> employeeList = employeeService.findAllEmployeePage(pageable);
+//        if (employeeList.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//        return new ResponseEntity<>(employeeList, HttpStatus.OK);
+//    }
 
     // Tìm kiếm nhân viên
     @GetMapping(value = "/search")
     public ResponseEntity<Page<Employee>> searchEmployeeByNameOrDateOfBirthOrEmailOrAddress(@PageableDefault(value = 5) Pageable pageable,
-                                                                                            @RequestParam(defaultValue = "") String employee_name,
-                                                                                            @RequestParam(defaultValue = "") String employee_date_of_birth,
-                                                                                            @RequestParam(defaultValue = "") String employee_email,
-                                                                                            @RequestParam(defaultValue = "") String employee_address
+                                                                                            @RequestParam(defaultValue = "") String employeeName,
+                                                                                            @RequestParam(defaultValue = "") String employeeDateOfBirth,
+                                                                                            @RequestParam(defaultValue = "") String employeeEmail,
+                                                                                            @RequestParam(defaultValue = "") String employeeAddress
     ) {
-        Page<Employee> employeeListSearch = employeeService.findAllEmployeeSearch(pageable, employee_name,
-                employee_date_of_birth, employee_email, employee_address);
+        Page<Employee> employeeListSearch = employeeService.findAllEmployeeSearch(pageable, employeeName,
+                employeeDateOfBirth, employeeEmail, employeeAddress);
         if (employeeListSearch.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -90,6 +86,7 @@ public class EmployeeController {
     @PatchMapping(value = "/update/{id}")
     public ResponseEntity<Object> updateEmployee(@RequestBody @Valid EmployeeDTO employeeDTO,
                                                  BindingResult bindingResult) {
+
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getFieldError(), HttpStatus.BAD_REQUEST);
         }
@@ -99,12 +96,12 @@ public class EmployeeController {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
         AppUser appUser = appUserService.findAppUserByEmail(employeeDTO.getAppUser().getUsername());
-        List<Role> roleList = new ArrayList<>();
+        Set<Role> roleList = new HashSet<>();
         Role role = new Role();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            role.setRoleId(1);
+            role.setId(1);
         } else {
-            role.setRoleId(2);
+            role.setId(2);
         }
         roleList.add(role);
         appUser.setRoles(roleList);
@@ -124,7 +121,7 @@ public class EmployeeController {
 //        Kiểm tra email và mã nhân viên có tồn tại trong DB hay không
 
         if (employeeService.existsEmployeeByCode(employeeDTO.getEmployeeCode())) {
-            System.out.println("Test");
+            System.out.println("Lỗi");;
             bindingResult.rejectValue("employeeCode", "Mã nhân viên đã tồn tại!");
         }
         if (employeeService.existsEmployeeByEmail(employeeDTO.getEmployeeEmail())) {
@@ -139,18 +136,20 @@ public class EmployeeController {
         BeanUtils.copyProperties(employeeDTO, employee);
         AppUser appUser = new AppUser();
         appUser.setUsername(employee.getEmployeeEmail());
-        appUser.setPassword("123456");
+        appUser.setPassword("$2a$12$RkSquv9K36Wv9q9QnQO7uOIl1EY3p7HhVCNWPWpxsIomyLt6t1NpC");
+        appUser.setDeleted(false);
+        appUser.setEnabled(true);
         employeeService.createEmployeeAccount(appUser);
         appUser = appUserService.findAppUserByEmail(appUser.getUsername());
         employee.setAppUser(appUser);
 
         //set role
-        List<Role> roleList = new ArrayList<>();
+        Set<Role> roleList = new HashSet<>();
         Role role = new Role();
         if (employee.getEmployeePosition().getEmployeePositionId() == 1) {
-            role.setRoleId(2);
+            role.setId(2);
         } else {
-            role.setRoleId(1);
+            role.setId(1);
         }
         roleList.add(role);
         appUser.setRoles(roleList);

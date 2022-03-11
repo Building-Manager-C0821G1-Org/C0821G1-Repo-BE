@@ -11,20 +11,23 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+    @Query(value = "SELECT * from employee e join app_users a on e.app_user_id = a.id where a.username =?1", nativeQuery = true)
+    Employee findEmployeeByAppUser(String username);
 
     @Query(value = "select * from  employee where employee_delete_flag = false ", nativeQuery = true)
     Page<Employee> findAllEmployee(Pageable pageable);
 
-    @Query(value = "select * from employee where employee_name like concat('%',:employee_name,'%') " +
-            "and employee_date_of_birth like concat('%',:employee_date_of_birth,'%') and employee_email like concat('%',:employee_email,'%')" +
-            " and employee_address like concat('%',:employee_address,'%') and employee_delete_flag = false", nativeQuery = true)
-    Page<Employee> searchEmployeeByNameOrDateOfBirthOrEmailOrAddress(Pageable pageable, @Param("employee_name") String employee_name
-            , @Param("employee_date_of_birth") String employee_date_of_birth, @Param("employee_email") String employee_email, @Param("employee_address") String employee_address);
+    @Query(value = "select * from employee where employee_name like concat('%',:employeeName,'%') " +
+            "and employee_date_of_birth like concat('%',:employeeDateOfBirth,'%') and employee_email like concat('%',:employeeEmail,'%')" +
+            " and employee_address like concat('%',:employeeAddress,'%') and employee_delete_flag = false", nativeQuery = true)
+    Page<Employee> searchEmployeeByNameOrDateOfBirthOrEmailOrAddress(Pageable pageable, @Param("employeeName") String employeeName
+            , @Param("employeeDateOfBirth") String employeeDateOfBirth, @Param("employeeEmail") String employeeEmail, @Param("employeeAddress") String employeeAddress);
 
     @Transactional
     @Modifying
@@ -48,7 +51,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
             "employee_name," +
             "employee_phone," +
             "employee_start_date," +
-            "app_user_app_user_id," +
+            "app_users_id," +
             "employee_position_id) " +
             "values (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12)", nativeQuery = true)
     void saveEmployee(String employeeAddress, String employeeCode, String employeeDateOfBirth, Boolean employeeDeleteFlag,
@@ -64,7 +67,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
             ",e.employee_date_of_birth =?3,e.employee_delete_flag =?4," +
             "e.employee_email =?5,e.employee_gender =?6," +
             "e.employee_image =?7,e.employee_name= ?8,e.employee_phone= ?9,e.employee_start_date= ?10," +
-            "e.app_user_app_user_id= ?11,e.employee_position_id= ?12 " +
+            "e.app_user_id= ?11,e.employee_position_id= ?12 " +
             "where employee_id =?13", nativeQuery = true)
     void editEmployee(String employeeAddress, String employeeCode, String employeeDateOfBirth, Boolean employeeDeleteFlag,
                       String employeeEmail, String employeeGender, String employeeImage, String employeeName,
@@ -74,21 +77,27 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     //Bảo đăng ký tài khoản cho nhân viên
     @Modifying
     @Transactional
-    @Query(value = "insert into app_user(app_user_name," +
-            "app_user_password)" +
-            "values  (:user_name," +
-            "                 :user_password);", nativeQuery = true)
-    void createEmployeeAccount(@Param("user_name") String appUserName, @Param("user_password") String appUserPassword);
+    @Query(value = "insert into app_users(username," +
+            "password)" +
+            "values  (?1,?2);", nativeQuery = true)
+    void createEmployeeAccount( String appUserName, String appUserPassword);
 
     //Bảo kiểm tra email có tồn tại trong DB hay không
-    @Query(value = "SELECT DISTINCT * " +
+    @Query(value = "SELECT  * " +
             "from employee  " +
             "where employee_email =?1", nativeQuery = true)
-    Employee existsEmployeeByEmail(String employeeEmail);
+    Employee getEmployeeByEmail(String employeeEmail);
 
     //Bảo kiểm tra mã nhân viên có tồn tại trong DB hay không
-    @Query(value = "SELECT DISTINCT* " +
+    @Query(value = "SELECT * " +
             "from employee  " +
             "where employee_code =?1", nativeQuery = true)
-    Employee existsEmployeeByCode(String employeeCode);
+    List<Employee> getEmployeeByCode(String employeeCode);
+
+
+    @Modifying
+    @Transactional
+    @Query(value = "INSERT INTO app_users( deleted, is_enabled, password, username) " +
+            "VALUES (?1, ?2, ?3, ?4 );", nativeQuery = true)
+    void createEmployeeAccount1(Boolean appUserDelete,Boolean appUserEnable,String appUserPassword, String appUserUsername);
 }

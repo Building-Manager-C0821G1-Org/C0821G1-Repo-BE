@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AppUserRepository extends JpaRepository<AppUser,Integer> {
 
-    @Query(value = "select * from app_user " +
-            "where app_user_name= ?1", nativeQuery = true)
+    @Query(value = "select * from app_users " +
+            "where username= ?1", nativeQuery = true)
     AppUser findAppUserByEmail(String appUserName);
 }
