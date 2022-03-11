@@ -1,8 +1,6 @@
 package com.c0821g1.sprint1.entity.floor;
-
 import com.c0821g1.sprint1.entity.space.Spaces;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnJava;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
 
@@ -27,11 +25,11 @@ public class Floors {
     private FloorsStatus floorsStatus;
 
     @OneToMany(mappedBy = "floors")
+    @JsonBackReference
     private List<Spaces> spacesList;
 
     public Floors() {
     }
-
     public Floors(int floorId, String floorCode, String floorName, String floorArea, String floorCapacity, Boolean floorDeleteFlag, FloorsType floorsType, FloorsStatus floorsStatus, List<Spaces> spacesList) {
         this.floorId = floorId;
         this.floorCode = floorCode;
@@ -108,6 +106,9 @@ public class Floors {
         this.floorCapacity = floorCapacity;
     }
 
+
+
+
     public FloorsType getFloorsType() {
         return floorsType;
     }
@@ -115,4 +116,8 @@ public class Floors {
     public void setFloorsType(FloorsType floorsType) {
         this.floorsType = floorsType;
     }
+
+
+
+
 }

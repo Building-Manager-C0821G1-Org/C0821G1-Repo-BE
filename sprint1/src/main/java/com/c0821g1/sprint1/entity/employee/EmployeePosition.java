@@ -1,26 +1,19 @@
 package com.c0821g1.sprint1.entity.employee;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.util.List;
 
-
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Entity(name = "employee_position")
+@Entity
 public class EmployeePosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "employee_position_id",nullable = false)
     private int employeePositionId;
-    @JoinColumn(name = "employee_position_name",nullable = false)
+
     private String employeePositionName;
 
 
-
-    @JsonBackReference
     @OneToMany(mappedBy = "employeePosition")
+    @JsonBackReference
     private List<Employee> employeeList;
 
     public EmployeePosition() {
@@ -53,6 +46,10 @@ public class EmployeePosition {
     }
 
     public void setEmployeeList(List<Employee> employeeList) {
+    }
+
+    public EmployeePosition(int employeePositionId, List<Employee> employeeList) {
+        this.employeePositionId = employeePositionId;
         this.employeeList = employeeList;
     }
 }

@@ -1,29 +1,31 @@
 package com.c0821g1.sprint1.entity.space;
-
-
 import com.c0821g1.sprint1.entity.floor.Floors;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "space_status")
 public class SpacesStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "space_status_id",nullable = false)
     private int spaceStatusId;
 
-    private String spacerStatusName;
+    @JoinColumn(name = "space_status_name",nullable = false)
+    private String spaceStatusName;
 
     @OneToMany(mappedBy = "spaceStatus")
+    @JsonBackReference(value = "spaceStatus")
     private List<Spaces> spacesList;
 
 
     public SpacesStatus() {
     }
 
-    public SpacesStatus(int spaceStatusId, String spacerStatusName, List<Spaces> spacesList) {
+
+    public SpacesStatus(int spaceStatusId, String spaceStatusName, List<Spaces> spacesList) {
         this.spaceStatusId = spaceStatusId;
-        this.spacerStatusName = spacerStatusName;
+        this.spaceStatusName = spaceStatusName;
         this.spacesList = spacesList;
     }
 
@@ -35,12 +37,12 @@ public class SpacesStatus {
         this.spaceStatusId = spaceStatusId;
     }
 
-    public String getSpacerStatusName() {
-        return spacerStatusName;
+    public String getSpaceStatusName() {
+        return spaceStatusName;
     }
 
-    public void setSpacerStatusName(String spacerStatusName) {
-        this.spacerStatusName = spacerStatusName;
+    public void setSpaceStatusName(String spaceStatusName) {
+        this.spaceStatusName = spaceStatusName;
     }
 
     public List<Spaces> getSpacesList() {

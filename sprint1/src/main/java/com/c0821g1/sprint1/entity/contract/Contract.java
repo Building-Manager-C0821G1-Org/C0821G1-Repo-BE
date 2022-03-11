@@ -1,76 +1,45 @@
 package com.c0821g1.sprint1.entity.contract;
-
 import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.entity.employee.Employee;
-import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.entity.space.Spaces;
-
 import javax.persistence.*;
+import java.io.Serializable;
+
 
 @Entity
-public class Contract {
+public class Contract implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int contractId;
+    private String contractCode;
 
-    private String contractExpred;
+    private Integer contractExpired;
     private String contractDateStart;
     private String contractDateEnd;
-    private String contractTotal;
+    private Integer contractTotal;
+    private Integer price;
+    private Integer contractDeposit;
+    private String contractTaxCode;
     private String contractContent;
+    private String contractImageUrl;
     private Boolean contractDeleteFlag;
+    private Integer checkFlag;
 
 
     @ManyToOne
-    @JoinColumn(name = "customer_id",nullable = false)
+    @JoinColumn(name = "customer_id",nullable = true)
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id",nullable = false)
+    @JoinColumn(name = "employee_id",nullable = true)
     private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "space_id",nullable = false)
+    @JoinColumn(name = "space_id",nullable = true)
+
     private Spaces spaces;
 
     public Contract() {
-    }
-
-    public Contract(int contractId, String contractExpred, String contractDateStart, String contractDateEnd, String contractTotal, String contractContent, Boolean contractDeleteFlag, Customer customer, Employee employee, Spaces spaces) {
-        this.contractId = contractId;
-        this.contractExpred = contractExpred;
-        this.contractDateStart = contractDateStart;
-        this.contractDateEnd = contractDateEnd;
-        this.contractTotal = contractTotal;
-        this.contractContent = contractContent;
-        this.contractDeleteFlag = contractDeleteFlag;
-        this.customer = customer;
-        this.employee = employee;
-        this.spaces = spaces;
-    }
-
-    public Spaces getSpaces() {
-        return spaces;
-    }
-
-    public void setSpaces(Spaces spaces) {
-        this.spaces = spaces;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public int getContractId() {
@@ -81,12 +50,20 @@ public class Contract {
         this.contractId = contractId;
     }
 
-    public String getContractExpred() {
-        return contractExpred;
+    public String getContractCode() {
+        return contractCode;
     }
 
-    public void setContractExpred(String contractExpred) {
-        this.contractExpred = contractExpred;
+    public void setContractCode(String contractCode) {
+        this.contractCode = contractCode;
+    }
+
+    public Integer getContractExpired() {
+        return contractExpired;
+    }
+
+    public void setContractExpired(Integer contractExpired) {
+        this.contractExpired = contractExpired;
     }
 
     public String getContractDateStart() {
@@ -105,12 +82,37 @@ public class Contract {
         this.contractDateEnd = contractDateEnd;
     }
 
-    public String getContractTotal() {
+    public Integer getContractTotal() {
         return contractTotal;
     }
 
-    public void setContractTotal(String contractTotal) {
+    public void setContractTotal(Integer contractTotal) {
         this.contractTotal = contractTotal;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getContractDeposit() {
+        return contractDeposit;
+    }
+
+    public void setContractDeposit(Integer contractDeposit) {
+        this.contractDeposit = contractDeposit;
+    }
+
+    public String getContractTaxCode() {
+        return contractTaxCode;
+    }
+
+    public void setContractTaxCode(String contractTaxCode) {
+        this.contractTaxCode = contractTaxCode;
+
     }
 
     public String getContractContent() {
@@ -121,12 +123,55 @@ public class Contract {
         this.contractContent = contractContent;
     }
 
+
+    public String getContractImageUrl() {
+        return contractImageUrl;
+    }
+
+    public void setContractImageUrl(String contractImageUrl) {
+        this.contractImageUrl = contractImageUrl;
+    }
+
+
     public Boolean getContractDeleteFlag() {
         return contractDeleteFlag;
     }
 
     public void setContractDeleteFlag(Boolean contractDeleteFlag) {
         this.contractDeleteFlag = contractDeleteFlag;
+    }
+
+
+    public Integer getCheckFlag() {
+        return checkFlag;
+    }
+
+    public void setCheckFlag(Integer checkFlag) {
+        this.checkFlag = checkFlag;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Spaces getSpaces() {
+        return spaces;
+    }
+
+    public void setSpaces(Spaces spaces) {
+        this.spaces = spaces;
     }
 
 }

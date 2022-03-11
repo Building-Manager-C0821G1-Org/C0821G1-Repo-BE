@@ -29,9 +29,30 @@ if "%DIRNAME%" == "" set DIRNAME=.
 set APP_BASE_NAME=%~n0
 set APP_HOME=%DIRNAME%
 
+<<<<<<< HEAD
 @rem Resolve any "." and ".." in APP_HOME to make it shorter.
 for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 
+=======
+<<<<<<< HEAD
+@rem Resolve any "." and ".." in APP_HOME to make it shorter.
+for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
+
+=======
+<<<<<<< HEAD
+@rem Resolve any "." and ".." in APP_HOME to make it shorter.
+for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
+
+=======
+
+
+@rem Resolve any "." and ".." in APP_HOME to make it shorter.
+for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
+
+
+>>>>>>> cde98f6c65c86dfae7a71fb8dfba592f1de7ecf5
+>>>>>>> developer
+>>>>>>> 70ac081b81d79028c18b881ff8c5964c78819d22
 @rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
 
@@ -40,8 +61,27 @@ if defined JAVA_HOME goto findJavaFromJavaHome
 
 set JAVA_EXE=java.exe
 %JAVA_EXE% -version >NUL 2>&1
+<<<<<<< HEAD
 if "%ERRORLEVEL%" == "0" goto execute
 
+=======
+<<<<<<< HEAD
+if "%ERRORLEVEL%" == "0" goto execute
+
+=======
+<<<<<<< HEAD
+if "%ERRORLEVEL%" == "0" goto execute
+
+=======
+
+if "%ERRORLEVEL%" == "0" goto init
+
+if "%ERRORLEVEL%" == "0" goto execute
+
+
+>>>>>>> cde98f6c65c86dfae7a71fb8dfba592f1de7ecf5
+>>>>>>> developer
+>>>>>>> 70ac081b81d79028c18b881ff8c5964c78819d22
 echo.
 echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
 echo.
@@ -54,8 +94,27 @@ goto fail
 set JAVA_HOME=%JAVA_HOME:"=%
 set JAVA_EXE=%JAVA_HOME%/bin/java.exe
 
+<<<<<<< HEAD
 if exist "%JAVA_EXE%" goto execute
 
+=======
+<<<<<<< HEAD
+if exist "%JAVA_EXE%" goto execute
+
+=======
+<<<<<<< HEAD
+if exist "%JAVA_EXE%" goto execute
+
+=======
+
+if exist "%JAVA_EXE%" goto init
+
+if exist "%JAVA_EXE%" goto execute
+
+
+>>>>>>> cde98f6c65c86dfae7a71fb8dfba592f1de7ecf5
+>>>>>>> developer
+>>>>>>> 70ac081b81d79028c18b881ff8c5964c78819d22
 echo.
 echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
 echo.
@@ -64,6 +123,31 @@ echo location of your Java installation.
 
 goto fail
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+:init
+@rem Get command-line arguments, handling Windows variants
+
+if not "%OS%" == "Windows_NT" goto win9xME_args
+
+:win9xME_args
+@rem Slurp the command line arguments.
+set CMD_LINE_ARGS=
+set _SKIP=2
+
+:win9xME_args_slurp
+if "x%~1" == "x" goto execute
+
+set CMD_LINE_ARGS=%*
+
+>>>>>>> cde98f6c65c86dfae7a71fb8dfba592f1de7ecf5
+>>>>>>> developer
+>>>>>>> 70ac081b81d79028c18b881ff8c5964c78819d22
 :execute
 @rem Setup the command line
 
@@ -71,8 +155,28 @@ set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
 
 
 @rem Execute Gradle
+<<<<<<< HEAD
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
 
+=======
+<<<<<<< HEAD
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
+
+=======
+<<<<<<< HEAD
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
+
+=======
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %CMD_LINE_ARGS%
+
+
+@rem Execute Gradle
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
+
+
+>>>>>>> cde98f6c65c86dfae7a71fb8dfba592f1de7ecf5
+>>>>>>> developer
+>>>>>>> 70ac081b81d79028c18b881ff8c5964c78819d22
 :end
 @rem End local scope for the variables with windows NT shell
 if "%ERRORLEVEL%"=="0" goto mainEnd

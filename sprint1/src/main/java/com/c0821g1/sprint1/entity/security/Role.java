@@ -1,11 +1,9 @@
 package com.c0821g1.sprint1.entity.security;
 
-import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.List;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity(name = "roles")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -39,8 +37,4 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
-
-
 }
-
-

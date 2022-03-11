@@ -4,8 +4,6 @@ import com.c0821g1.sprint1.entity.security.AppUser;
 import javax.validation.constraints.NotBlank;
 
 
-
-
     public class EmployeeDTO {
 
         private int employeeId;
@@ -165,3 +163,6 @@ import javax.validation.constraints.NotBlank;
             this.appUser = appUser;
         }
     }
+
+
+

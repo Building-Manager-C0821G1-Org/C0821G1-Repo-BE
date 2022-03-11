@@ -1,6 +1,5 @@
 package com.c0821g1.sprint1.entity.floor;
-
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,6 +12,8 @@ public class FloorsStatus {
     private String floorStatusName;
 
     @OneToMany(mappedBy = "floorsStatus")
+
+    @JsonBackReference
     private List<Floors> floorsList;
 
     public FloorsStatus() {
