@@ -1,8 +1,6 @@
 package com.c0821g1.sprint1.entity.space;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 import java.util.List;
 
