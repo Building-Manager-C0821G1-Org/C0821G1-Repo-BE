@@ -20,7 +20,6 @@ import java.io.IOException;
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
-
     @Autowired
     private JwtUtils jwtUtils;
 
@@ -32,14 +31,11 @@ public class JwtFilter extends OncePerRequestFilter {
         String requestTokenHeader = request.getHeader("Authorization");
         String username = null;
         String jwtToken = null;
-        System.out.println("token:" + requestTokenHeader);
-
         // JWT Token is in the form "Bearer token". Remove Bearer word and get only the Token
         if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
             jwtToken = requestTokenHeader.substring(7);
             try {
                 username = jwtUtils.getUsernameFromToken(jwtToken);
-                System.out.println(username);
             } catch (IllegalArgumentException e) {
                 logger.warn("Unable to get JWT Token");
             } catch (ExpiredJwtException e) {
@@ -56,7 +52,6 @@ public class JwtFilter extends OncePerRequestFilter {
 
             // if token is valid configure Spring Security to manually set authentication
             if (Boolean.TRUE.equals(jwtUtils.validateToken(jwtToken, userDetails)) ) {
-                System.out.println(userDetails.getAuthorities());
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
                         userDetails, null, userDetails.getAuthorities());
                 usernamePasswordAuthenticationToken

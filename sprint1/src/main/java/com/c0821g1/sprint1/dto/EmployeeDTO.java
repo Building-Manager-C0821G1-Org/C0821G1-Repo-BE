@@ -1,5 +1,6 @@
 package com.c0821g1.sprint1.dto;
 
+
 import com.c0821g1.sprint1.entity.employee.EmployeePosition;
 import com.c0821g1.sprint1.entity.security.AppUser;
 import javax.validation.constraints.NotBlank;
@@ -163,4 +164,5 @@ public class EmployeeDTO {
     public void setAppUser(AppUser appUser) {
         this.appUser = appUser;
     }
+
 }

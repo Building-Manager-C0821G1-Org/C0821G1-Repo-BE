@@ -1,3 +1,4 @@
+
 package com.c0821g1.sprint1.service.account.impl;
 import com.c0821g1.sprint1.entity.security.AppUser;
 import com.c0821g1.sprint1.repository.account.IAppUserRepository;
@@ -30,3 +31,4 @@ public class AppUserServiceImpl implements IAppUserService {
         return appUserRepository.findAppUserByEmail(email);
     }
 }
+

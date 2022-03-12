@@ -26,7 +26,11 @@ class SecurityControllerTest_AuthenticateUser {
 
     // Test username + passwword null
     @Test
+<<<<<<< HEAD
     private void authenticateUser_1() throws Exception {
+=======
+    public void authenticateUser_1() throws Exception {
+>>>>>>> origin/login-NghiaDM
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername(null);
         loginRequest.setPassword(null);
@@ -41,7 +45,11 @@ class SecurityControllerTest_AuthenticateUser {
     }
     // Test username + passwword rỗng
     @Test
+<<<<<<< HEAD
     private void authenticateUser_2() throws Exception {
+=======
+    public void authenticateUser_2() throws Exception {
+>>>>>>> origin/login-NghiaDM
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("");
         loginRequest.setPassword("");
@@ -56,7 +64,11 @@ class SecurityControllerTest_AuthenticateUser {
     }
     // Test username + passwword nhập đúng
     @Test
+<<<<<<< HEAD
     private void authenticateUser_3() throws Exception {
+=======
+    public void authenticateUser_3() throws Exception {
+>>>>>>> origin/login-NghiaDM
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("admin");
         loginRequest.setPassword("123");
@@ -71,7 +83,11 @@ class SecurityControllerTest_AuthenticateUser {
     }
     // Test passwword nhập sai (khong tồn tại trong db)
     @Test
+<<<<<<< HEAD
     private void authenticateUser_4() throws Exception {
+=======
+    public void authenticateUser_4() throws Exception {
+>>>>>>> origin/login-NghiaDM
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("admin");
         loginRequest.setPassword("456");
@@ -86,7 +102,11 @@ class SecurityControllerTest_AuthenticateUser {
     }
     // Test username nhập sai (khong tồn tại trong db)
     @Test
+<<<<<<< HEAD
     private void authenticateUser_5() throws Exception {
+=======
+    public void authenticateUser_5() throws Exception {
+>>>>>>> origin/login-NghiaDM
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("abcdefgh");
         loginRequest.setPassword("456");
@@ -101,7 +121,11 @@ class SecurityControllerTest_AuthenticateUser {
     }
     // Test username + passwword nhập sai (khong tồn tại trong db)
     @Test
+<<<<<<< HEAD
     private void authenticateUser_6() throws Exception {
+=======
+    public void authenticateUser_6() throws Exception {
+>>>>>>> origin/login-NghiaDM
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("abcdefgh");
         loginRequest.setPassword("1584699");

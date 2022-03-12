@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
@@ -87,8 +86,5 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void saveEmployee(Employee employee) {
         employeeRepository.save(employee);
     }
-
-
-
 
 }

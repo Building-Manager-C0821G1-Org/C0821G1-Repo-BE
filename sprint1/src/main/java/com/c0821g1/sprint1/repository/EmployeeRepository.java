@@ -14,12 +14,13 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
     @Query(value = "SELECT * from employee e join app_users a on e.app_user_id = a.id where a.username =?1", nativeQuery = true)
     Employee findEmployeeByAppUser(String username);
-
-
 
     @Query(value = "select * from  employee where employee_delete_flag = false ", nativeQuery = true)
     Page<Employee> findAllEmployee(Pageable pageable);
@@ -101,4 +102,5 @@ public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
     @Query(value = "INSERT INTO app_users( deleted, is_enabled, password, username) " +
             "VALUES (?1, ?2, ?3, ?4 );", nativeQuery = true)
     void createEmployeeAccount1(Boolean appUserDelete,Boolean appUserEnable,String appUserPassword, String appUserUsername);
+
 }

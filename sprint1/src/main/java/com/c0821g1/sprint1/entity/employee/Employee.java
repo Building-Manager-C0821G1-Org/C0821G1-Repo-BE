@@ -4,6 +4,7 @@ import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.security.AppUser;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -30,17 +31,12 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "employee_position_id", nullable = false)
     private EmployeePosition employeePosition;
-
-
-
-//    @OneToMany(mappedBy = "employee")
-//    private List<AppUser> appUserList;
-
     @OneToOne(targetEntity = AppUser.class, cascade = {CascadeType.PERSIST})
     private AppUser appUser;
 
     public Employee() {
     }
+
     public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth, String employeeGender, String employeeAddress, String employeePhone, String employeeEmail, String employeeStartDate, String employeeImage, Boolean employeeDeleteFlag, List<Contract> contractList, EmployeePosition employeePosition, AppUser appUser) {
         this.employeeId = employeeId;
         this.employeeCode = employeeCode;
@@ -56,22 +52,6 @@ public class Employee {
         this.contractList = contractList;
         this.employeePosition = employeePosition;
         this.appUser = appUser;
-    }
-
-    public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth, String employeeGender, String employeeAddress, String employeePhone, String employeeEmail, String employeeStartDate, String employeeImage, Boolean employeeDeleteFlag, List<Contract> contractList, EmployeePosition employeePosition) {
-        this.employeeId = employeeId;
-        this.employeeCode = employeeCode;
-        this.employeeName = employeeName;
-        this.employeeDateOfBirth = employeeDateOfBirth;
-        this.employeeGender = employeeGender;
-        this.employeeAddress = employeeAddress;
-        this.employeePhone = employeePhone;
-        this.employeeEmail = employeeEmail;
-        this.employeeStartDate = employeeStartDate;
-        this.employeeImage = employeeImage;
-        this.employeeDeleteFlag = employeeDeleteFlag;
-        this.contractList = contractList;
-        this.employeePosition = employeePosition;
     }
 
     public Employee(int employeeId, String employeeCode, String employeeName, String employeeDateOfBirth) {
@@ -105,7 +85,6 @@ public class Employee {
     public void setCustomerDeleteFlag(Boolean customerDeleteFlag) {
         this.employeeDeleteFlag = customerDeleteFlag;
     }
-
 
     public int getEmployeeId() {
         return employeeId;
@@ -171,8 +150,6 @@ public class Employee {
         this.employeePhone = employeePhone;
     }
 
-
-
     public String getEmployeeEmail() {
         return employeeEmail;
     }
@@ -204,7 +181,4 @@ public class Employee {
     public void setEmployeePosition(EmployeePosition employeePosition) {
         this.employeePosition = employeePosition;
     }
-
-
-
 }

@@ -1,6 +1,5 @@
 package com.c0821g1.sprint1.repository;
 
-
 import com.c0821g1.sprint1.entity.customer.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -33,5 +32,4 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query(value = "update customer set customer_delete_flag = 1 where customer_id = :id", nativeQuery = true)
     void deleteCustomer(@Param("id") Integer id);
 }
-
 

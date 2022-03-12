@@ -58,16 +58,12 @@ public class SecurityController {
         // lấy token từ phương thức generateToken bên class jwtUtils đưa qua front end
         String jwtToken = jwtUtils.generateToken(myUserDetails);
 
-
         List<String> roles = myUserDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority).collect(Collectors.toList());
-
         JwtResponse jwtResponse = new JwtResponse();
         String urlImgDefault = "https://cdyduochopluc.edu.vn/wp-content/uploads/2019/07/anh-dai-dien-FB-200-1.jpg";
 
         Employee employee = employeeService.getEmployeeByUsername(myUserDetails.getUsername());
-        System.out.println(employee.getEmployeeName());
-
 
         // Lấy thông tin từ nhân viên đã đăng nhập bỏ vào Lớp JwtResponse đưa qua front end
         jwtResponse.setName(employee.getEmployeeName());
