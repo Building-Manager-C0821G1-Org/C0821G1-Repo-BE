@@ -20,154 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08f7d634-fc2b-4bc8-8e43-39031a3048ec" name="Default Changelist" comment="Merge branch 'developer' of https://github.com/Building-Manager-C0821G1-Org/C0821G1-Repo-BE into manager-employee&#10;&#10;# Conflicts:&#10;#&#9;.idea/.gitignore&#10;#&#9;.idea/misc.xml&#10;#&#9;sprint1/build.gradle&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/Sprint1Application.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/controller/ContractController.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/controller/CustomerController.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/controller/EmployeeController.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/controller/FloorsController.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/controller/SpaceController.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/contract/Contract.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/customer/Customer.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/employee/Employee.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/employee/EmployeePosition.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/floor/Floors.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsStatus.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsType.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/security/AppUser.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/security/Role.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/space/Spaces.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesStatus.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesType.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/repository/ContractRepository.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/repository/CustomerRepository.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/repository/FloorsRepository.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceRepository.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceStatusRepository.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceTypeRepository.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/ContractService.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/CustomerService.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/EmployeePositionService.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/EmployeeService.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/FloorsService.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/SpaceService.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/SpaceStatusService.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/SpaceTypeService.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/impl/ContractServiceImpl.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/impl/FloorServiceImpl.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceServiceImpl.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceStatusServiceImpl.class&#10;#&#9;sprint1/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceTypeServiceImpl.class&#10;#&#9;sprint1/build/resources/main/application.properties&#10;#&#9;sprint1/build/tmp/compileJava/previous-compilation-data.bin&#10;#&#9;sprint1/gradle/wrapper/gradle-wrapper.properties&#10;#&#9;sprint1/gradlew&#10;#&#9;sprint1/gradlew.bat&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/Sprint1Application.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/controller/ContractController.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/controller/CustomerController.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/controller/EmployeeController.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/controller/FloorsController.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/controller/SpaceController.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/dto/EmployeeDTO.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/contract/Contract.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/customer/Customer.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/employee/Employee.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/employee/EmployeePosition.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/floor/Floors.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsStatus.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsType.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/security/AppUser.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/security/Role.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/space/SpacesStatus.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/repository/CustomerRepository.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/repository/FloorsRepository.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/repository/SpaceRepository.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/repository/SpaceStatusRepository.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/repository/SpaceTypeRepository.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/ContractService.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/CustomerService.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/EmployeePositionService.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/EmployeeService.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/FloorsService.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/SpaceService.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/SpaceStatusService.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/SpaceTypeService.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/impl/ContractServiceImpl.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/impl/FloorServiceImpl.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/impl/SpaceServiceImpl.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/impl/SpaceStatusServiceImpl.java&#10;#&#9;sprint1/src/main/java/com/c0821g1/sprint1/service/impl/SpaceTypeServiceImpl.java&#10;#&#9;sprint1/src/main/resources/application.properties&#10;#&#9;sprint1/src/test/java/com/c0821g1/sprint1/Sprint1ApplicationTests.java">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/EmployeePositionRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/EmployeePositionServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/accessdenied/CustomAccessDeniedHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/FloorsRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/SecurityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/SpaceStatusController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/SpaceTypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/ContractDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/SpaceListDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/space/SpacesDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floors/Floors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floors/FloorsStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floors/FloorsType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/exception/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/jwt/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/jwt/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/jwt/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/payload/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/payload/response/JwtResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/payload/response/MessageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/account/IAppUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/account/IRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/account/IAppUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/account/impl/AppUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/account/impl/MyUserDetailsImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/account/impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/ContractRestController_getListContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/DeleteContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/SearchContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/ContractRestController_createContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/ContractRestController_editContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/CustomerController_deleteCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/CustomerController_getAllCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/CustomerController_getDetailCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/FloorsRestController_deleteFloorsById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/FloorsRestController_findAllFloors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/SecurityControllerTest_AuthenticateUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/SpaceController_editSpace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/controller/SpaceController_registerSpace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/space_controller/SpaceController_deleteSpaceById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/space_controller/SpaceController_findAllSpace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/space_controller/SpaceController_searchSpace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/C0821G1-Repo-BE.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/Sprint1Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/Sprint1Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/ContractController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/ContractController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/FloorsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/FloorsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/SpaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/controller/SpaceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/dto/EmployeeDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/dto/EmployeeDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/contract/Contract.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/contract/Contract.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/customer/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/customer/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/employee/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/employee/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/employee/EmployeePosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/employee/EmployeePosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/Floors.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/Floors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/floor/FloorsType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/security/AppUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/security/AppUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/security/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/security/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/Spaces.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/Spaces.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/entity/space/SpacesType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/ContractRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/ContractRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/FloorsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/FloorsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceStatusRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceStatusRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/SpaceTypeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/employee/EmployeePositionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/employee/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/repository/EmployeeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/ContractService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/ContractService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/FloorsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/FloorsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/SpaceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/SpaceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/SpaceStatusService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/SpaceStatusService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/SpaceTypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/SpaceTypeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/ContractServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/ContractServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/FloorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/FloorServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceStatusServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceStatusServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/SpaceTypeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/employee/EmployeePositionServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/employee/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/c0821g1/sprint1/service/impl/EmployeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/Sprint1Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/Sprint1Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/ContractController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/FloorsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/FloorsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/SpaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/controller/SpaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/dto/EmployeeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/contract/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/contract/Contract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/EmployeePosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/employee/EmployeePosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/Floors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/Floors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/floor/FloorsType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/security/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/Spaces.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/entity/space/SpacesType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/ContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/FloorsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/FloorsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceStatusRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceStatusRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/SpaceTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/employee/EmployeePositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/EmployeePositionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/employee/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/repository/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/ContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/EmployeePositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/EmployeePositionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/FloorsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/FloorsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceStatusService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceStatusService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/SpaceTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/ContractServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/ContractServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/FloorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/FloorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceStatusServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceStatusServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/SpaceTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/employee/EmployeePositionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/EmployeePositionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/employee/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/Sprint1ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/c0821g1/sprint1/Sprint1ApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +73,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/c0821g1/sprint1/service/impl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -246,7 +104,10 @@
       <workItem from="1646887926925" duration="16823000" />
       <workItem from="1646914369872" duration="5541000" />
       <workItem from="1646960597696" duration="5459000" />
-      <workItem from="1646969585988" duration="12160000" />
+      <workItem from="1646969585988" duration="14449000" />
+      <workItem from="1646998101434" duration="6330000" />
+      <workItem from="1647047945315" duration="966000" />
+      <workItem from="1647049356006" duration="75000" />
     </task>
     <servers />
   </component>
@@ -282,42 +143,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1646986561965" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1646970111134">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1647049428960">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646970111134" />
-    <state width="1323" height="229" key="GridCell.Tab.0.bottom" timestamp="1646989300991">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1647049428960" />
+    <state width="1323" height="530" key="GridCell.Tab.0.bottom" timestamp="1647009052227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="229" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646989300991" />
-    <state width="1323" height="229" key="GridCell.Tab.0.center" timestamp="1646989300990">
+    <state width="1323" height="530" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1647009052227" />
+    <state width="1323" height="530" key="GridCell.Tab.0.center" timestamp="1647009052227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="229" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646989300990" />
-    <state width="1323" height="229" key="GridCell.Tab.0.left" timestamp="1646989300990">
+    <state width="1323" height="530" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1647009052227" />
+    <state width="1323" height="530" key="GridCell.Tab.0.left" timestamp="1647009052227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="229" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646989300990" />
-    <state width="1323" height="229" key="GridCell.Tab.0.right" timestamp="1646989300990">
+    <state width="1323" height="530" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1647009052227" />
+    <state width="1323" height="530" key="GridCell.Tab.0.right" timestamp="1647009052227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="229" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646989300990" />
-    <state width="1323" height="229" key="GridCell.Tab.1.bottom" timestamp="1646989300991">
+    <state width="1323" height="530" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1647009052227" />
+    <state width="1323" height="530" key="GridCell.Tab.1.bottom" timestamp="1647009052227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="229" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646989300991" />
-    <state width="1323" height="229" key="GridCell.Tab.1.center" timestamp="1646989300991">
+    <state width="1323" height="530" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1647009052227" />
+    <state width="1323" height="530" key="GridCell.Tab.1.center" timestamp="1647009052227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="229" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1646989300991" />
-    <state width="1323" height="229" key="GridCell.Tab.1.left" timestamp="1646989300991">
+    <state width="1323" height="530" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1647009052227" />
+    <state width="1323" height="530" key="GridCell.Tab.1.left" timestamp="1647009052227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="229" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1646989300991" />
-    <state width="1323" height="229" key="GridCell.Tab.1.right" timestamp="1646989300991">
+    <state width="1323" height="530" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1647009052227" />
+    <state width="1323" height="530" key="GridCell.Tab.1.right" timestamp="1647009052227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="229" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1646989300991" />
+    <state width="1323" height="530" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1647009052227" />
     <state width="1323" height="235" key="GridCell.Tab.2.bottom" timestamp="1646928917156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
