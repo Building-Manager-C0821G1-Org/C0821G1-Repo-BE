@@ -1,5 +1,6 @@
 package com.c0821g1.sprint1.service.impl;
 
+import com.c0821g1.sprint1.dto.FloorsDTO;
 import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.repository.FloorsRepository;
 import com.c0821g1.sprint1.service.FloorsService;
@@ -38,5 +39,10 @@ public class FloorServiceImpl implements FloorsService {
     @Override
     public Floors findById(Integer id) {
         return this.floorsRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public FloorsDTO findAllFloorsArea() {
+        return floorsRepository.findAllFloorsArea();
     }
 }

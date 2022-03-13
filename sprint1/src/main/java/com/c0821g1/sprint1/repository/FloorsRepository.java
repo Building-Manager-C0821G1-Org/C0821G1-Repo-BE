@@ -1,6 +1,7 @@
 package com.c0821g1.sprint1.repository;
 
 
+import com.c0821g1.sprint1.dto.FloorsDTO;
 import com.c0821g1.sprint1.entity.floor.Floors;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -19,4 +20,12 @@ public interface FloorsRepository extends JpaRepository<Floors,Integer> {
             "from floors\n" +
             "where floor_delete_flag = 0;",nativeQuery = true)
     List<Floors> findAllFloors();
+    /**
+     * created: Duy NP
+     * method get list FloorsDTO
+     * @return List<FloorsDTO>
+     */
+    @Query(value = "SELECT SUM(floor_area) as floors_total_area FROM floors \n" +
+            "where floor_delete_flag = 0;",nativeQuery = true)
+    FloorsDTO findAllFloorsArea();
 }

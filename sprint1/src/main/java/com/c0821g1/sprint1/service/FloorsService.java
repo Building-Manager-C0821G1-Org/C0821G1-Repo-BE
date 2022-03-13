@@ -1,6 +1,7 @@
 package com.c0821g1.sprint1.service;
 
 
+import com.c0821g1.sprint1.dto.FloorsDTO;
 import com.c0821g1.sprint1.entity.floor.Floors;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface FloorsService {
     void editFloors(Floors floors);
 
     Floors findById(Integer id);
+
+    FloorsDTO findAllFloorsArea();
 }

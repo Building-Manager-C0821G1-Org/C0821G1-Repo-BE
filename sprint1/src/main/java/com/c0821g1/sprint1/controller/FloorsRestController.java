@@ -1,5 +1,6 @@
 package com.c0821g1.sprint1.controller;
 
+import com.c0821g1.sprint1.dto.FloorsDTO;
 import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.service.impl.FloorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,19 @@ public class FloorsRestController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(floors, HttpStatus.OK);
+    }
+    /**
+     * Created: DuyNP
+     * Method: return floorsDTO
+     * @return ResponseEntity<>(floorsDTO, HttpStatus.OK);
+     */
+    @GetMapping("/area")
+    public ResponseEntity<FloorsDTO> findAllFloorsArea() {
+        FloorsDTO floorsDTO = floorService.findAllFloorsArea();
+        if (floorsDTO==null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(floorsDTO, HttpStatus.OK);
     }
 
     /**
