@@ -2,6 +2,7 @@ package com.c0821g1.sprint1.service.account.impl;
 import com.c0821g1.sprint1.entity.security.AppUser;
 import com.c0821g1.sprint1.repository.account.IAppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;

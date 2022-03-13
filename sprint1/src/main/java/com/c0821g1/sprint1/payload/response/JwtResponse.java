@@ -18,6 +18,19 @@ public class JwtResponse {
     public JwtResponse() {
     }
 
+    public JwtResponse(String jwtToken, String username, String name, String dayOfBirth, String gender, String address, String phone, String email, Integer idEmployee, String urlImg) {
+        this.jwtToken = jwtToken;
+        this.username = username;
+        this.name = name;
+        this.dayOfBirth = dayOfBirth;
+        this.gender = gender;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.idEmployee = idEmployee;
+        this.urlImg = urlImg;
+    }
+
     public JwtResponse(String jwtToken, String username, String name, String dayOfBirth, String gender, String address, String phone, String email, Integer idEmployee, String urlImg, List<String> roles) {
         this.jwtToken = jwtToken;
         this.username = username;
@@ -31,9 +44,6 @@ public class JwtResponse {
         this.urlImg = urlImg;
         this.roles = roles;
     }
-
-
-
 
     public String getDayOfBirth() {
         return dayOfBirth;

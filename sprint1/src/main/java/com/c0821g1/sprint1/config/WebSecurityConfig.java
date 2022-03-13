@@ -1,5 +1,4 @@
 package com.c0821g1.sprint1.config;
-
 import com.c0821g1.sprint1.accessdenied.CustomAccessDeniedHandler;
 import com.c0821g1.sprint1.jwt.JwtAuthenticationEntryPoint;
 import com.c0821g1.sprint1.jwt.JwtFilter;
@@ -34,28 +33,36 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManager() throws Exception {
-        return super.authenticationManager();
-    }
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsServiceImpl).passwordEncoder(passwordEncoder());
     }
 
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.rememberMe().key("uniqueAndSecret").tokenValiditySeconds(1296000);
+
         http.authorizeRequests()
                 // Các trang không yêu cầu login
-                .antMatchers("/api/public/**", "/api/customer/**", "/**/*.jpg", "/**/*.png")
+                .antMatchers("/api/public/**",
+                        "/**/*.js", "/**/*.css", "/**/*.jpg", "/**/*.png")
                 .permitAll()
                 //phan quyen
-                .and().authorizeRequests().antMatchers("/api/customer/update/**","/api/employee/list/**",
-                "/api/customer/**", "/api/floors/update/**")
+                .and().authorizeRequests().antMatchers("/api/customer/**",
+                "/api/contract/**",
+                "/api/employee/detail/**",
+                "/api/employee/list/**",
+                "/api/spaces/**",
+                "/api/spaceType/**",
+                "/api/spaceStatus/**",
+                "/api/floors/**",
+                "/api/employee/search/**")
                 .hasAnyRole("EMPLOYEE", "ADMIN")
                 .and().authorizeRequests().antMatchers("/api/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
@@ -64,15 +71,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 // make sure we use stateless session; session won't be used to
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
         // Add a filter to validate the tokens with every request
-//        thêm lọc filter trước khi xác thực
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
 
     @Bean
-    public AccessDeniedHandler accessDeniedHandler() {
+    public AccessDeniedHandler accessDeniedHandler(){
         return new CustomAccessDeniedHandler();
     }
 }

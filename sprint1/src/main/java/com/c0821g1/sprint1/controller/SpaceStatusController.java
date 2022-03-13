@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/spaceStatus")
+@RequestMapping(value = "/api/spaceStatus")
 public class SpaceStatusController {
     @Autowired
     private SpaceStatusService spaceStatusService;

@@ -1,6 +1,9 @@
 package com.c0821g1.sprint1.controller;
 
+import com.c0821g1.sprint1.dto.CustomerDTO;
+import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.entity.customer.Customer;
+import com.c0821g1.sprint1.entity.employee.Employee;
 import com.c0821g1.sprint1.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,12 +13,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/customers")
-@CrossOrigin("http://localhost:4200")
+@RequestMapping("/api/customer/")
+@CrossOrigin("http://localhost:4200/")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
@@ -26,7 +31,7 @@ public class CustomerController {
      * @param pageable
      * @return
      */
-    @GetMapping(value = "/list")
+    @GetMapping(value = "list")
     public ResponseEntity<Page<Customer>> showListCustomer(@PageableDefault(value = 5) Pageable pageable) {
         Page<Customer> customers = this.customerService.getAll(pageable);
         if (customers.isEmpty()) {
@@ -35,8 +40,32 @@ public class CustomerController {
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/list-select")
+    public ResponseEntity<List<CustomerDTO>>  getAll(){
+        List<CustomerDTO> customerDTO  = new ArrayList<>();
+
+        List<Customer> employeeListSearch = this.customerService.getAll1();
+        for (Customer d: employeeListSearch) {
+            CustomerDTO customerDTO1  = new CustomerDTO();
+
+            customerDTO1.setCustomerId(d.getCustomerId());
+            customerDTO1.setCustomerCode(d.getCustomerCode());
+            customerDTO1.setCustomerName(d.getCustomerName());
+            customerDTO1.setCustomerIdentifyNumber(d.getCustomerIdentifyNumber());
+            customerDTO1.setCustomerEmail(d.getCustomerEmail());
+            customerDTO1.setCustomerDateOfBirth(d.getCustomerDateOfBirth());
+            customerDTO1.setCustomerAddress(d.getCustomerAddress());
+            customerDTO1.setCustomerStatus(d.getCustomerStatus());
+            customerDTO1.setCustomerDeleteFlag(d.getCustomerDeleteFlag());
+
+            customerDTO.add(customerDTO1);
+        }
+
+        return new ResponseEntity<>(customerDTO, HttpStatus.OK);
+    }
+
     //          VyLTT- detail customer
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "{id}")
     public ResponseEntity<Customer> getDetailCustomer(@PathVariable Integer id) {
         Optional<Customer> customerObj = this.customerService.findById(id);
         if (!customerObj.isPresent()) {
@@ -46,7 +75,7 @@ public class CustomerController {
     }
 
     //      VyLTT- delete customer
-    @DeleteMapping(value = "/delete/{id}")
+    @DeleteMapping(value = "delete/{id}")
     public ResponseEntity<Customer> deleteCustomer(@PathVariable("id") Integer id) {
         Optional<Customer> customerObj = this.customerService.findById(id);
         if (!customerObj.isPresent()) {
@@ -57,7 +86,7 @@ public class CustomerController {
     }
 
     //    VyLTT - search by name, email, phone, identify number
-    @GetMapping(value = "/search")
+    @GetMapping(value = "search")
     public ResponseEntity<Page<Customer>> searchCustomer(
             @PageableDefault(value = 5) Pageable pageable,
             @RequestParam(defaultValue = "") String customer_name,

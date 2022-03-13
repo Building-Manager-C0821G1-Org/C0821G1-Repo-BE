@@ -1,5 +1,7 @@
 package com.c0821g1.sprint1.entity.employee;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,10 +9,8 @@ import java.util.List;
 public class EmployeePosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "employee_position_id", nullable = false)
-    private Integer employeePositionId;
+    private int employeePositionId;
 
-    @JoinColumn(name = "employee_position_name", nullable = false)
     private String employeePositionName;
 
 
@@ -21,11 +21,17 @@ public class EmployeePosition {
     public EmployeePosition() {
     }
 
-    public Integer getEmployeePositionId() {
+    public EmployeePosition(int employeePositionId, String employeePositionName, List<Employee> employeeList) {
+        this.employeePositionId = employeePositionId;
+        this.employeePositionName = employeePositionName;
+        this.employeeList = employeeList;
+    }
+
+    public int getEmployeePositionId() {
         return employeePositionId;
     }
 
-    public void setEmployeePositionId(Integer employeePositionId) {
+    public void setEmployeePositionId(int employeePositionId) {
         this.employeePositionId = employeePositionId;
     }
 
@@ -42,6 +48,10 @@ public class EmployeePosition {
     }
 
     public void setEmployeeList(List<Employee> employeeList) {
+    }
+
+    public EmployeePosition(int employeePositionId, List<Employee> employeeList) {
+        this.employeePositionId = employeePositionId;
         this.employeeList = employeeList;
     }
 }

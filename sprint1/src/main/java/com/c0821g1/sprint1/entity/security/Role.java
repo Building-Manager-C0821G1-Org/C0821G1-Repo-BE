@@ -1,18 +1,14 @@
 package com.c0821g1.sprint1.entity.security;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity(name = "roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "id", nullable = false)
     private Integer id;
-
-    @JoinColumn(name = "name", nullable = false)
     private String name;
-//    @ManyToMany(mappedBy = "roles")
-//    private Set<AppUser> appUsers;
 
     public Role() {
     }
@@ -35,13 +31,6 @@ public class Role {
         this.id = id;
     }
 
-//    public Set<AppUser> getAppUsers() {
-//        return appUsers;
-//    }
-//
-//    public void setAppUsers(Set<AppUser> appUsers) {
-//        this.appUsers = appUsers;
-//    }
 
     public String getName() {
         return name;

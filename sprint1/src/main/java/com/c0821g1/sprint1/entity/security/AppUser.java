@@ -1,4 +1,6 @@
 package com.c0821g1.sprint1.entity.security;
+
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -14,33 +16,24 @@ import java.util.Set;
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "id", nullable = false)
     private Integer id;
-
-
     @NotBlank(message = " Tên đăng nhập không được để trống")
-    @JoinColumn(name = "username", nullable = false)
     private String username;
-
-
     @NotBlank(message = " Mật khẩu không được để trống")
-    @JoinColumn(name = "password", nullable = false)
     private String password;
-
-    @JoinColumn(name = "is_enabled", nullable = false)
     private Boolean isEnabled;
-
-    @JoinColumn(name = "verification_code", nullable = false)
     private String verificationCode;
-    //    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
+//    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, targetEntity = Role.class)
+//    @JoinTable(name = "app_users_roles",
+//            joinColumns = @JoinColumn(name = "app_users_id"),
+//            inverseJoinColumns = @JoinColumn(name = "roles_id"))
 //    private Set<Role> roles;
-    @ManyToMany(fetch = FetchType.LAZY)
+        @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, targetEntity = Role.class)
     @JoinTable(name = "app_users_roles",
             joinColumns = @JoinColumn(name = "app_users_id"),
             inverseJoinColumns = @JoinColumn(name = "roles_id"))
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles;
 
-    @JoinColumn(name = "deleted", nullable = false)
     private Boolean deleted = Boolean.FALSE;
 
     public AppUser() {
@@ -120,4 +113,5 @@ public class AppUser {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
 }

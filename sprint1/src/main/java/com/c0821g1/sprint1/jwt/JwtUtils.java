@@ -12,7 +12,7 @@ import java.util.function.Function;
 
 @Service
 public class JwtUtils {
-    private String secret = "secret_word";
+    private String secret = "c0821g1";
     public static final long JWT_TOKEN_VALIDITY =(long) (5*60*60);
 
     private Claims getAllClaimsFromToken(String token) {
@@ -37,9 +37,9 @@ public class JwtUtils {
         return expiration.before(new Date());
     }
 
-    public String generateToken(MyUserDetailsImpl myUserDetailsImpl) {
+    public String generateToken(MyUserDetailsImpl userDetails) {
         Map<String, Object> claims = new HashMap<>();
-        return doGenerateToken(claims, myUserDetailsImpl.getUsername());
+        return doGenerateToken(claims, userDetails.getUsername());
     }
 
     private String doGenerateToken(Map<String, Object> claims, String subject) {

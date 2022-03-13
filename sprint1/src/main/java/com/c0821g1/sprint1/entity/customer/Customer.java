@@ -6,49 +6,57 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "customers")
+@Entity
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "customer_id", nullable = false)
     private Integer customerId;
-    @JoinColumn(name = "customer_code", nullable = false)
     private String customerCode;
-    @JoinColumn(name = "customer_name", nullable = false)
     private String customerName;
-    @JoinColumn(name = "customer_identify_number", nullable = false)
     private String customerIdentifyNumber;
-    @JoinColumn(name = "customer_email", nullable = false)
     private String customerEmail;
-    @JoinColumn(name = "customer_phone", nullable = false)
     private String customerPhone;
-    @JoinColumn(name = "customer_date_of_birth", nullable = false)
     private String customerDateOfBirth;
-    @JoinColumn(name = "customer_address", nullable = false)
     private String customerAddress;
-    @JoinColumn(name = "customer_status", nullable = false)
     private String customerStatus;
-    @JoinColumn(name = "customer_delete_flag", nullable = false)
     private Boolean customerDeleteFlag;
 
-    @OneToMany(mappedBy = "customer")
+
     @JsonBackReference
+    @OneToMany(mappedBy = "customer")
     private List<Contract> contractList;
 
 
-
     public Customer() {
+    }
+
+    public Customer(Integer customerId, String customerCode, String customerName, String customerIdentifyNumber, String customerEmail, String customerPhone, String customerDateOfBirth, String customerAddress, String customerStatus, Boolean customerDeleteFlag, List<Contract> contractList) {
+        this.customerId = customerId;
+        this.customerCode = customerCode;
+        this.customerName = customerName;
+        this.customerIdentifyNumber = customerIdentifyNumber;
+        this.customerEmail = customerEmail;
+        this.customerPhone = customerPhone;
+        this.customerDateOfBirth = customerDateOfBirth;
+        this.customerAddress = customerAddress;
+        this.customerStatus = customerStatus;
+        this.customerDeleteFlag = customerDeleteFlag;
+        this.contractList = contractList;
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
     }
 
     public void setContractList(List<Contract> contractList) {
         this.contractList = contractList;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
@@ -124,3 +132,4 @@ public class Customer {
         this.customerDeleteFlag = customerDeleteFlag;
     }
 }
+

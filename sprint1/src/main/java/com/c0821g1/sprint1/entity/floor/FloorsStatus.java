@@ -1,16 +1,16 @@
-package com.c0821g1.sprint1.entity.floors;
+package com.c0821g1.sprint1.entity.floor;
+
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = ("floor_status"))
+@Entity
 public class FloorsStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "floor_status_id", nullable = false)
     private Integer floorStatusId;
-
-    @JoinColumn(name = "floor_status_name", nullable = false)
     private String floorStatusName;
 
     @OneToMany(mappedBy = "floorsStatus")

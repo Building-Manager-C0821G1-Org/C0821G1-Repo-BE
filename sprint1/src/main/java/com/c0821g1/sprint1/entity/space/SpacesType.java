@@ -1,25 +1,29 @@
 package com.c0821g1.sprint1.entity.space;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "space_type")
+@Entity
 public class SpacesType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "space_type_id",nullable = false)
-
     private int spaceTypeId;
-    @JoinColumn(name = "space_type_name",nullable = false)
+
     private String spaceTypeName;
 
 
-    @OneToMany(mappedBy = "spacesType", cascade =  CascadeType.ALL)
     @JsonBackReference
+    @OneToMany(mappedBy = "spacesType")
     private List<Spaces> spacesList;
+
+    public SpacesType(int spaceTypeId, String spaceTypeName, List<Spaces> spacesList) {
+        this.spaceTypeId = spaceTypeId;
+        this.spaceTypeName = spaceTypeName;
+        this.spacesList = spacesList;
+    }
 
     public SpacesType() {
     }

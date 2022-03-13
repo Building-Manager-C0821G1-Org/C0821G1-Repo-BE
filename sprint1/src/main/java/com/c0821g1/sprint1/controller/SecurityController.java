@@ -7,6 +7,7 @@ import com.c0821g1.sprint1.payload.response.JwtResponse;
 import com.c0821g1.sprint1.service.account.impl.MyUserDetailsImpl;
 import com.c0821g1.sprint1.service.impl.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,7 +27,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/public")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200",allowedHeaders = "*")
 public class SecurityController {
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -40,12 +41,13 @@ public class SecurityController {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Value("${secretPsw}")
+    String secretPsw;
+
 
     // Đăng Nhập (NghiaDM)
     @PostMapping("/login")
     public ResponseEntity<Object> authenticateUser(@RequestBody LoginRequest loginRequest) {
-        System.out.println("test");
-        System.out.println(loginRequest.getUsername());
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
                         loginRequest.getPassword()));
@@ -56,17 +58,16 @@ public class SecurityController {
         // lấy token từ phương thức generateToken bên class jwtUtils đưa qua front end
         String jwtToken = jwtUtils.generateToken(myUserDetails);
 
-        //System.out.println("jwtoken show info" + jwtToken);
 
         List<String> roles = myUserDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority).collect(Collectors.toList());
 
-        //System.out.println(roles);
         JwtResponse jwtResponse = new JwtResponse();
         String urlImgDefault = "https://cdyduochopluc.edu.vn/wp-content/uploads/2019/07/anh-dai-dien-FB-200-1.jpg";
 
         Employee employee = employeeService.getEmployeeByUsername(myUserDetails.getUsername());
-        //System.out.println(employee.getEmployeeName());
+        System.out.println(employee.getEmployeeName());
+
 
         // Lấy thông tin từ nhân viên đã đăng nhập bỏ vào Lớp JwtResponse đưa qua front end
         jwtResponse.setName(employee.getEmployeeName());

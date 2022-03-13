@@ -2,6 +2,7 @@ package com.c0821g1.sprint1.dto;
 
 public class CustomerDTO {
 
+    private Integer customerId;
     private String customerCode;
     private String customerName;
     private String customerIdentifyNumber;
@@ -15,7 +16,9 @@ public class CustomerDTO {
     public CustomerDTO() {
     }
 
-    public CustomerDTO(String customerCode, String customerName, String customerIdentifyNumber, String customerEmail, String customerPhone, String customerDateOfBirth, String customerAddress, String customerStatus, Boolean customerDeleteFlag) {
+
+    public CustomerDTO(Integer customerId, String customerCode, String customerName, String customerIdentifyNumber, String customerEmail, String customerPhone, String customerDateOfBirth, String customerAddress, String customerStatus, Boolean customerDeleteFlag) {
+        this.customerId = customerId;
         this.customerCode = customerCode;
         this.customerName = customerName;
         this.customerIdentifyNumber = customerIdentifyNumber;
@@ -25,6 +28,14 @@ public class CustomerDTO {
         this.customerAddress = customerAddress;
         this.customerStatus = customerStatus;
         this.customerDeleteFlag = customerDeleteFlag;
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getCustomerCode() {

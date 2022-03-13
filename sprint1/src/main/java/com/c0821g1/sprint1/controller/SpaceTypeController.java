@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/spaceType")
+@RequestMapping(value = "/api/spaceType")
 public class SpaceTypeController {
     @Autowired
     private SpaceTypeService spaceTypeService;

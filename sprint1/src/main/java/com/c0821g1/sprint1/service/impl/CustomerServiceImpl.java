@@ -1,13 +1,14 @@
 package com.c0821g1.sprint1.service.impl;
 
+import com.c0821g1.sprint1.service.CustomerService;
+import org.springframework.stereotype.Service;
 import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.repository.CustomerRepository;
-import com.c0821g1.sprint1.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -20,6 +21,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Page<Customer> getAll(Pageable pageable) {
         return customerRepository.findAllCustomer(pageable);
+    }
+
+    @Override
+    public List<Customer> getAll1() {
+        return this.customerRepository.findAll();
     }
 
     @Override
@@ -45,3 +51,4 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
 }
+

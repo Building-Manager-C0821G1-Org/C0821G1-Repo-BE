@@ -1,7 +1,7 @@
 package com.c0821g1.sprint1.controller;
 
 import com.c0821g1.sprint1.dto.SpaceListDTO;
-import com.c0821g1.sprint1.dto.space.SpacesDTO;
+import com.c0821g1.sprint1.dto.SpacesDTO;
 import com.c0821g1.sprint1.entity.space.Spaces;
 import com.c0821g1.sprint1.service.SpaceService;
 import com.c0821g1.sprint1.service.SpaceStatusService;
@@ -22,7 +22,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping (value = "/spaces")
+@RequestMapping (value = "api/spaces")
 public class SpaceController {
 
     @Autowired
@@ -45,7 +45,7 @@ public class SpaceController {
         }
         Spaces spacesObj = new Spaces();
         BeanUtils.copyProperties(spacesDTO, spacesObj);
-        spacesObj.setSpaceDeleteFlag(true);
+        spacesObj.setSpaceDeleteFlag(false);
         spaceService.saveNewSpace(spacesObj);
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -64,7 +64,7 @@ public class SpaceController {
         }
         Spaces spacesObj = new Spaces();
         BeanUtils.copyProperties(spacesDTO, spacesObj);
-        spacesObj.setSpaceDeleteFlag(true);
+//        spacesObj.setSpaceDeleteFlag(false);
         spaceService.editSpace(spacesObj);
         return new ResponseEntity<>(HttpStatus.OK);
     }

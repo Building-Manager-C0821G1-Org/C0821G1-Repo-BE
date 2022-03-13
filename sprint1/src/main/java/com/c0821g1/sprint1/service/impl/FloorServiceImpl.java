@@ -1,6 +1,6 @@
 package com.c0821g1.sprint1.service.impl;
 
-import com.c0821g1.sprint1.entity.floors.Floors;
+import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.repository.FloorsRepository;
 import com.c0821g1.sprint1.service.FloorsService;
 import org.springframework.beans.factory.annotation.Autowired;

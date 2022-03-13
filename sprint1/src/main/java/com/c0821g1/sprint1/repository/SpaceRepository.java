@@ -24,7 +24,7 @@ public interface SpaceRepository extends JpaRepository<Spaces, Integer> {
     @Modifying
     @Transactional
     @Query(value = "update  spaces\n" +
-            "set spaces.space_delete_flag = 0\n" +
+            "set spaces.space_delete_flag = 1\n" +
             "where spaces.space_id = ?1 ", nativeQuery = true)
     void deleteSpaceById(Integer id);
 

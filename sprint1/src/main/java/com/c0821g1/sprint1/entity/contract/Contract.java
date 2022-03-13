@@ -3,70 +3,67 @@ package com.c0821g1.sprint1.entity.contract;
 import com.c0821g1.sprint1.entity.customer.Customer;
 import com.c0821g1.sprint1.entity.employee.Employee;
 import com.c0821g1.sprint1.entity.space.Spaces;
-
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity(name = "contracts")
-public class Contract {
+
+@Entity
+public class Contract implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "contract_id", nullable = false)
-    private Integer contractId;
+    private int contractId;
+    private String contractCode;
 
-    @JoinColumn(name = "contract_expired", nullable = false)
-    private String contractExpred;
-
-    @JoinColumn(name = "contract_date_start", nullable = false)
+    private String contractExpired;
     private String contractDateStart;
-
-    @JoinColumn(name = "contract_date_end", nullable = false)
     private String contractDateEnd;
-
-    @JoinColumn(name = "contract_total", nullable = false)
     private String contractTotal;
-
-    @JoinColumn(name = "contract_content", nullable = false)
+    private Integer price;
+    private Integer contractDeposit;
+    private String contractTaxCode;
     private String contractContent;
-
-    @JoinColumn(name = "contract_delete_flag", nullable = false)
+    private String contractImageUrl;
     private Boolean contractDeleteFlag;
-
-    @JoinColumn(name = "contract_price", nullable = false)
-    private Boolean contractPrice;
+    private int checkFlag;
 
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer_id",nullable = true)
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)
+    @JoinColumn(name = "employee_id",nullable = true)
     private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "space_id", nullable = false)
+    @JoinColumn(name = "space_id",nullable = true)
     private Spaces spaces;
 
-
-
     public Contract() {
-
     }
 
-    public Integer getContractId() {
+    public int getContractId() {
         return contractId;
     }
 
-    public void setContractId(Integer contractId) {
+    public void setContractId(int contractId) {
         this.contractId = contractId;
     }
 
-    public String getContractExpred() {
-        return contractExpred;
+    public String getContractCode() {
+        return contractCode;
     }
 
-    public void setContractExpred(String contractExpred) {
-        this.contractExpred = contractExpred;
+    public void setContractCode(String contractCode) {
+        this.contractCode = contractCode;
+    }
+
+    public String getContractExpired() {
+        return contractExpired;
+    }
+
+    public void setContractExpired(String contractExpired) {
+        this.contractExpired = contractExpired;
     }
 
     public String getContractDateStart() {
@@ -93,12 +90,44 @@ public class Contract {
         this.contractTotal = contractTotal;
     }
 
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getContractDeposit() {
+        return contractDeposit;
+    }
+
+    public void setContractDeposit(Integer contractDeposit) {
+        this.contractDeposit = contractDeposit;
+    }
+
+    public String getContractTaxCode() {
+        return contractTaxCode;
+    }
+
+    public void setContractTaxCode(String contractTaxCode) {
+        this.contractTaxCode = contractTaxCode;
+    }
+
     public String getContractContent() {
         return contractContent;
     }
 
     public void setContractContent(String contractContent) {
         this.contractContent = contractContent;
+    }
+
+    public String getContractImageUrl() {
+        return contractImageUrl;
+    }
+
+    public void setContractImageUrl(String contractImageUrl) {
+        this.contractImageUrl = contractImageUrl;
     }
 
     public Boolean getContractDeleteFlag() {
@@ -109,12 +138,12 @@ public class Contract {
         this.contractDeleteFlag = contractDeleteFlag;
     }
 
-    public Boolean getContractPrice() {
-        return contractPrice;
+    public int getCheckFlag() {
+        return checkFlag;
     }
 
-    public void setContractPrice(Boolean contractPrice) {
-        this.contractPrice = contractPrice;
+    public void setCheckFlag(int checkFlag) {
+        this.checkFlag = checkFlag;
     }
 
     public Customer getCustomer() {

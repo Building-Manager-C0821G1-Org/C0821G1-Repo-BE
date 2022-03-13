@@ -1,19 +1,17 @@
-package com.c0821g1.sprint1.dto.space;
+package com.c0821g1.sprint1.dto;
 
-import com.c0821g1.sprint1.entity.floors.Floors;
+import com.c0821g1.sprint1.entity.floor.Floors;
 import com.c0821g1.sprint1.entity.space.SpacesStatus;
 import com.c0821g1.sprint1.entity.space.SpacesType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 
-
 public class SpacesDTO {
-
     private int spaceId;
     @NotBlank(message = "Mã mặt bằng không được để trống")
     private String spaceCode;
-    @NotBlank (message = "Diện tích không được để trống")
+    @NotBlank(message = "Diện tích không được để trống")
     private String spaceArea;
     private String spacePrice;
     private String spaceManagerFee;
@@ -27,7 +25,7 @@ public class SpacesDTO {
     @NotNull (message = "Loại mặt bằng không được để trống")
     private SpacesStatus spaceStatus;
 
-    @NotNull (message = "Loại mặt bằng không được để trống")
+    @NotNull(message = "Loại mặt bằng không được để trống")
     private Floors floors;
 
 
@@ -138,3 +136,4 @@ public class SpacesDTO {
         this.spaceStatus = spaceStatus;
     }
 }
+
