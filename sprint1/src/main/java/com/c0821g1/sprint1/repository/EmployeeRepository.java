@@ -1,6 +1,4 @@
 package com.c0821g1.sprint1.repository;
-
-
 import com.c0821g1.sprint1.entity.employee.Employee;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +14,9 @@ import java.util.Optional;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
-    @Query(value = "SELECT * from employee e join app_users a on e.app_user_id = a.id where a.username =?1", nativeQuery = true)
+    @Query(value = "SELECT * from employee e " +
+            "join app_users a on e.app_user_id = a.id " +
+            "where a.username =?1 and e.employee_delete_flag = false ", nativeQuery = true)
     Employee findEmployeeByAppUser(String username);
 
 

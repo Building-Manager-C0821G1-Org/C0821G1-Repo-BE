@@ -30,14 +30,16 @@ public interface ContractRepository  extends JpaRepository<Contract,Integer> {
             " where contract.contract_delete_flag = 0 and customer.customer_name like concat('%',:name,'%') \n" +
             " and spaces.space_code like concat('%',:code,'%') \n" +
             " and contract.contract_date_start like concat('%',:start,'%') \n" +
-            " and contract.contract_date_end like concat('%',:end,'%')", nativeQuery = true,
+            " and contract.contract_date_end like concat('%',:end,'%') \n" +
+            " order by contract.contract_id desc ", nativeQuery = true,
             countQuery = " select count(*) from contract \n " +
                     " left Join customer on contract.customer_id = customer.customer_id \n" +
                     " left Join spaces on contract.space_id = spaces.space_id \n" +
                     " where contract.contract_delete_flag = 0 and customer.customer_name like concat('%',:name,'%') \n" +
                     " and spaces.space_code like concat('%',:code,'%') \n" +
                     " and contract.contract_date_start like concat('%',:start,'%') \n" +
-                    " and contract.contract_date_end like concat('%',:end,'%')")
+                    " and contract.contract_date_end like concat('%',:end,'%')\n" +
+                    " order by contract.contract_id desc ")
     Page<Contract> findAllContractByNameAndCodeAndDate(@Param("name") String name,
                                                        @Param("code") String code,
                                                        @Param("start") String start,

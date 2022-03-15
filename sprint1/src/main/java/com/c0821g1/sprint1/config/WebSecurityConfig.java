@@ -50,8 +50,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 // Các trang không yêu cầu login
-                .antMatchers("/api/public/**","/api/floors/**",
-                        "/**/*.js", "/**/*.css", "/**/*.jpg", "/**/*.png")
+                .antMatchers("/api/public/**",
+                        "/api/floors/list**",
+                        "/api/floors/area**",
+                        "/**/*.js", "/**/*.css",
+                        "/**/*.jpg", "/**/*.png")
                 .permitAll()
                 //phan quyen
                 .and().authorizeRequests().antMatchers("/api/customer/**",
@@ -60,6 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/api/employee/list/**",
                 "/api/employee/changePassword/**",
                 "/api/spaces/**",
+                "/api/floors/delete-flag/**",
                 "/api/spaceType/**",
                 "/api/spaceStatus/**",
                 "/api/employee/search/**")
