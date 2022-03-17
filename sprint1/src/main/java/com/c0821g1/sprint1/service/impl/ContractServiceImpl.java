@@ -43,7 +43,7 @@ public class ContractServiceImpl implements ContractService {
             return false;
         }
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date date1 = simpleDateFormat.parse(date);
             Date date3 = simpleDateFormat.parse(date2);
