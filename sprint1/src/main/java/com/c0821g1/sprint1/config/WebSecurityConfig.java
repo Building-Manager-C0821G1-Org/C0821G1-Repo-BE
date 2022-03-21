@@ -53,6 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/public/**",
                         "/api/floors/list**",
                         "/api/floors/area**",
+                        "/api/floors/send-email/**",
                         "/**/*.js", "/**/*.css",
                         "/**/*.jpg", "/**/*.png")
                 .permitAll()

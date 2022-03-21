@@ -3,7 +3,6 @@ package com.c0821g1.sprint1.service.impl;
 import com.c0821g1.sprint1.entity.contract.Contract;
 import com.c0821g1.sprint1.repository.ContractRepository;
 import com.c0821g1.sprint1.service.ContractService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
