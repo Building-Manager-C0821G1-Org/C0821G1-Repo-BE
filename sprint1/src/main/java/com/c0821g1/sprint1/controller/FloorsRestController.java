@@ -83,21 +83,31 @@ public class FloorsRestController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    /**
+     * Created: DuyNP
+     * Method: send-email
+     * @param requestMail
+     * @return ResponseEntity<>(HttpStatus.OK);
+     */
     @PostMapping("send-email")
     public ResponseEntity<?> sendEmailTo(@RequestBody RequestMail requestMail) {
         sendMail(requestMail);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
+    /**
+     * Created: DuyNP
+     * Method: send-email
+     * @param requestMail
+     */
     private void sendMail (RequestMail requestMail){
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(requestMail.getEmail());
         message.setSubject("[C0821G1] KÍNH CHÀO QUÝ KHÁCH");
-        message.setText("DEAR " +requestMail.getName() + ", \n \n \n CTY - TNHH C0821G1 CODEGYM XIN CẢM ƠN QUÝ KHÁCH " + requestMail.getName() +
-                " ĐÃ GỞI YÊU CẦU XIN THÊM THÔNG TIN VỀ CÔNG TY CHÚNG TÔI. \n" +
-                " XIN QUÝ KHÁCH VUI LÒNG ĐỢI SẼ CÓ NHÂN VIÊN CỦA CÔNG TY CHÚNG TÔI LIÊN LẠC VỚI QUÝ KHÁCH THÔNG QUA EMAIL NÀY \n" +
-                " XIN CẢM ƠN QUÝ KHÁCH ĐÃ QUAN TÂM ĐẾN CÔNG TY CHÚNG TÔI! \n \n" +
-                " TRÂN TRỌNG CẢM ƠN QUÝ KHÁCH");
+        message.setText("Dear " +requestMail.getName() + ", \n \nCTY - TNHH C0821G1 CODEGYM Xin cảm ơn quý khách " +
+                " đã gửi yêu cần hỗ trợ về công ty chúng tôi. \n" +
+                " Xin quý khách vui lòng đợi, nhân viên của chúng tôi sẽ phản hồi lại email này theo thời gian sớm nhất.  \n" +
+                " Xin cảm ơn quý khách đã quan tâm tới công ty chúng tôi! \n \n" +
+                " Trân trong cảm ơn quý khách");
         this.emailSender.send(message);
     }
 }
